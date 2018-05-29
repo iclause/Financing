@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="white">#ffffff</color>
+
+    //登录界面
+
+    <color name="black_large_text">#3A3A3A</color>
+    <color name="black_middle1_text">#333333</color>
+    <color name="grey_middle1_text">#949494</color>
+    <color name="grey_middle1_text_input">#757575</color>
+    <color name="orange_line">#FFA94D</color>
+    <color name="orange_loginbtn_unenable">#FFCC7C</color>
+    <color name="orange_loginbtn_enable">#FFA51A</color>
+    <color name="orange_fg_item">#FF9B0B</color>
+    <color name="blue_fg1_item">#4C93E5</color>
+    <color name="grey_fragment_small_text">#BCBCBC</color>
+    <color name="red_fragment_small_text">#FF3D3D</color>
+    <color name="grey_fragment_buy_background">#F2F2F6</color>
+    <color name="style_window_background">#212121</color>
+</resources>

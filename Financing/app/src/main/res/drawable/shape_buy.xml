@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+       android:shape="rectangle">
+    <solid android:color="@color/grey_fragment_buy_background"/> <!-- 背景颜色 -->
+
+
+
+    <stroke android:width="1px" android:color="@color/grey_fragment_buy_background"/> <!-- 图片边框属性 -->
+    <corners android:radius="20dp" /> <!-- 圆角的程度 -->
+</shape>

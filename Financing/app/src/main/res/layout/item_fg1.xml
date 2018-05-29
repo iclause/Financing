@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/header_ll"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:background="@color/grey_fragment_buy_background"
+        >
+
+        <ImageView
+            android:id="@+id/header_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/orange_ring"/>
+
+        <TextView
+            android:id="@+id/header_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text2"
+            android:textColor="@color/grey_fragment_small_text"
+            android:textSize="@dimen/middle2"
+            android:layout_marginLeft="6dp"
+            />
+    </LinearLayout>
+    <RelativeLayout
+        style="@style/styler_rl1">
+
+        <LinearLayout
+            android:id="@+id/ll1"
+            style="@style/style_ll1"
+            >
+
+            <TextView
+                android:id="@+id/proname_tv"
+                style="@style/style_financing_item_name_tv"
+                android:text="@string/financing_1_name"/>
+
+            <!--<TextView-->
+                <!--android:id="@+id/is_novice_1_tv"-->
+                <!--style="@style/style_is_novice_tv"-->
+                <!--android:text="@string/is_novice"/>-->
+
+            <LinearLayout
+                style="@style/style_financing_updown_num_ll">
+
+                <TextView
+                    android:id="@+id/proDes_tv"
+                    style="@style/style_financing_updown_num_tv"
+                    android:text="@string/financing_updown_num"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/style_botom_ll1"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/ll1"
+            >
+
+            <LinearLayout
+                style="@style/style_target_num_annual_revenue_ll"
+                android:gravity="center_vertical">
+                <!--android:textColor="#FF9B0B"-->
+                <TextView
+
+                    android:id="@+id/updownnum_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/orange_fg_item"
+                    android:textSize="@dimen/large2"
+                    android:text="@string/target_num_annual_revenue"/>
+
+                <TextView
+                    android:id="@+id/proDes1_tv"
+                    style="@style/style_target_annual_revenue_tv"
+                    android:text="@string/target_annual_revenue"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/style_target_num_annual_revenue_ll"
+                 android:layout_gravity="bottom"
+                >
+
+                <TextView
+                    android:id="@+id/circle_tv"
+                    style="@style/cycle_num_day_tv"
+                    android:text="30天"
+                    android:layout_gravity="right"
+                    />
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>

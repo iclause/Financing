@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:id="@+id/header_rl"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@drawable/fragment1_header_color"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="20dp"
+            >
+
+            <TextView
+                android:id="@+id/newcomer_raise_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:text="@string/newcomer_raise"
+                android:textColor="@color/white"
+                android:textSize="@dimen/middle3"
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/right_tv"
+                android:text="前四周加息4%"
+                android:textColor="@color/white"
+                android:textSize="@dimen/middle3"
+                />
+
+            <ImageView
+                android:id="@+id/right_tv"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="2dp"
+                android:src="@drawable/icon_grey_arrow"
+
+                />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.mga.financing.ui.pullableview.PullToRefreshLayout
+            android:id="@+id/refresh_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- 支持所有实现Pullable接口的View -->
+            <include layout="@layout/refresh_head"/>
+
+            <com.mga.financing.ui.pullableview.PullableRecycleView
+                android:id="@+id/pullable_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </com.mga.financing.ui.pullableview.PullableRecycleView>
+
+            <include
+                layout="@layout/load_more"
+                android:visibility="gone"
+                />
+        </com.mga.financing.ui.pullableview.PullToRefreshLayout>
+    </LinearLayout>
+
+</LinearLayout>

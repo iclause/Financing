@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">Financing</string>
+    <string name="hello">您好！</string>
+    <string name="welcome">欢迎来到黄金钱包登录或注册</string>
+    <string name="phonenumber">手机号   </string>
+    <string name="input_phonenumber">请输入手机号码</string>
+    <string name="next">下一步</string>
+    <string name="safeinfo">用户信息加密存储保障您的隐私安全</string>
+    <string name="first_regist">初次见面，注册有礼</string>
+    <string name="vfc_has_send">验证码已发送到</string>
+    <string name="vfc">验证码</string>
+    <string name="input_vfc">请输入验证码</string>
+    <string name="miss_vfc">未收到短信？</string>
+    <string name="audio_get">语音获取</string>
+    <string name="resend">重新发送</string>
+    <string name="countdown">60s后重新发送</string>
+    <string name="welcome_to_back">欢迎回来！</string>
+    <string name="sendinfo">您的收益是我们共同的喜悦</string>
+    <string name="password">密码</string>
+    <string name="input_password">请输入登录密码</string>
+    <string name="vfc_login">验证码登录</string>
+    <string name="logining">正在登录</string>
+    <string name="login">登录</string>
+    <string name="regist_tv">立即注册</string>
+    <string name="loading">请稍后</string>
+    <string name="send_vfc_to">验证码已发送到</string>
+    <string name="tab_0">首页</string>
+    <string name="tab_1">产品</string>
+    <string name="tab_2">行情</string>
+    <string name="tab_3">我的</string>
+    <string name="realtime_gold_price">实时金价[元/克]</string>
+    <string name="buy">买入</string>
+    <string name="know">一分钟了解</string>
+    <string name="safe">安全保障</string>
+    <string name="novice">新手专享</string>
+    <string name="financing_1_name">安心计划30天</string>
+    <string name="is_novice">新手</string>
+    <string name="financing_updown_num">7%+5%</string>
+    <string name="target_num_annual_revenue">12.0%</string>
+    <string name="target_annual_revenue">目标年化回报率</string>
+    <string name="effective_date">14天后生效</string>
+    <string name="more_product">查看更多产品</string>
+    <string name="know_wallet">了解钱包</string>
+    <string name="monthly_operating_report">运营月报</string>
+    <string name="activity">热门活动</string>
+    <string name="quarter">金企合作季报</string>
+    <string name="accumulative_transaction_tv">累计交易额（元）</string>
+    <string name="market_danger">市场有风险 投资需谨慎</string>
+    <string name="insurance">点击查看保单样本</string>
+    <string name="newcomer_raise">新手周周升息</string>
+    <string name="text2">持有黄金 保值增值</string>
+    <string name="text3">稳定生产 省时省力</string>
+
+
+    <string name="pull_to_refresh">下拉刷新</string>
+    <string name="release_to_refresh">释放立即刷新</string>
+    <string name="refreshing">正在刷新...</string>
+    <string name="refresh_succeed">刷新成功</string>
+    <string name="refresh_fail">刷新失败</string>
+    <string name="pullup_to_load">上拉加载更多</string>
+    <string name="release_to_load">释放立即加载</string>
+    <string name="loading1">正在加载...</string>
+    <string name="load_succeed">加载成功</string>
+    <string name="load_fail">加载失败</string>
+
+</resources>

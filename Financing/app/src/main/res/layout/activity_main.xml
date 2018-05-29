@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+
+    <com.mga.financing.ui.MyViewPager
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"/>
+
+
+    <View
+        android:id="@+id/bottom_bar_line"
+        style="@style/style_normal_line"
+        android:layout_above="@+id/tab_all_ll"
+        />
+
+    <LinearLayout
+        android:id="@+id/tab_all_ll"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:paddingBottom="1dp"
+        android:paddingTop="2dp">
+
+        <RelativeLayout
+            android:id="@+id/tab_0_rl"
+            style="@style/tab_rl_style">
+
+            <ImageView
+                android:id="@+id/tab_0_iv"
+                style="@style/tab_iv_style"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/tab0_enable_iv"
+
+                />
+
+            <TextView
+
+                android:id="@+id/tab_0_tv"
+                style="@style/tab_style"
+                android:layout_below="@+id/tab_0_iv"
+                android:text="@string/tab_0"/>
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/tab_1_rl"
+            style="@style/tab_rl_style">
+
+            <ImageView
+                android:id="@+id/tab_1_iv"
+                style="@style/tab_iv_style"
+                android:src="@drawable/tab1_unable_iv"
+                />
+
+            <TextView
+                android:id="@+id/tab_1_tv"
+                style="@style/tab_style"
+                android:layout_below="@id/tab_1_iv"
+                android:text="@string/tab_1"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tab_2_rl"
+            style="@style/tab_rl_style">
+
+            <ImageView
+                android:id="@+id/tab_2_iv"
+                style="@style/tab_iv_style"
+                android:src="@drawable/tab2_unable_iv"
+                />
+
+            <TextView
+                android:id="@+id/tab_2_tv"
+                style="@style/tab_style"
+                android:layout_below="@id/tab_2_iv"
+                android:text="@string/tab_2"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tab_3_rl"
+            style="@style/tab_rl_style">
+
+            <ImageView
+                android:id="@+id/tab_3_iv"
+                style="@style/tab_iv_style"
+                android:layout_marginTop="4dp"
+                android:src="@drawable/tab3_unable_iv"
+                />
+
+            <TextView
+                android:id="@+id/tab_3_tv"
+                style="@style/tab_style"
+                android:layout_below="@id/tab_3_iv"
+                android:text="@string/tab_3"
+                />
+
+        </RelativeLayout>
+    </LinearLayout>
+    <!--</LinearLayout>-->
+    <!--首推广告-->
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/rl_addetail_main"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="@color/main_introduce_bg"-->
+    <!--android:clickable="true"-->
+    <!--android:paddingLeft="30dp"-->
+    <!--android:paddingRight="30dp"-->
+    <!--android:visibility="gone"-->
+    <!--&gt;-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/iv_ad_background"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="380dp"-->
+    <!--android:layout_centerInParent="true"-->
+    <!--android:scaleType="fitCenter"-->
+    <!--/>-->
+
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/rl_addetail"-->
+    <!--android:layout_width="280dp"-->
+    <!--android:layout_height="280dp"-->
+    <!--android:layout_centerInParent="true">-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/tv_addetail_title"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:layout_marginLeft="@dimen/dp_30"-->
+    <!--android:layout_marginRight="@dimen/dp_30"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:gravity="center_vertical"-->
+    <!--android:lines="2"-->
+    <!--android:text="zheshihu多功能"-->
+    <!--android:textColor="@color/white"-->
+    <!--android:textSize="@dimen/largeTextSize"/>-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/tv_addetail_message"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:layout_marginLeft="@dimen/dp_30"-->
+    <!--android:layout_marginRight="@dimen/dp_30"-->
+    <!--android:layout_marginTop="60dp"-->
+    <!--android:layout_weight="1"-->
+    <!--android:gravity="center_vertical"-->
+    <!--android:text="1nihais这是测试帝\n豪斯和覅海商法hi按时发货是否is合法和冯绍峰和是否is合法是否is合法is是否is反思法"-->
+    <!--android:textColor="@color/editor_state_allchoose"-->
+    <!--android:textSize="@dimen/middleTextSize"/>-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/tv_into_addetail"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:layout_marginBottom="@dimen/dp_30"-->
+    <!--android:background="#ed0f7d"-->
+    <!--android:paddingBottom="@dimen/dp_10"-->
+    <!--android:paddingLeft="50dp"-->
+    <!--android:paddingRight="50dp"-->
+    <!--android:paddingTop="@dimen/dp_10"-->
+    <!--android:text="立即查看活动"-->
+    <!--android:textColor="@color/white"-->
+    <!--android:visibility="invisible"/>-->
+    <!--</LinearLayout>-->
+
+    <!--</RelativeLayout>-->
+
+    <!--<ImageView-->
+    <!--android:id="@+id/iv_close_addetail"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_below="@+id/iv_ad_background"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_marginTop="@dimen/dp_5"-->
+    <!--android:src="@drawable/close_icon"/>-->
+
+
+    <!--</RelativeLayout>-->
+    <!--//使用指南-->
+    <!--<LinearLayout-->
+    <!--android:id="@+id/main_introduce_layout"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="@color/main_introduce_bg"-->
+    <!--android:clickable="true"-->
+    <!--android:orientation="vertical"-->
+    <!--android:paddingTop="110dp"-->
+    <!--android:visibility="gone">-->
+
+
+    <!--<ImageView-->
+    <!--android:id="@+id/main_introduce_btn"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:layout_marginTop="25dp"-->
+    <!--android:src="@drawable/iknow"/>-->
+    <!--</LinearLayout>-->
+
+</RelativeLayout>
+
+

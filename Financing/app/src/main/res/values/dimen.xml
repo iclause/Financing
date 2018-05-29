@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="toleft">20dp</dimen>
+    <dimen name="toright">20dp</dimen>
+
+    <dimen name="small">12sp</dimen>
+    <dimen name="middle1">14sp</dimen>
+    <dimen name="middle2">16sp</dimen>
+    <dimen name="middle3">18sp</dimen>
+    <dimen name="large">22sp</dimen>
+    <dimen name="large2">24sp</dimen>
+    <dimen name="large3">26sp</dimen>
+    <dimen name="large4">28sp</dimen>
+    <dimen name="large5">30sp</dimen>
+    <dimen name="large6">32sp</dimen>
+    <dimen name="large7">34sp</dimen>
+
+
+</resources>
