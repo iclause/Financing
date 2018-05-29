@@ -1,16 +1,16 @@
 package com.mga.financing.mvp.main.tab1;
 
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 
 import com.mga.financing.R;
-import com.mga.financing.adapter.MyAdapter;
+import com.mga.financing.adapter.MlistAdapter;
 import com.mga.financing.base.presenter.BasePresenter;
 import com.mga.financing.base.view.BaseFragment;
 import com.mga.financing.bean.ProductBean;
 import com.mga.financing.ui.pullableview.PullToRefreshLayout;
 import com.mga.financing.ui.pullableview.PullToRefreshLayout.OnRefreshListener;
+import com.mga.financing.ui.pullableview.PullableListView;
 import com.mga.financing.ui.pullableview.PullableRecycleView;
 
 import java.util.List;
@@ -24,7 +24,8 @@ public class Tab1Fragment extends BaseFragment implements OnRefreshListener, Tab
     private PullToRefreshLayout prl;
     private Tab1Presenter tab1Presenter;
     private PullableRecycleView prv;
-    private MyAdapter mAdapter;
+    private MlistAdapter mAdapter;
+    private PullableListView plv;
 
     @Override
     public void toOtherLayout(Class aClass, Bundle bundle) {
@@ -46,10 +47,16 @@ public class Tab1Fragment extends BaseFragment implements OnRefreshListener, Tab
     protected void initView(View view, Bundle savedInstanceState) {
         prl = (PullToRefreshLayout) view.findViewById(R.id.refresh_view);
         prl.setOnRefreshListener(this);
-        prv=(PullableRecycleView)view.findViewById(R.id.pullable_rv);
-        prv.setLayoutManager(new LinearLayoutManager(getContext()));
-        mAdapter=new MyAdapter(getContext(),null,null);
-        prv.setAdapter(mAdapter);
+//        RecyclerView
+//        prv=(PullableRecycleView)view.findViewById(R.id.pullable_rv);
+//        prv.setLayoutManager(new LinearLayoutManager(getContext()));
+//        mAdapter=new MyAdapter(getContext(),null,null);
+//        prv.setAdapter(mAdapter);
+
+//        ListView
+        plv=(PullableListView)view.findViewById(R.id.pullable_lv);
+        mAdapter=new MlistAdapter(getContext(),null,null);
+        plv.setAdapter(mAdapter);
 
     }
 

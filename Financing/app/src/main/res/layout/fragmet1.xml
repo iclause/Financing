@@ -70,12 +70,12 @@
             <!-- 支持所有实现Pullable接口的View -->
             <include layout="@layout/refresh_head"/>
 
-            <com.mga.financing.ui.pullableview.PullableRecycleView
-                android:id="@+id/pullable_rv"
+            <com.mga.financing.ui.pullableview.PullableListView
+                android:id="@+id/pullable_lv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-            </com.mga.financing.ui.pullableview.PullableRecycleView>
+            </com.mga.financing.ui.pullableview.PullableListView>
 
             <include
                 layout="@layout/load_more"
