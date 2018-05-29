@@ -86,4 +86,9 @@ public class Tab1Fragment extends BaseFragment implements OnRefreshListener, Tab
         logi("refreshFail");
         prl.refreshFinish(PullToRefreshLayout.FAIL);
     }
+
+    @Override
+    public void onClick(View v) {
+
+    }
 }

@@ -38,6 +38,7 @@
     <string name="financing_updown_num">7%+5%</string>
     <string name="target_num_annual_revenue">12.0%</string>
     <string name="target_annual_revenue">目标年化回报率</string>
+    <string name="year_rate">年化利率</string>
     <string name="effective_date">14天后生效</string>
     <string name="more_product">查看更多产品</string>
     <string name="know_wallet">了解钱包</string>
@@ -62,5 +63,16 @@
     <string name="loading1">正在加载...</string>
     <string name="load_succeed">加载成功</string>
     <string name="load_fail">加载失败</string>
+    <string name="wallet_balance">钱包可用余额</string>
+    <string name="weight">克重</string>
+    <string name="input_buy_weight">输入购买重量</string>
+    <string name="change_to_buy_with_price"> 切换为\n按金额买</string>
+    <string name="expect_price">预计金额</string>
+    <string name="caculate_rate_date">计息日</string>
+    <string name="check_notice">查看买入提示</string>
+    <string name="have_read">我已阅读并同意</string>
+    <string name="golden_protocal">流动金-黄金消费综合服务协议</string>
+    <string name="china_unicom">中华联合财险承保用户黄金财产安全，请放心交易</string>
+    <string name="confirm_order">确认下单</string>
 
 </resources>

@@ -6,10 +6,12 @@ import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.mga.financing.R;
 import com.mga.financing.base.presenter.BasePresenter;
 import com.mga.financing.base.view.BaseFragment;
+import com.mga.financing.mvp.BuyGoldenActivity;
 import com.mga.financing.ui.GlideImageLoader;
 import com.mga.financing.ui.pullableview.PullToRefreshLayout;
 import com.mga.financing.ui.pullableview.PullToRefreshLayout.OnRefreshListener;
@@ -27,13 +29,12 @@ import java.util.List;
 public class Tab0Fragment extends BaseFragment implements OnRefreshListener {
     private Banner banner;
     private List<Integer> images;
+    private List<String> imagespath;
     private boolean isFirstIn=true;
     private PullToRefreshLayout ptrl;
+    private TextView buyTv;
 
-    @Override
-    public void toOtherLayout(Class aClass, Bundle bundle) {
 
-    }
 
     @Override
     protected int bindLayout() {
@@ -72,6 +73,9 @@ public class Tab0Fragment extends BaseFragment implements OnRefreshListener {
             isFirstIn = false;
         }
         initbanner(view);
+
+        buyTv=(TextView)view.findViewById(R.id.buy_tv);
+        buyTv.setOnClickListener(this);
     }
 
     private void initbanner(View view) {
@@ -83,6 +87,12 @@ public class Tab0Fragment extends BaseFragment implements OnRefreshListener {
             images.add(R.drawable.ic_bullion_withdraw_offline);
             images.add(R.drawable.ic_bullion_withdraw_online);
         }
+if (imagespath == null) {
+    imagespath = new ArrayList<>();
+    imagespath.add("https://hmls.hfbank.com.cn/hfapp-api/9.png");
+    imagespath.add("http://ww1.sinaimg.cn/mw690/006dJESWgw1f6iyb8bzraj31kw0v67a2.jpg");
+
+        }
 
         banner = (Banner) view.findViewById(R.id.banner);
         //设置banner样式
@@ -90,7 +100,7 @@ public class Tab0Fragment extends BaseFragment implements OnRefreshListener {
         //设置图片加载器
         banner.setImageLoader(new GlideImageLoader());
         //设置图片集合
-        banner.setImages(images);
+        banner.setImages(imagespath);
         //设置banner动画效果
         banner.setBannerAnimation(Transformer.Default);
         //设置标题集合（当banner样式有显示title时）
@@ -134,4 +144,15 @@ public class Tab0Fragment extends BaseFragment implements OnRefreshListener {
 //            }
 //        }.sendEmptyMessageDelayed(0, 2000);
     }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.buy_tv:
+                toOtherLayout(BuyGoldenActivity.class, getBundle());
+                break;
+        }
+    }
+
+
 }

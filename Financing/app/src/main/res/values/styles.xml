@@ -168,6 +168,11 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <!--<style name="CustomCheckboxTheme" parent="@android:style/Widget.CompoundButton.CheckBox">-->
+        <!--<item name="android:button">@null</item>-->
+        <!--<item name="android:background">@drawable/checkbox_style</item>-->
+    <!--</style>-->
+
 
     <color name="line_grey">#C8C7CC</color>
 </resources>

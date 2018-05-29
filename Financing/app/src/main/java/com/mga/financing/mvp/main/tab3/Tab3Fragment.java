@@ -56,4 +56,9 @@ public class Tab3Fragment extends BaseFragment implements OnRefreshListener {
     public void onLoadMore(PullToRefreshLayout pullToRefreshLayout) {
 
     }
+
+    @Override
+    public void onClick(View v) {
+
+    }
 }

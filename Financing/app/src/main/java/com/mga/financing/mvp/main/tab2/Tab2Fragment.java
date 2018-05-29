@@ -120,9 +120,10 @@ public class Tab2Fragment extends BaseFragment {
     }
 
 
+    @Override
+    public void onClick(View v) {
 
-
-
+    }
 }
 
 

@@ -85,6 +85,7 @@
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/buy_tv"
                         android:layout_width="60dp"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
