@@ -100,7 +100,7 @@ if (imagespath == null) {
         //设置图片加载器
         banner.setImageLoader(new GlideImageLoader());
         //设置图片集合
-        banner.setImages(imagespath);
+        banner.setImages(images);
         //设置banner动画效果
         banner.setBannerAnimation(Transformer.Default);
         //设置标题集合（当banner样式有显示title时）

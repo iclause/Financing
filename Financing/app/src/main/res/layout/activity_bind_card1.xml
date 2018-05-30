@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include
+        android:id="@+id/bind_card_tb"
+        layout="@layout/toolbar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/toleft"
+            android:paddingRight="@dimen/toright"
+            >
+
+            <TextView
+                android:id="@+id/notice_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_prompt"
+                android:gravity="center"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:id="@+id/notice_tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/notice_tv"
+                    android:gravity="center"
+                    android:text="@string/bind_notice"
+                    android:textColor="@color/orange_change_state"
+                    android:textSize="@dimen/middle2"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/bind_info"
+                    android:textColor="@color/black_middle1_text"
+                    android:textSize="@dimen/small"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            style="@style/style_normal_line"
+            android:layout_marginTop="10dp"/>
+
+        <View
+            style="@style/style_bold_line"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <View
+                style="@style/style_normal_line"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/toleft"
+                android:paddingRight="@dimen/toright">
+
+                <TextView
+                    android:id="@+id/card_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*三"
+                    android:textColor="@color/grey_middle1_text_input"
+                    android:textSize="@dimen/middle2"/>
+
+            </LinearLayout>
+
+            <View
+                style="@style/style_normal_line"
+                android:layout_marginLeft="@dimen/toleft"
+                android:layout_marginRight="@dimen/toright"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/toleft"
+                android:paddingRight="@dimen/toright">
+
+                <TextView
+                    android:id="@+id/user_id_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="**************7896"
+                    android:textColor="@color/grey_middle1_text_input"
+                    android:textSize="@dimen/middle2"/>
+            </LinearLayout>
+
+
+            <View
+                style="@style/style_normal_line"
+                />
+        </LinearLayout>
+
+        <TextView
+            style="@style/style_bolder_line"
+            android:gravity="center|left"
+            android:paddingLeft="@dimen/toleft"
+            android:text="@string/bind_info_title"
+            />
+
+        <View
+            style="@style/style_normal_line"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/toleft"
+            android:paddingRight="@dimen/toright">
+
+            <EditText
+                android:id="@+id/input_weight_or_price_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:background="@null"
+                android:hint="@string/input_card_id"
+
+                />
+
+        </LinearLayout>
+
+        <View
+            style="@style/style_normal_line"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/grey_fragment_buy_background"
+            android:paddingLeft="@dimen/toleft"
+            android:paddingRight="@dimen/toright"
+            >
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@+id/checkbox"
+                android:text="@string/check"
+                />
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@id/text"
+                android:text="@string/support_bank"
+                android:textColor="@color/orange_change_state"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@color/grey_fragment_small_text"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/next_step"
+                android:textColor="@color/white"
+                android:textSize="@dimen/middle3"/>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

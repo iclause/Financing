@@ -9,4 +9,6 @@ public class BundleKeyConstant {
     public static final String ISFINISH="isfinish";   //是否结束当前界面key
     public static final String PARAM2="param2";
     public static final String PARAM3="param3";
+    public static final String WEIGHT ="golden_weight" ;
+    public static final String PRICE ="price" ;
 }

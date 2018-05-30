@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include
+        android:id="@+id/bind_card_tb"
+        layout="@layout/toolbar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+
+        <View
+            style="@style/style_bold_line"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <View
+                style="@style/style_normal_line"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/toleft"
+                android:paddingRight="@dimen/toright">
+
+                <TextView
+                    android:id="@+id/card_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="*三"
+                    android:textColor="@color/grey_middle1_text_input"
+                    android:textSize="@dimen/middle2"/>
+
+                <TextView
+                    android:id="@+id/card_type_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="浦发银行"
+                    android:textColor="@color/grey_middle1_text_input"
+                    android:textSize="@dimen/middle2"/>
+
+            </LinearLayout>
+
+
+            <View
+                style="@style/style_normal_line"
+                />
+
+            <TextView
+                style="@style/style_bolder_line"
+                android:gravity="center|left"
+                android:paddingLeft="@dimen/toleft"
+                android:text="@string/bank_phonenumber"
+                />
+
+            <View
+                style="@style/style_normal_line"
+                />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/toleft"
+                android:paddingRight="@dimen/toright">
+
+                <EditText
+                    android:id="@+id/input_weight_or_price_et"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@null"
+                    android:hint="@string/input_bank_phonenumber"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textSize="@dimen/middle2"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textColor="@color/white"
+                    android:background="@color/grey_fragment_small_text"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/get_vfc"
+                    />
+
+            </LinearLayout>
+            <View
+                style="@style/style_normal_line"
+                android:layout_marginLeft="@dimen/toleft"
+                android:layout_marginRight="@dimen/toright"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/toleft"
+                android:paddingRight="@dimen/toright">
+
+                <EditText
+                    android:id="@+id/input_sms_et"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:background="@null"
+                    android:hint="@string/input_vfc"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            style="@style/style_normal_line"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/grey_fragment_buy_background"
+            android:paddingLeft="@dimen/toleft"
+            android:paddingRight="@dimen/toright"
+            >
+            <CheckBox
+                android:id="@+id/checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                />
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@+id/checkbox"
+                android:text="@string/have_read"
+                android:textColor="@color/black_middle1_text"
+                />
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@id/text"
+                android:text="@string/one_key_pay_protocal"
+                android:textColor="@color/orange_change_state"
+                />
+
+            <TextView
+                android:id="@+id/submit_tv"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_centerInParent="true"
+                android:background="@color/grey_fragment_small_text"
+                android:gravity="center"
+                android:text="@string/submit"
+                android:textColor="@color/white"
+                android:textSize="@dimen/middle3"/>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#FEA749</color>
     <color name="white">#ffffff</color>
 
     //登录界面
@@ -23,4 +23,6 @@
     <color name="grey_fragment_buy_background">#F2F2F6</color>
     <color name="style_window_background">#212121</color>
     <color name="orange_real_tiem_golden_price">#FF701A</color>
+    <color name="orange_btn">#FF701A</color>
+    <color name="grey_btn">#BCBCBC</color>
 </resources>

@@ -9,7 +9,8 @@
     <string name="first_regist">初次见面，注册有礼</string>
     <string name="vfc_has_send">验证码已发送到</string>
     <string name="vfc">验证码</string>
-    <string name="input_vfc">请输入验证码</string>
+    <string name="get_vfc">获取验证码</string>
+    <string name="input_vfc">请输入短信验证码</string>
     <string name="miss_vfc">未收到短信？</string>
     <string name="audio_get">语音获取</string>
     <string name="resend">重新发送</string>
@@ -72,7 +73,21 @@
     <string name="check_notice">查看买入提示</string>
     <string name="have_read">我已阅读并同意</string>
     <string name="golden_protocal">流动金-黄金消费综合服务协议</string>
+    <string name="read_agree_golden_protocal">阅读并同意流动金-黄金消费综合服务协议</string>
     <string name="china_unicom">中华联合财险承保用户黄金财产安全，请放心交易</string>
     <string name="confirm_order">确认下单</string>
+    <string name="bind_info">黄金钱包只支持绑定一张银行卡，该银行卡将是您在黄金钱包唯一的资金出口。即使手机丢失、账号被盗，您的钱也只能回到您自己的银行卡中，最大程度保障您的资产安全。</string>
+    <string name="bind_notice">绑卡提示</string>
+    <string name="bind_info_title">请绑定本人名下的储蓄卡</string>
+    <string name="input_card_id">请输入您的储蓄卡号</string>
+    <string name="check">查看</string>
+    <string name="support_bank">支持的银行及限额</string>
+    <string name="next_step">下一步</string>
+    <string name="bank_phonenumber">银行预留手机号</string>
+    <string name="input_bank_phonenumber">请输入银行预留手机号</string>
+    <string name="one_key_pay_protocal">《一键支付协议》</string>
+    <string name="submit">提交</string>
+    <string name="revolving_funds">流动金</string>
+    <string name="bind_card">绑定银行卡</string>
 
 </resources>

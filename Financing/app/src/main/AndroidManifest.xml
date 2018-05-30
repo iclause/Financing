@@ -8,6 +8,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:screenOrientation="portrait"
         android:theme="@style/AppTheme">
         <activity android:name=".mvp.main.MainActivity">
             <intent-filter>
@@ -25,6 +26,8 @@
         <activity android:name=".mvp.login.LoginVfcActivity"/>
         <activity android:name=".mvp.regist.RegistActivity"/>
         <activity android:name=".mvp.BuyGoldenActivity"/>
+        <activity android:name=".mvp.BindCardActivity1"/>
+        <activity android:name=".mvp.BindCardActivity2"/>
 
     </application>
 

@@ -42,12 +42,12 @@
         >
 
         <TextView
-            android:id="@+id/real_tiem_golden_price_tv"
+            android:id="@+id/real_time_golden_price_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:text="50.00"
+            android:text="230.03"
             android:textColor="@color/orange_real_tiem_golden_price"
             android:textSize="@dimen/large3"
             android:textStyle="bold"
@@ -56,7 +56,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/real_tiem_golden_price_tv"
+            android:layout_below="@id/real_time_golden_price_tv"
             android:layout_centerInParent="true"
             android:layout_marginTop="10dp"
             android:text="@string/realtime_gold_price"
@@ -95,6 +95,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
+                android:phoneNumber="true"
                 android:background="@null"
                 android:hint="@string/input_buy_weight"
 
@@ -151,8 +152,8 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/wallet_balance_tv"
                 android:layout_weight="3"
-                android:text="0.00元"
-                android:textColor="@color/white"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/middle2"
                 />
 
         </LinearLayout>
@@ -199,8 +200,9 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/wallet_balance_tv"
                 android:layout_weight="3"
-                android:text="0.00元"
-                android:textColor="@color/white"
+                android:gravity="right"
+                android:text="1.06%"
+                android:textColor="@color/black_middle1_text"
                 />
 
         </LinearLayout>
@@ -233,8 +235,9 @@
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/wallet_balance_tv"
                 android:layout_weight="3"
-                android:text="0.00元"
-                android:textColor="@color/white"
+                android:gravity="right"
+                android:text="2018-05-31"
+                android:textColor="@color/black_middle1_text"
                 />
 
         </LinearLayout>
@@ -252,24 +255,32 @@
         android:paddingLeft="@dimen/toleft"
         android:paddingRight="@dimen/toright">
 
-        <TextView
-            android:id="@+id/notice_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/ic_prompt"
-            android:gravity="center"/>
 
-        <TextView
-            android:id="@+id/notice_tv2"
+        <LinearLayout
+            android:id="@+id/notice_ll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_toRightOf="@id/notice_tv"
-            android:gravity="center"
-            android:text="@string/check_notice"
-            android:textColor="@color/orange_change_state"
-            />
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/notice_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/ic_prompt"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/notice_tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/notice_tv"
+                android:gravity="center"
+                android:text="@string/check_notice"
+                android:textColor="@color/orange_change_state"
+                />
+        </LinearLayout>
 
 
         <RelativeLayout
@@ -283,6 +294,7 @@
                 android:id="@+id/checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:checked="true"
                 />
 
             <TextView
@@ -296,7 +308,7 @@
                 />
 
             <TextView
-                android:id="@+id/text2"
+                android:id="@+id/golden_protocal_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -309,7 +321,7 @@
                 android:id="@+id/text3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/text2"
+                android:layout_below="@+id/golden_protocal_tv"
                 android:layout_marginLeft="2dp"
                 android:layout_marginTop="14dp"
                 android:text="@string/china_unicom"
@@ -331,10 +343,12 @@
             >
 
             <TextView
+                android:id="@+id/confirm_order_tv"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@color/grey_fragment_small_text"
                 android:gravity="center"
+                android:enabled="false"
                 android:text="@string/confirm_order"
                 android:textColor="@color/white"
                 android:textSize="@dimen/middle3"/>
