@@ -119,7 +119,7 @@ public class BindCardActivity1 extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if(dialog.isShowing()) dialog.dismiss();
+        if(dialog!=null&&dialog.isShowing()) dialog.dismiss();
         checkIsBindIdCard();
         showBasicUi();
     }
