@@ -1,5 +1,6 @@
 package com.mga.financing.base.presenter;
 
+import android.content.Context;
 import android.util.Log;
 
 import com.mga.financing.base.bean.BaseNet;
@@ -14,9 +15,13 @@ import java.lang.ref.WeakReference;
  */
 
 public abstract class BasePresenterImpl<V extends BaseView> implements BasePresenter {
+    private final Context mContext;
     protected WeakReference<V> mView;
     private String TAG = BasePresenterImpl.class.getSimpleName();
 
+    public BasePresenterImpl(Context context) {
+        this.mContext=context;
+    }
 
     @Override
     public void attach(BaseView view) {

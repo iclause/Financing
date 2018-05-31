@@ -89,7 +89,6 @@
                     android:id="@+id/card_name_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="*三"
                     android:textColor="@color/grey_middle1_text_input"
                     android:textSize="@dimen/middle2"/>
 
@@ -112,7 +111,6 @@
                     android:id="@+id/user_id_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="**************7896"
                     android:textColor="@color/grey_middle1_text_input"
                     android:textSize="@dimen/middle2"/>
             </LinearLayout>
@@ -142,7 +140,7 @@
             android:paddingRight="@dimen/toright">
 
             <EditText
-                android:id="@+id/input_weight_or_price_et"
+                android:id="@+id/input_card_id_et"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="3"
@@ -175,7 +173,7 @@
                 />
 
             <TextView
-                android:id="@+id/text2"
+                android:id="@+id/support_bank_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
@@ -184,11 +182,13 @@
                 android:textColor="@color/orange_change_state"
                 />
             <TextView
+                android:id="@+id/next_tv2"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:background="@color/grey_fragment_small_text"
                 android:layout_centerInParent="true"
                 android:gravity="center"
+                android:enabled="false"
                 android:text="@string/next_step"
                 android:textColor="@color/white"
                 android:textSize="@dimen/middle3"/>

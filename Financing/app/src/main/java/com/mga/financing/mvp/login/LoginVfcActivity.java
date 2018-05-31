@@ -72,7 +72,7 @@ public class LoginVfcActivity extends BaseActivity implements LoginContact.View 
 
     @Override
     protected BasePresenter createPresenter() {
-        mLoginPresenter = new LoginPresenter();
+        mLoginPresenter = new LoginPresenter(this);
         return mLoginPresenter;
     }
 
@@ -81,7 +81,7 @@ public class LoginVfcActivity extends BaseActivity implements LoginContact.View 
         switch (v.getId()) {
 
             case R.id.vfc_login_tv:
-                mLoginPresenter.vfc();
+                mLoginPresenter.vfc(getBundle().getString(BundleKeyConstant.PHONENUMBER));
                 break;
         }
     }

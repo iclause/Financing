@@ -69,7 +69,7 @@ public class LoginPasswordActivity extends BaseActivity implements LoginContact.
 
     @Override
     protected BasePresenter createPresenter() {
-        mLoginPresenter = new LoginPresenter();
+        mLoginPresenter = new LoginPresenter(this);
         return mLoginPresenter;
     }
 
@@ -77,7 +77,7 @@ public class LoginPasswordActivity extends BaseActivity implements LoginContact.
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.login_tv:
-                mLoginPresenter.login();
+                mLoginPresenter.login(getBundle().getString(BundleKeyConstant.PHONENUMBER),passwordEt.getText().toString());
                 break;
             case R.id.to_vfc_login_tv:
                 toOtherLayout(LoginVfcActivity.class, getBundle());

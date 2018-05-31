@@ -184,6 +184,7 @@
                 android:layout_height="45dp"
                 android:layout_centerInParent="true"
                 android:background="@color/grey_fragment_small_text"
+                android:enabled="false"
                 android:gravity="center"
                 android:text="@string/submit"
                 android:textColor="@color/white"

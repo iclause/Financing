@@ -1,5 +1,6 @@
 package com.mga.financing.mvp.main.tab1;
 
+import android.content.Context;
 import android.util.Log;
 
 import com.mga.financing.base.bean.BaseNet;
@@ -24,6 +25,10 @@ public class Tab1Presenter extends BasePresenterImpl<Tab1Contact.View> implement
     private String TAG = Tab1Presenter.class.getSimpleName();
     private List<ProductBean> mList = null;
     private HashMap<Integer,Integer> mLettes=null;
+
+    public Tab1Presenter(Context context) {
+        super(context);
+    }
 
     @Override
     public void getProductList() {

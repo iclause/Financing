@@ -1,5 +1,6 @@
 package com.mga.financing.mvp.login;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -12,6 +13,7 @@ import com.mga.financing.constant.BundleKeyConstant;
 import com.mga.financing.mvp.main.MainActivity;
 import com.mga.financing.mvp.regist.RegistActivity;
 import com.mga.financing.utils.AppManager;
+import com.mga.financing.utils.UserInfoManager;
 
 import cz.msebera.android.httpclient.Header;
 
@@ -23,9 +25,16 @@ public class LoginPresenter extends BasePresenterImpl<LoginContact.View> impleme
 
 
     private static final String TAG =LoginPresenter.class.getSimpleName() ;
+    private Context mContext;
+
+    public LoginPresenter(Context context) {
+        super(context);
+        this.mContext=context;
+    }
+
 
     @Override
-    public void checkIsRegist() {
+    public void checkIsRegist(String account) {
 
 
         // TODO: 2018/4/17 网络请求
@@ -70,7 +79,7 @@ public class LoginPresenter extends BasePresenterImpl<LoginContact.View> impleme
     }
 
     @Override
-    public void login() {
+    public void login(final String account, final String password) {
         if(isViewAttach()) {
             getView().showDialog(true,getView().getContext().getResources().getString(R.string.loading));
         }
@@ -81,6 +90,9 @@ public class LoginPresenter extends BasePresenterImpl<LoginContact.View> impleme
             public void onSuccess(Object data) {
                 //tologinsecond
                 Log.i(TAG,"onSuccess");
+                UserInfoManager.saveAccount(mContext,account);
+                UserInfoManager.savePassword(mContext,account,password);
+                UserInfoManager.setIsAutoLogin(mContext,true);
                 if(isViewAttach()) {
                     Bundle bundle=new Bundle();
                     getView().toOtherLayout(MainActivity.class,bundle);
@@ -92,6 +104,7 @@ public class LoginPresenter extends BasePresenterImpl<LoginContact.View> impleme
             @Override
             public void onFailure(Object data) {
                 //toregist
+                UserInfoManager.clearUserLoginInfo(mContext,account);
 
 
             }
@@ -112,7 +125,7 @@ public class LoginPresenter extends BasePresenterImpl<LoginContact.View> impleme
     }
 
     @Override
-    public void vfc() {
+    public void vfc(String account) {
         if(isViewAttach()) {
             getView().showDialog(true,getView().getContext().getResources().getString(R.string.loading));
         }
@@ -156,7 +169,7 @@ public class LoginPresenter extends BasePresenterImpl<LoginContact.View> impleme
     }
 
     @Override
-    public void regist() {
+    public void regist(String account) {
         if(isViewAttach()) {
             getView().showDialog(true,getView().getContext().getResources().getString(R.string.loading));
         }
@@ -195,7 +208,7 @@ public class LoginPresenter extends BasePresenterImpl<LoginContact.View> impleme
     }
 
     @Override
-    public void audioVfc() {
+    public void audioVfc(String account) {
         if(isViewAttach()) {
             getView().showDialog(true,getView().getContext().getResources().getString(R.string.loading));
         }

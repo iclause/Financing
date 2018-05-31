@@ -32,7 +32,7 @@ public class RegistActivity extends BaseActivity implements LoginContact.View{
 
     @Override
     protected BasePresenter createPresenter() {
-        mLoginPresenter = new LoginPresenter();
+        mLoginPresenter = new LoginPresenter(this);
         return mLoginPresenter;
     }
 
@@ -42,7 +42,7 @@ public class RegistActivity extends BaseActivity implements LoginContact.View{
         super.onClick(v);
         switch (v.getId()){
             case R.id.regist_tv:
-                mLoginPresenter.regist();
+                mLoginPresenter.regist(getBundle().getString(BundleKeyConstant.PHONENUMBER));
                 break;
         }
     }

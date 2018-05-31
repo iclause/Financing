@@ -11,7 +11,7 @@ public class UserInfoManager {
 
     private static final String USERINFO = "userinfo";
 
-    private static void saveAccount(Context mContext, String user) {
+    public static void saveAccount(Context mContext, String user) {
         SharedPreferences sp = mContext.getApplicationContext().getSharedPreferences(USERINFO, Context.MODE_PRIVATE);
         sp.edit().putString("user", user).commit();
     }
@@ -40,6 +40,15 @@ public class UserInfoManager {
         SharedPreferences sp = mContext.getApplicationContext().getSharedPreferences(USERINFO, Context.MODE_PRIVATE);
         return sp.getString("idcard" + user, "");
     }
+    public static void saveName(Context mContext, String user, String name) {
+        SharedPreferences sp = mContext.getApplicationContext().getSharedPreferences(USERINFO, Context.MODE_PRIVATE);
+        sp.edit().putString("name" + user, name).commit();
+    }
+
+    public static String readName(Context mContext, String user) {
+        SharedPreferences sp = mContext.getApplicationContext().getSharedPreferences(USERINFO, Context.MODE_PRIVATE);
+        return sp.getString("name" + user, "");
+    }
 
     public static void saveBankCard(Context mContext, String user, String bankcard) {
         SharedPreferences sp = mContext.getApplicationContext().getSharedPreferences(USERINFO, Context.MODE_PRIVATE);
@@ -50,6 +59,8 @@ public class UserInfoManager {
         SharedPreferences sp = mContext.getApplicationContext().getSharedPreferences(USERINFO, Context.MODE_PRIVATE);
         return sp.getString("bankcard" + user, "");
     }
+
+
 
     public static void setIsAutoLogin(Context mContext, boolean isAutoLogin) {
         SharedPreferences sp = mContext.getApplicationContext().getSharedPreferences(USERINFO, Context.MODE_PRIVATE);

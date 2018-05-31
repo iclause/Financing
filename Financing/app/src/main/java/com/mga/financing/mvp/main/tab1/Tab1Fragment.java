@@ -39,7 +39,7 @@ public class Tab1Fragment extends BaseFragment implements OnRefreshListener, Tab
 
     @Override
     protected BasePresenter createPresenter() {
-        tab1Presenter = new Tab1Presenter();
+        tab1Presenter = new Tab1Presenter(getContext());
         return tab1Presenter;
     }
 

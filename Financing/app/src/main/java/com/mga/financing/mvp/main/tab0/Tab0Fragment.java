@@ -12,9 +12,11 @@ import com.mga.financing.R;
 import com.mga.financing.base.presenter.BasePresenter;
 import com.mga.financing.base.view.BaseFragment;
 import com.mga.financing.mvp.BuyGoldenActivity;
+import com.mga.financing.mvp.login.LoginFirstActivity;
 import com.mga.financing.ui.GlideImageLoader;
 import com.mga.financing.ui.pullableview.PullToRefreshLayout;
 import com.mga.financing.ui.pullableview.PullToRefreshLayout.OnRefreshListener;
+import com.mga.financing.utils.UserInfoManager;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
@@ -149,7 +151,11 @@ if (imagespath == null) {
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.buy_tv:
-                toOtherLayout(BuyGoldenActivity.class, getBundle());
+                if(UserInfoManager.getIsAutoLogin(getContext())) {
+                    toOtherLayout(BuyGoldenActivity.class, getBundle());
+                }else{
+                    toOtherLayout(LoginFirstActivity.class,null);
+                }
                 break;
         }
     }

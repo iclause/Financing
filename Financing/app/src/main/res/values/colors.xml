@@ -17,12 +17,16 @@
     <color name="orange_loginbtn_enable">#FFA51A</color>
     <color name="orange_fg_item">#FF9B0B</color>
     <color name="orange_wallet_balance">#EBB100</color>
+    <color name="orange_banner_bg">#FFF7EA</color>
+    <color name="orange_banner_text">#F79F23</color>
     <color name="blue_fg1_item">#4C93E5</color>
     <color name="grey_fragment_small_text">#BCBCBC</color>
     <color name="red_fragment_small_text">#FF3D3D</color>
     <color name="grey_fragment_buy_background">#F2F2F6</color>
+    <color name="grey_bg">#F2F2F6</color>
     <color name="style_window_background">#212121</color>
     <color name="orange_real_tiem_golden_price">#FF701A</color>
     <color name="orange_btn">#FF701A</color>
     <color name="grey_btn">#BCBCBC</color>
+    <color name="blue_dialog_button_text">#037BFF</color>
 </resources>

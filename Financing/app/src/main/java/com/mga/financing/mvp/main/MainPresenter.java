@@ -1,5 +1,7 @@
 package com.mga.financing.mvp.main;
 
+import android.content.Context;
+
 import com.mga.financing.base.presenter.BasePresenterImpl;
 
 /**
@@ -8,4 +10,7 @@ import com.mga.financing.base.presenter.BasePresenterImpl;
 
 public class MainPresenter extends BasePresenterImpl implements MainContact.Presenter {
 
+    public MainPresenter(Context context) {
+        super(context);
+    }
 }

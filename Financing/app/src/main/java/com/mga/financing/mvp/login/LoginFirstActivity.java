@@ -64,7 +64,7 @@ public class LoginFirstActivity extends BaseActivity implements LoginContact.Vie
 
     @Override
     protected BasePresenter createPresenter() {
-        mLoginPresenter = new LoginPresenter();
+        mLoginPresenter = new LoginPresenter(this);
         return mLoginPresenter;
     }
 
@@ -73,7 +73,7 @@ public class LoginFirstActivity extends BaseActivity implements LoginContact.Vie
         super.onClick(v);
         switch (v.getId()) {
             case R.id.next_tv1:
-                mLoginPresenter.checkIsRegist();
+                mLoginPresenter.checkIsRegist(phoneNumberEt.getText().toString());
                 break;
             default:
 

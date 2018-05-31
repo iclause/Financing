@@ -24,21 +24,21 @@ public class LoginContact {
         /**
          * 获取验证码并检查此账号是否注册过
          */
-        void checkIsRegist();
+        void checkIsRegist(String account);
 
-        void login();
+        void login(String account,String password);
         /**
          * 验证码登录
          */
-        void vfc();
+        void vfc(String account);
         /**
          * 注册
          */
-        void regist();
+        void regist(String account);
         /**
          * 语音验证码
          */
-        void audioVfc();
+        void audioVfc(String account);
 
 
     }
