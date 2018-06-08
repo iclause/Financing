@@ -98,5 +98,13 @@
     <string name="personal_infomation_by_public_security_organization">个人信息由公安机关验证</string>
     <string name="golden_wallet_protocal">黄金钱包服务协议</string>
     <string name="auth_title">实名认证</string>
+    <string name="now_goden_price">实时金价</string>
+    <string name="floute_price">流动金</string>
+    <string name="expect_weight">预计克重</string>
+    <string name="buy_order_info">由于金价实时变动，实际购买克重可能与预计克重有所偏差</string>
+    <string name="order_total_price">订单总额</string>
+    <string name="coupon">优惠券</string>
+    <string name="time_pay_notice">请在90秒内完成在线支付</string>
+    <string name="buy_order_info2">易宝、中华联合财险共同保障用户交易资金安全</string>
 
 </resources>

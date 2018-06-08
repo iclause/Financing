@@ -92,32 +92,36 @@
                 android:paddingRight="@dimen/toright">
 
                 <EditText
-                    android:id="@+id/input_weight_or_price_et"
+                    android:id="@+id/input_phone_et"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="3"
                     android:background="@null"
                     android:hint="@string/input_bank_phonenumber"
                     />
+
                 <TextView
+                    android:id="@+id/vfc_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:textSize="@dimen/middle2"
-                    android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"
-                    android:textColor="@color/white"
-                    android:background="@color/grey_fragment_small_text"
+                    android:layout_marginTop="5dp"
                     android:layout_weight="1"
+                    android:background="@color/orange_btn"
                     android:gravity="center"
                     android:text="@string/get_vfc"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/middle2"
                     />
 
             </LinearLayout>
+
             <View
                 style="@style/style_normal_line"
                 android:layout_marginLeft="@dimen/toleft"
                 android:layout_marginRight="@dimen/toright"
                 />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
@@ -150,6 +154,7 @@
             android:paddingLeft="@dimen/toleft"
             android:paddingRight="@dimen/toright"
             >
+
             <CheckBox
                 android:id="@+id/checkbox"
                 android:layout_width="wrap_content"

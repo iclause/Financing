@@ -11,13 +11,12 @@ import com.mga.financing.base.view.BaseView;
  * 所有登录、注册相关接口
  */
 public class LoginContact {
-   public  interface View extends BaseView {
+    public interface View extends BaseView {
         String getPhoneNumber();
 
+        void countDown();
+
     }
-
-
-
 
 
     interface Presenter extends BasePresenter {
@@ -26,15 +25,20 @@ public class LoginContact {
          */
         void checkIsRegist(String account);
 
-        void login(String account,String password);
+        void login(String account, String password);
+
+        void getVfc(String account);
+
         /**
          * 验证码登录
          */
         void vfc(String account);
+
         /**
          * 注册
          */
         void regist(String account);
+
         /**
          * 语音验证码
          */

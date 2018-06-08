@@ -30,9 +30,9 @@
         <activity android:name=".mvp.login.LoginVfcActivity"/>
         <activity android:name=".mvp.regist.RegistActivity"/>
         <activity android:name=".mvp.BuyGoldenActivity"/>
-        <activity android:name=".mvp.BindCardActivity1"/>
-        <activity android:name=".mvp.BindCardActivity2"/>
-        <activity android:name=".mvp.BindIdCardActivity"/>
+        <activity android:name=".mvp.bindCard.BindCardActivity1"/>
+        <activity android:name=".mvp.bindCard.BindCardActivity2"/>
+        <activity android:name=".mvp.bindCard.BindIdCardActivity"/>
 
     </application>
 

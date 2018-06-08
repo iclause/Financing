@@ -1,4 +1,4 @@
-package com.mga.financing.mvp;
+package com.mga.financing.mvp.bindCard;
 
 import android.text.TextUtils;
 import android.view.View;

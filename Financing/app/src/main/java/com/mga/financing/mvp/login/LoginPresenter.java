@@ -138,9 +138,51 @@ public class LoginPresenter extends BasePresenterImpl<LoginContact.View> impleme
                 Log.i(TAG,"vfconSuccess");
                 if(isViewAttach()) {
                     Log.i(TAG,"isViewAttach");
+
                     Bundle bundle=new Bundle();
                     getView().toOtherLayout(MainActivity.class,bundle);
                     AppManager.finishAllActivity();
+                }else{
+                    Log.i(TAG,"isViewnotAttach");
+                }
+            }
+
+            @Override
+            public void onFailure(Object data) {
+                //toregist
+
+
+            }
+
+            @Override
+            public void onError(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+
+            }
+
+            @Override
+            public void onComplete() {
+                Log.i(TAG,"onComplete");
+                if(isViewAttach()) {
+                    getView().showDialog(false,null);
+                }
+            }
+        });
+    }
+
+    @Override
+    public void getVfc(String account) {
+        if(isViewAttach()) {
+            getView().showDialog(true,getView().getContext().getResources().getString(R.string.loading));
+        }
+        BaseNet baseNet=new BaseNet();
+        baseNet.setDescription("normal");
+        getData(Token.API_USER_DATA,baseNet, new Callback() {
+            @Override
+            public void onSuccess(Object data) {
+                //tologinsecond
+                Log.i(TAG,"vfconSuccess");
+                if(isViewAttach()) {
+                    getView().countDown();
                 }else{
                     Log.i(TAG,"isViewnotAttach");
                 }

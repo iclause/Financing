@@ -39,6 +39,12 @@ public class LoginVfcActivity extends BaseActivity implements LoginContact.View 
     }
 
     @Override
+    protected void initialize() {
+        super.initialize();
+        mLoginPresenter.getVfc(getBundle().getString(BundleKeyConstant.PHONENUMBER));
+    }
+
+    @Override
     protected void initView() {
         vfcEt = (EditText) findViewById(R.id.vfc_et);
         loginTv = (TextView) findViewById(R.id.vfc_login_tv);
@@ -98,5 +104,11 @@ public class LoginVfcActivity extends BaseActivity implements LoginContact.View 
             return "";
         }
         return getBundle().getString(BundleKeyConstant.PHONENUMBER);
+    }
+
+    @Override
+    public void countDown() {
+        // TODO: 2018/6/8 倒计时
+
     }
 }

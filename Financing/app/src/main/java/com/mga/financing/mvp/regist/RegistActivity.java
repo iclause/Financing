@@ -55,4 +55,9 @@ public class RegistActivity extends BaseActivity implements LoginContact.View{
         }
         return getBundle().getString(BundleKeyConstant.PHONENUMBER);
     }
+
+    @Override
+    public void countDown() {
+
+    }
 }

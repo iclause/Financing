@@ -93,4 +93,9 @@ public class LoginPasswordActivity extends BaseActivity implements LoginContact.
         }
         return getBundle().getString(BundleKeyConstant.PHONENUMBER);
     }
+
+    @Override
+    public void countDown() {
+
+    }
 }

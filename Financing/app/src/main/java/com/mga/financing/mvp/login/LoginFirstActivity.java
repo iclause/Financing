@@ -98,4 +98,9 @@ public class LoginFirstActivity extends BaseActivity implements LoginContact.Vie
         return phoneNumberEt.getText().toString();
     }
 
+    @Override
+    public void countDown() {
+
+    }
+
 }

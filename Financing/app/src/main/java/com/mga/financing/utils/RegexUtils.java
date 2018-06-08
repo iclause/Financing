@@ -55,5 +55,15 @@ public class RegexUtils {
         return m.matches();
     }
 
+    /**
+     * 是否是验证码
+     */
+    public static boolean isVfc(String code) {
+        Pattern p = Pattern.compile("\\d{6}");
+        Matcher m = p.matcher(code);
+        return m.matches();
+    }
+
+
 
 }

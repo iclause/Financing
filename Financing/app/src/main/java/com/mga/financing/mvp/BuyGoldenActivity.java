@@ -13,6 +13,7 @@ import com.mga.financing.R;
 import com.mga.financing.base.presenter.BasePresenter;
 import com.mga.financing.base.view.BaseActivity;
 import com.mga.financing.constant.BundleKeyConstant;
+import com.mga.financing.mvp.bindCard.BindCardActivity1;
 import com.mga.financing.utils.RegexUtils;
 import com.mga.financing.utils.UserInfoManager;
 

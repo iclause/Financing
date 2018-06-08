@@ -1,5 +1,6 @@
-package com.mga.financing.mvp;
+package com.mga.financing.mvp.bindCard;
 
+import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AlertDialog.Builder;
 import android.text.Editable;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import com.mga.financing.R;
 import com.mga.financing.base.presenter.BasePresenter;
 import com.mga.financing.base.view.BaseActivity;
+import com.mga.financing.constant.BundleKeyConstant;
 import com.mga.financing.utils.RegexUtils;
 import com.mga.financing.utils.UserInfoManager;
 
@@ -111,7 +113,13 @@ public class BindCardActivity1 extends BaseActivity {
         super.onClick(v);
         switch (v.getId()){
             case R.id.next_tv2:
-                toOtherLayout(BindCardActivity2.class,getBundle());
+                if(!RegexUtils.isBankCard(iciEt.getText().toString())){
+                    showToast("请输入正确的银行卡号");
+                    return;
+                }
+                Bundle bundle=new Bundle();
+                bundle.putString(BundleKeyConstant.BANKCARD,iciEt.getText().toString());
+                toOtherLayout(BindCardActivity2.class,bundle);
                 break;
         }
     }
