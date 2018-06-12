@@ -14,6 +14,7 @@ import com.mga.financing.base.presenter.BasePresenter;
 import com.mga.financing.base.view.BaseActivity;
 import com.mga.financing.constant.BundleKeyConstant;
 import com.mga.financing.mvp.bindCard.BindCardActivity1;
+import com.mga.financing.mvp.order.BuyOrderActivity;
 import com.mga.financing.utils.RegexUtils;
 import com.mga.financing.utils.UserInfoManager;
 
@@ -112,6 +113,7 @@ public class BuyGoldenActivity extends BaseActivity {
 
                 break;
             case R.id.confirm_order_tv:
+                logi("confirm_order_tv has been onclick");
                 if (!cb.isChecked()) {
                     showToast(getResources().getString(R.string.read_agree_golden_protocal));
                     return;
@@ -126,7 +128,7 @@ public class BuyGoldenActivity extends BaseActivity {
                  toOtherLayout(BindCardActivity1.class,bundle);
                 } else {
                     //至购买订单
-
+                    toOtherLayout(BuyOrderActivity.class,bundle);
                 }
                 break;
         }

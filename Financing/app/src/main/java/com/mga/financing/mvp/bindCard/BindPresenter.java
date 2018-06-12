@@ -9,8 +9,9 @@ import com.mga.financing.base.bean.BaseNet;
 import com.mga.financing.base.model.Callback;
 import com.mga.financing.base.model.Token;
 import com.mga.financing.constant.BundleKeyConstant;
-import com.mga.financing.mvp.login.LoginPasswordActivity;
 import com.mga.financing.mvp.login.LoginPresenter;
+import com.mga.financing.mvp.order.BuyOrderActivity;
+import com.mga.financing.utils.ActivityCollector;
 import com.mga.financing.utils.UserInfoManager;
 
 import cz.msebera.android.httpclient.Header;
@@ -50,9 +51,12 @@ public class BindPresenter extends LoginPresenter implements BindContact.Present
                 String bankCard = mBundle.getString(BundleKeyConstant.BANKCARD);
                 UserInfoManager.saveBankCard(mContect, UserInfoManager.readAccount(mContect), bankCard);
                 if (isViewAttach()) {
+                    ActivityCollector.removeActivity(BindCardActivity1.instance);
+                    ActivityCollector.removeActivity(BindCardActivity2.instance);
                     Bundle bundle = new Bundle();
                     bundle.putString(BundleKeyConstant.PHONENUMBER, getView().getPhoneNumber());
-                    getView().toOtherLayout(LoginPasswordActivity.class, bundle);
+                    getView().toOtherLayout(BuyOrderActivity.class, bundle);
+
                 }
             }
 

@@ -49,6 +49,7 @@ public abstract class BaseActivity<A extends BaseActivity, V extends BaseView, T
     private CustomDialog mCustomDialog;
     protected Bundle mBundle;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

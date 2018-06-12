@@ -102,9 +102,12 @@
     <string name="floute_price">流动金</string>
     <string name="expect_weight">预计克重</string>
     <string name="buy_order_info">由于金价实时变动，实际购买克重可能与预计克重有所偏差</string>
+    <string name="buy_order">买单金额</string>
     <string name="order_total_price">订单总额</string>
     <string name="coupon">优惠券</string>
     <string name="time_pay_notice">请在90秒内完成在线支付</string>
     <string name="buy_order_info2">易宝、中华联合财险共同保障用户交易资金安全</string>
+    <string name="need_charge">需要充值：</string>
+    <string name="goto_charge">前往充值</string>
 
 </resources>

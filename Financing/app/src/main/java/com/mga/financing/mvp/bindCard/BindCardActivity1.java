@@ -1,5 +1,6 @@
 package com.mga.financing.mvp.bindCard;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AlertDialog.Builder;
@@ -31,7 +32,7 @@ public class BindCardActivity1 extends BaseActivity {
     private TextView nameTv;
     private String account;
     private AlertDialog dialog;
-
+    public static Activity instance;
     @Override
     protected int getLayoutId() {
         return R.layout.activity_bind_card1;
@@ -42,6 +43,7 @@ public class BindCardActivity1 extends BaseActivity {
         super.setupAppBar();
         mAppbarLeftBackIcon.setVisibility(View.VISIBLE);
         mAppBarTitle.setText(R.string.bind_card);
+
     }
 
     @Override
@@ -88,6 +90,7 @@ public class BindCardActivity1 extends BaseActivity {
     @Override
     protected void initialize() {
         super.initialize();
+        instance=this;
         checkIsBindIdCard();
         showBasicUi();
     }

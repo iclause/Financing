@@ -227,25 +227,54 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="grey_fragment_buy_background">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_alignParentBottom="true"
             android:background="@color/white"
+            android:paddingLeft="@dimen/toleft"
             >
 
             <TextView
-                android:id="@+id/confirm_order_tv"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/grey_fragment_small_text"
-                android:enabled="false"
+                android:id="@+id/need_charge_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/confirm_order"
+                android:layout_centerVertical="true"
+                android:text="@string/need_charge"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/middle3"/>
+
+            <TextView
+                android:id="@+id/need_charge_num_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/need_charge_tv"
+                android:enabled="false"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="269.53"
+                android:textColor="@color/orange_fg_item"
+                android:textSize="@dimen/middle3"/>
+
+            <TextView
+                android:id="@+id/goto_charge_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:enabled="false"
+                android:paddingRight="@dimen/toright"
+                android:paddingLeft="@dimen/toleft"
+                android:layout_alignParentRight="true"
+                android:gravity="center"
+                android:background="@color/orange_wallet_balance"
+                android:text="@string/goto_charge"
                 android:textColor="@color/white"
                 android:textSize="@dimen/middle3"/>
+
+
         </RelativeLayout>
     </RelativeLayout>
 

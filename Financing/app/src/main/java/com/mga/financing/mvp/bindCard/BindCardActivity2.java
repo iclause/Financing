@@ -1,5 +1,6 @@
 package com.mga.financing.mvp.bindCard;
 
+import android.app.Activity;
 import android.os.Handler;
 import android.os.Message;
 import android.text.Editable;
@@ -20,7 +21,7 @@ import com.mga.financing.utils.RegexUtils;
  * Created by mga on 2018/5/30 15:09.
  */
 
-public class BindCardActivity2 extends BaseActivity implements LoginContact.View{
+public class BindCardActivity2 extends BaseActivity implements LoginContact.View {
     private TextView cardNameTv;
     private TextView sTv;
     private TextView tv2;
@@ -30,6 +31,7 @@ public class BindCardActivity2 extends BaseActivity implements LoginContact.View
     private EditText ipEt;
     private TextView cardTypeTv;
     private BindPresenter mBindCardPresenter;
+    public static Activity instance;
 
     @Override
     protected int getLayoutId() {
@@ -66,13 +68,13 @@ public class BindCardActivity2 extends BaseActivity implements LoginContact.View
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-              if(RegexUtils.isVfc(s.toString())){
-                  sTv.setEnabled(true);
-                  sTv.setBackgroundResource(R.color.orange_btn);
-              }else{
-                  sTv.setEnabled(false);
-                  sTv.setBackgroundResource(R.color.grey_btn);
-              }
+                if (RegexUtils.isVfc(s.toString())) {
+                    sTv.setEnabled(true);
+                    sTv.setBackgroundResource(R.color.orange_btn);
+                } else {
+                    sTv.setEnabled(false);
+                    sTv.setBackgroundResource(R.color.grey_btn);
+                }
             }
 
             @Override
@@ -82,35 +84,34 @@ public class BindCardActivity2 extends BaseActivity implements LoginContact.View
         });
 
 
-
-
     }
 
     @Override
     protected BasePresenter createPresenter() {
-        mBindCardPresenter=new BindPresenter(this,getBundle());
+        mBindCardPresenter = new BindPresenter(this, getBundle());
         return mBindCardPresenter;
     }
 
     @Override
     protected void initialize() {
         super.initialize();
+        instance=this;
+
 
     }
 
     @Override
     public void onClick(View v) {
         super.onClick(v);
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.vfc_tv:
-                if(!RegexUtils.isPhoneNumber(ipEt.getText().toString())){
+                if (!RegexUtils.isPhoneNumber(ipEt.getText().toString())) {
                     showToast("请输入正确的11位手机号码");
                     return;
-                }else{
-                    // TODO: 2018/6/8 1.发送验证码;
-                    mBindCardPresenter.getVfc(cardNameTv.getText().toString());
-
                 }
+                // TODO: 2018/6/8 1.发送验证码;
+                mBindCardPresenter.getVfc(cardNameTv.getText().toString());
+
 
                 break;
             case R.id.tv2:
@@ -119,7 +120,23 @@ public class BindCardActivity2 extends BaseActivity implements LoginContact.View
                 break;
             case R.id.submit_tv:
                 // TODO: 2018/6/8 提交
-                mBindCardPresenter.submitBindCard(getPhoneNumber(),isEt.getText().toString());
+                if (!RegexUtils.isPhoneNumber(ipEt.getText().toString())) {
+                    showToast("请输入正确的11位手机号码");
+                    return;
+                }
+                if (!RegexUtils.isVfc(isEt.getText().toString())) {
+                    showToast("请输入正确的6位验证码");
+                    return;
+                }
+                if (!cb.isChecked()) {
+                    showToast("请阅读并同意《一键支付协议》");
+                    return;
+                }
+
+                // TODO: 2018/6/8 1.发送验证码;
+                mBindCardPresenter.submitBindCard(getPhoneNumber(), isEt.getText().toString());
+
+
                 break;
         }
     }
@@ -128,6 +145,7 @@ public class BindCardActivity2 extends BaseActivity implements LoginContact.View
     public String getPhoneNumber() {
         return cardNameTv.getText().toString();
     }
+
     private int timeoutlen = 60;
 
     private int UPDATE_TIME = 100;
