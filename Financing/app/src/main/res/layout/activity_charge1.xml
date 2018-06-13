@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/grey_bg"
+              android:orientation="vertical">
+
+    <include layout="@layout/toolbar"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/toleft"
+        android:paddingRight="@dimen/toright"
+        >
+
+        <ImageView
+            android:id="@+id/bank_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_launcher"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/bank_iv"
+            android:gravity="center_vertical"
+            >
+
+            <TextView
+                android:id="@+id/bank_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="浦发银行 尾号1234"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/middle2"
+                />
+
+            <TextView
+                android:id="@+id/info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bank_name_tv"
+                android:layout_marginTop="10dp"
+                android:text="单笔限额10万元 单日限额20万元"
+                android:textColor="@color/grey_middle1_text"
+                />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:paddingLeft="@dimen/toleft"
+        android:paddingRight="@dimen/toright">
+
+        <com.mga.financing.ui.XEditText
+            android:id="@+id/charge_num_et"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/vfc_tv"
+            android:background="@null"
+            android:inputType="number"
+            android:text="256.51"
+            android:textColorHint="@color/grey_middle1_text_input"
+            android:textSize="@dimen/middle2"
+            app:x_clearDrawable="@drawable/icon_text_clear"
+            app:x_hidePwdDrawable="@drawable/close_eye_icon"
+            app:x_showPwdDrawable="@drawable/open_eye_icon"
+            />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/toleft"
+        android:paddingRight="@dimen/toright"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/submit_tv"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@color/orange_btn"
+            android:gravity="center"
+            android:text="@string/submit"
+            android:textColor="@color/white"
+            android:textSize="@dimen/middle3"/>
+    </RelativeLayout>
+</LinearLayout>

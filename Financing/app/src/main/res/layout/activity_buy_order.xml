@@ -5,7 +5,6 @@
               android:orientation="vertical">
 
     <include
-        android:id="@+id/golder_order_tb"
         layout="@layout/toolbar"/>
 
     <RelativeLayout
@@ -228,13 +227,15 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="grey_fragment_buy_background">
+        android:background="@color/grey_fragment_buy_background">
 
         <RelativeLayout
+            android:id="@+id/charge_rl"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_alignParentBottom="true"
             android:background="@color/white"
+            android:visibility="gone"
             android:paddingLeft="@dimen/toleft"
             >
 
@@ -264,7 +265,6 @@
                 android:id="@+id/goto_charge_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:enabled="false"
                 android:paddingRight="@dimen/toright"
                 android:paddingLeft="@dimen/toleft"
                 android:layout_alignParentRight="true"
@@ -275,6 +275,27 @@
                 android:textSize="@dimen/middle3"/>
 
 
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/buy_rl"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white"
+            android:visibility="gone"
+            >
+            <TextView
+                android:id="@+id/buy_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingRight="@dimen/toright"
+                android:paddingLeft="@dimen/toleft"
+
+                android:gravity="center"
+                android:background="@color/orange_wallet_balance"
+                android:text="@string/buy"
+                android:textColor="@color/white"
+                android:textSize="@dimen/middle3"/>
         </RelativeLayout>
     </RelativeLayout>
 

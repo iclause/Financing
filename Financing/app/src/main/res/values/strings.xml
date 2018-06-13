@@ -109,5 +109,6 @@
     <string name="buy_order_info2">易宝、中华联合财险共同保障用户交易资金安全</string>
     <string name="need_charge">需要充值：</string>
     <string name="goto_charge">前往充值</string>
+    <string name="charge">充值</string>
 
 </resources>

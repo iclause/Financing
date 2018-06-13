@@ -34,6 +34,7 @@
         <activity android:name=".mvp.bindCard.BindCardActivity2"/>
         <activity android:name=".mvp.bindCard.BindIdCardActivity"/>
         <activity android:name=".mvp.order.BuyOrderActivity"/>
+        <activity android:name=".mvp.charge.ChargeActivity1"/>
 
     </application>
 
