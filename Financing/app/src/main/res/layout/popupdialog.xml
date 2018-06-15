@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/white"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:background="#F4F4F4"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/toleft">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/toleft"
+            android:paddingRight="@dimen/toright">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/x_icon"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+
+                >
+
+
+                <TextView
+                    android:id="@+id/chare_info_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="充值金额"
+                    android:textSize="@dimen/middle2"
+                    android:textColor="@color/black_middle1_text"
+                    />
+
+                <TextView
+                    android:id="@+id/charge_num_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/chare_info_tv"
+                    android:text="  235.24"
+                    android:textColor="@color/orange_fg_item"
+
+                    android:textSize="@dimen/middle2"
+                    />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <View
+            style="@style/style_normal_line"
+            android:layout_marginTop="@dimen/toleft"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="@dimen/toleft"
+            android:layout_marginRight="@dimen/toright"
+            android:layout_marginTop="45dp"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/pay_password_info_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/toleft"
+                android:text="支付密码"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/middle1"
+                />
+
+            <EditText
+                android:id="@+id/input_charge_password_et"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/toleft"
+                android:layout_toRightOf="@+id/pay_password_info_tv"
+                android:background="@null"
+                android:hint="请输入交易密码"
+                android:textSize="@dimen/middle1"
+                android:textColor="@android:color/black"
+                android:inputType="number"
+                />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/use_bankcard_info_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="20dp"
+            android:text="使用浦发银行（9700）付款"
+            android:textColor="@color/grey_middle1_text_input"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/toleft"
+            android:paddingRight="@dimen/toright">
+
+            <TextView
+                android:id="@+id/confirm_tv"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginBottom="10dp"
+                android:layout_alignParentBottom="true"
+                android:background="@color/orange_btn"
+                android:enabled="false"
+                android:gravity="center"
+                android:text="@string/confirm"
+                android:textColor="@color/white"
+                android:textSize="@dimen/middle3"/>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

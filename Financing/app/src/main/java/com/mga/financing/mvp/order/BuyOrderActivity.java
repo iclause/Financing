@@ -7,6 +7,7 @@ import android.widget.TextView;
 import com.mga.financing.R;
 import com.mga.financing.base.presenter.BasePresenter;
 import com.mga.financing.base.view.BaseActivity;
+import com.mga.financing.mvp.charge.ChargeActivity;
 
 /**
  * Created by mga on 2018/6/12 17:32.
@@ -69,6 +70,10 @@ public class BuyOrderActivity extends BaseActivity {
         super.onClick(v);
         switch (v.getId()){
             case R.id.goto_charge_tv:
+             toOtherLayout(ChargeActivity.class,getBundle());
+                break;
+            case R.id.buy_tv:
+                // TODO: 2018/6/15 买入
 
                 break;
         }

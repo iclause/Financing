@@ -26,7 +26,7 @@
     <color name="grey_bg">#F2F2F6</color>
     <color name="style_window_background">#212121</color>
     <color name="orange_real_tiem_golden_price">#FF701A</color>
-    <color name="orange_btn">#FF701A</color>
+    <color name="orange_btn">#FEA848</color>
     <color name="grey_btn">#BCBCBC</color>
     <color name="blue_dialog_button_text">#037BFF</color>
 </resources>

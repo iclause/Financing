@@ -173,6 +173,23 @@
         <!--<item name="android:background">@drawable/checkbox_style</item>-->
     <!--</style>-->
 
+    <!-- +++++++++++++++++++++++++++++popwindow进出动画++++++++++++++++++++++++++++++++++++++++-->
+    <style name="MyDialog" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <style name="AnimBottom" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="android:windowExitAnimation">@anim/push_bottom_out</item>
+    </style>
+    <style name="MPopupDialog" parent="@style/MyDialog">
+        <item name="android:windowAnimationStyle">@style/AnimBottom</item>
+
+    </style>
+    <!-- +++++++++++++++++++++++++++++popwindow进出动画++++++++++++++++++++++++++++++++++++++++-->
 
     <color name="line_grey">#C8C7CC</color>
 </resources>

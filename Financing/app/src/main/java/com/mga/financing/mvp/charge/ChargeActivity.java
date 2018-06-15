@@ -7,18 +7,21 @@ import android.widget.TextView;
 import com.mga.financing.R;
 import com.mga.financing.base.presenter.BasePresenter;
 import com.mga.financing.base.view.BaseActivity;
+import com.mga.financing.ui.MPopupDialog;
 import com.mga.financing.ui.XEditText;
 
 /**
  * Created by mga on 2018/6/13 18:58.
  */
 
-public class ChargeActivity1 extends BaseActivity {
+public class ChargeActivity extends BaseActivity implements ChargeContact.View{
     private TextView submitTv;
     private XEditText chargeNumEt;
     private ImageView bankIv;
     private TextView bankNameTv;
     private TextView infoTv;
+    private ChargePresenter mChargePresenter;
+    private MPopupDialog mPopDialog;
 
     @Override
     protected int getLayoutId() {
@@ -51,7 +54,8 @@ public class ChargeActivity1 extends BaseActivity {
 
     @Override
     protected BasePresenter createPresenter() {
-        return null;
+        mChargePresenter=new ChargePresenter(this);
+        return mChargePresenter;
     }
 
     @Override
@@ -59,8 +63,22 @@ public class ChargeActivity1 extends BaseActivity {
         super.onClick(v);
         switch (v.getId()){
             case R.id.submit_tv:
-
+                 mChargePresenter.submit();
                 break;
+        }
+    }
+
+    @Override
+    public void showPopDialog() {
+        mPopDialog=new MPopupDialog(this,mChargePresenter);
+        mPopDialog.show();
+    }
+
+    @Override
+    public void dismissPopDialog() {
+        if(mPopDialog!=null&&mPopDialog.isShowing()){
+            mPopDialog.dismiss();
+            mPopDialog=null;
         }
     }
 }

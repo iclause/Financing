@@ -76,6 +76,7 @@
     <string name="read_agree_golden_protocal">阅读并同意流动金-黄金消费综合服务协议</string>
     <string name="china_unicom">中华联合财险承保用户黄金财产安全，请放心交易</string>
     <string name="confirm_order">确认下单</string>
+    <string name="confirm">确认</string>
     <string name="bind_info">黄金钱包只支持绑定一张银行卡，该银行卡将是您在黄金钱包唯一的资金出口。即使手机丢失、账号被盗，您的钱也只能回到您自己的银行卡中，最大程度保障您的资产安全。</string>
     <string name="bind_notice">绑卡提示</string>
     <string name="bind_info_title">请绑定本人名下的储蓄卡</string>
