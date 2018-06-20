@@ -13,10 +13,13 @@ import com.mga.financing.R;
 import com.mga.financing.base.presenter.BasePresenter;
 import com.mga.financing.base.view.BaseActivity;
 import com.mga.financing.constant.BundleKeyConstant;
+import com.mga.financing.constant.NowPrice;
 import com.mga.financing.mvp.bindCard.BindCardActivity1;
 import com.mga.financing.mvp.order.BuyOrderActivity;
 import com.mga.financing.utils.RegexUtils;
 import com.mga.financing.utils.UserInfoManager;
+
+import java.text.DecimalFormat;
 
 /**
  * Created by mga on 2018/5/29 18:55.
@@ -51,6 +54,7 @@ public class BuyGoldenActivity extends BaseActivity {
     protected void initView() {
         walletBalanceTv = (TextView) findViewById(R.id.wallet_balance_tv2);
         rtgpTv = (TextView) findViewById(R.id.real_time_golden_price_tv);
+        rtgpTv.setText(NowPrice.price);
         wopTv = (TextView) findViewById(R.id.weight_or_price_tv);
         iwopEt = (EditText) findViewById(R.id.input_weight_or_price_et);
         csTv = (TextView) findViewById(R.id.change_state_tv);
@@ -78,7 +82,10 @@ public class BuyGoldenActivity extends BaseActivity {
                     float weight=Float.parseFloat(s.toString());
                     float goldenprice=Float.parseFloat(rtgpTv.getText().toString());
                     float price=weight*goldenprice;
-                    epTv.setText(String.valueOf(price)+"元");
+                    DecimalFormat decimalFormat=new DecimalFormat(".00");//构造方法的字符格式这里如果小数不足2位,会以0补足.
+                    String p=decimalFormat.format(price);//format 返回的是字符串
+                    logi("price"+String.valueOf(p));
+                    epTv.setText(String.valueOf(p)+"元");
                 } else {
                     coTv.setBackgroundColor(getResources().getColor(R.color.grey_btn));
                     coTv.setEnabled(false);

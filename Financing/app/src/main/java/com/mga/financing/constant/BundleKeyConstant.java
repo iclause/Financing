@@ -13,4 +13,5 @@ public class BundleKeyConstant {
     public static final String PARAM3="param3";
     public static final String WEIGHT ="golden_weight" ;
     public static final String PRICE ="price" ;
+    public static final String CHARGE_PRICE ="charge_price" ;
 }

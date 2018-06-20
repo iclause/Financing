@@ -1,5 +1,6 @@
 package com.mga.financing.mvp.order;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -7,19 +8,28 @@ import android.widget.TextView;
 import com.mga.financing.R;
 import com.mga.financing.base.presenter.BasePresenter;
 import com.mga.financing.base.view.BaseActivity;
+import com.mga.financing.constant.BundleKeyConstant;
+import com.mga.financing.constant.NowPrice;
 import com.mga.financing.mvp.charge.ChargeActivity;
 
 /**
  * Created by mga on 2018/6/12 17:32.
  */
 
-public class BuyOrderActivity extends BaseActivity {
+public class BuyOrderActivity extends BaseActivity implements BuyOrderContact.View{
 
     private TextView goToChargeTv;
-    private float  bankBalance= (float) 0.00;
-    private float  order= (float) 256.00;
+    private float bankBalance = (float) 0.00;
+    private float order = (float) 256.00;
     private RelativeLayout buyRl;
     private RelativeLayout chargeRl;
+    private TextView priceTv;
+    private TextView weightTv;
+    private TextView needChargeTv;
+    private TextView nowPriceTv2;
+    private TextView wallletBalanceTv;
+    private BuyPresenter mBuyPresenter;
+    private TextView buyTv;
 
     @Override
     protected void setupAppBar() {
@@ -42,19 +52,48 @@ public class BuyOrderActivity extends BaseActivity {
     @Override
     protected void initView() {
 
-        chargeRl=(RelativeLayout)findViewById(R.id.charge_rl);
-        buyRl=(RelativeLayout)findViewById(R.id.buy_rl);
+        chargeRl = (RelativeLayout) findViewById(R.id.charge_rl);
+        buyRl = (RelativeLayout) findViewById(R.id.buy_rl);
+
+        wallletBalanceTv = (TextView) findViewById(R.id.wallet_balance_tv2);
+        if (getBundle()!=null&&getBundle().getString(BundleKeyConstant.CHARGE_PRICE)!=null) {
+            Log.i(TAG, "chargeprice = " + getBundle().getString(BundleKeyConstant.CHARGE_PRICE).toString());
+            wallletBalanceTv.setText(getBundle().getString(BundleKeyConstant.CHARGE_PRICE,"0.00元").toString());
+        }else{
+
+            wallletBalanceTv.setText("0.00元");
+        }
+        String chargePrice=getBundle().getString(BundleKeyConstant.CHARGE_PRICE,"0.00元").toString();
+        chargePrice=chargePrice.substring(0,chargePrice.indexOf("元"));
+        bankBalance=Float.valueOf(chargePrice);
+        logi("bankBalance="+bankBalance);
+
+        weightTv = (TextView) findViewById(R.id.weight_tv);
+        priceTv = (TextView) findViewById(R.id.price_tv);
+        nowPriceTv2 = (TextView) findViewById(R.id.now_price_tv2);
+        nowPriceTv2.setText(NowPrice.price+"元/克");
+        needChargeTv = (TextView) findViewById(R.id.need_charge_num_tv);
+        weightTv.setText(getBundle().getString(BundleKeyConstant.WEIGHT,"0克"));
+        logi("order all price ="+getBundle().getString(BundleKeyConstant.PRICE,"0.00元"));
+        priceTv.setText(getBundle().getString(BundleKeyConstant.PRICE,"0.00元"));
+        String orderPrice=getBundle().getString(BundleKeyConstant.PRICE,"0.00元");
+        orderPrice=orderPrice.substring(0,orderPrice.indexOf("元"));
+        order=Float.valueOf(orderPrice);
+        logi("order="+order);
         judgeIsCharge();
-        goToChargeTv=(TextView)findViewById(R.id.goto_charge_tv);
+        needChargeTv.setText(getBundle().getString(BundleKeyConstant.PRICE,"0.00元"));
+        goToChargeTv = (TextView) findViewById(R.id.goto_charge_tv);
         goToChargeTv.setOnClickListener(this);
 
+        buyTv = (TextView) findViewById(R.id.buy_tv);
+        buyTv.setOnClickListener(this);
     }
 
     private void judgeIsCharge() {
-        if(bankBalance<order){
+        if (bankBalance < order) {
             chargeRl.setVisibility(View.VISIBLE);
             buyRl.setVisibility(View.GONE);
-        }else{
+        } else {
             chargeRl.setVisibility(View.GONE);
             buyRl.setVisibility(View.VISIBLE);
         }
@@ -62,19 +101,21 @@ public class BuyOrderActivity extends BaseActivity {
 
     @Override
     protected BasePresenter createPresenter() {
-        return null;
+        mBuyPresenter=new BuyPresenter(this);
+        return mBuyPresenter;
     }
 
     @Override
     public void onClick(View v) {
         super.onClick(v);
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.goto_charge_tv:
-             toOtherLayout(ChargeActivity.class,getBundle());
+                toOtherLayout(ChargeActivity.class, getBundle());
                 break;
             case R.id.buy_tv:
                 // TODO: 2018/6/15 买入
-
+                logi("buy_tv onclick");
+                mBuyPresenter.buy();
                 break;
         }
     }

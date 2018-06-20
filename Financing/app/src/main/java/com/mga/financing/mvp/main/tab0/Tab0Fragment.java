@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.mga.financing.R;
 import com.mga.financing.base.presenter.BasePresenter;
 import com.mga.financing.base.view.BaseFragment;
+import com.mga.financing.constant.NowPrice;
 import com.mga.financing.mvp.BuyGoldenActivity;
 import com.mga.financing.mvp.login.LoginFirstActivity;
 import com.mga.financing.ui.GlideImageLoader;
@@ -32,10 +33,10 @@ public class Tab0Fragment extends BaseFragment implements OnRefreshListener {
     private Banner banner;
     private List<Integer> images;
     private List<String> imagespath;
-    private boolean isFirstIn=true;
+    private boolean isFirstIn = true;
     private PullToRefreshLayout ptrl;
     private TextView buyTv;
-
+    private TextView goldPriceTv;
 
 
     @Override
@@ -56,9 +57,6 @@ public class Tab0Fragment extends BaseFragment implements OnRefreshListener {
     }
 
 
-
-
-
     @Override
     protected BasePresenter createPresenter() {
         return null;
@@ -66,18 +64,20 @@ public class Tab0Fragment extends BaseFragment implements OnRefreshListener {
 
     @Override
     protected void initView(View view, Bundle savedInstanceState) {
-        ptrl=((PullToRefreshLayout) view.findViewById(R.id.refresh_view));
+        ptrl = ((PullToRefreshLayout) view.findViewById(R.id.refresh_view));
         ptrl.setOnRefreshListener(this);
         // 第一次进入自动刷新
-        if (isFirstIn)
-        {
+        if (isFirstIn) {
             ptrl.autoRefresh();
             isFirstIn = false;
         }
         initbanner(view);
 
-        buyTv=(TextView)view.findViewById(R.id.buy_tv);
+        goldPriceTv = (TextView) view.findViewById(R.id.gold_price_tv);
+        goldPriceTv.setText(NowPrice.price);
+        buyTv = (TextView) view.findViewById(R.id.buy_tv);
         buyTv.setOnClickListener(this);
+
     }
 
     private void initbanner(View view) {
@@ -89,10 +89,10 @@ public class Tab0Fragment extends BaseFragment implements OnRefreshListener {
             images.add(R.drawable.ic_bullion_withdraw_offline);
             images.add(R.drawable.ic_bullion_withdraw_online);
         }
-if (imagespath == null) {
-    imagespath = new ArrayList<>();
-    imagespath.add("https://hmls.hfbank.com.cn/hfapp-api/9.png");
-    imagespath.add("http://ww1.sinaimg.cn/mw690/006dJESWgw1f6iyb8bzraj31kw0v67a2.jpg");
+        if (imagespath == null) {
+            imagespath = new ArrayList<>();
+            imagespath.add("https://hmls.hfbank.com.cn/hfapp-api/9.png");
+            imagespath.add("http://ww1.sinaimg.cn/mw690/006dJESWgw1f6iyb8bzraj31kw0v67a2.jpg");
 
         }
 
@@ -122,11 +122,9 @@ if (imagespath == null) {
     @Override
     public void onRefresh(final PullToRefreshLayout pullToRefreshLayout) {
         // 下拉刷新操作
-        new Handler()
-        {
+        new Handler() {
             @Override
-            public void handleMessage(Message msg)
-            {
+            public void handleMessage(Message msg) {
                 // 千万别忘了告诉控件刷新完毕了哦！
                 pullToRefreshLayout.refreshFinish(PullToRefreshLayout.SUCCEED);
             }
@@ -141,7 +139,7 @@ if (imagespath == null) {
 //            @Override
 //            public void handleMessage(Message msg)
 //            {
-                // 千万别忘了告诉控件刷新完毕了哦！
+        // 千万别忘了告诉控件刷新完毕了哦！
 //                pullToRefreshLayout.refreshFinish(PullToRefreshLayout.SUCCEED);
 //            }
 //        }.sendEmptyMessageDelayed(0, 2000);
@@ -149,12 +147,12 @@ if (imagespath == null) {
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.buy_tv:
-                if(UserInfoManager.getIsAutoLogin(getContext())) {
+                if (UserInfoManager.getIsAutoLogin(getContext())) {
                     toOtherLayout(BuyGoldenActivity.class, getBundle());
-                }else{
-                    toOtherLayout(LoginFirstActivity.class,null);
+                } else {
+                    toOtherLayout(LoginFirstActivity.class, null);
                 }
                 break;
         }

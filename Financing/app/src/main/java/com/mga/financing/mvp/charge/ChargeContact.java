@@ -1,5 +1,7 @@
 package com.mga.financing.mvp.charge;
 
+import android.os.Bundle;
+
 import com.mga.financing.base.presenter.BasePresenter;
 import com.mga.financing.base.view.BaseView;
 
@@ -18,7 +20,7 @@ public class ChargeContact {
         //提交充值订单
         void submit();
         //提交充值密码
-        void submitPassword();
+        void submitPassword(Bundle bundle);
 
     }
 }

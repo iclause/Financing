@@ -9,6 +9,8 @@ import com.mga.financing.base.bean.BaseNet;
 import com.mga.financing.base.model.Callback;
 import com.mga.financing.base.model.Token;
 import com.mga.financing.base.presenter.BasePresenterImpl;
+import com.mga.financing.constant.BundleKeyConstant;
+import com.mga.financing.mvp.order.BuyOrderActivity;
 import com.mga.financing.mvp.regist.RegistActivity;
 
 import cz.msebera.android.httpclient.Header;
@@ -69,7 +71,7 @@ public class ChargePresenter extends BasePresenterImpl<ChargeContact.View> imple
     }
 
     @Override
-    public void submitPassword() {
+    public void submitPassword(final Bundle bundle) {
         if(isViewAttach()) {
             getView().showDialog(true,getView().getContext().getResources().getString(R.string.loading));
         }
@@ -82,6 +84,9 @@ public class ChargePresenter extends BasePresenterImpl<ChargeContact.View> imple
                 Log.i(TAG,"onSuccess");
                 if(isViewAttach()) {
                     getView().dismissPopDialog();
+                    Log.i(TAG,"chargeprice = "+bundle.getString(BundleKeyConstant.CHARGE_PRICE).toString());
+
+                    getView().toOtherLayout(BuyOrderActivity.class,bundle);
 
                 }
             }

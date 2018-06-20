@@ -120,7 +120,7 @@ public class BindCardActivity1 extends BaseActivity {
                     showToast("请输入正确的银行卡号");
                     return;
                 }
-                Bundle bundle=new Bundle();
+                Bundle bundle=getBundle();
                 bundle.putString(BundleKeyConstant.BANKCARD,iciEt.getText().toString());
                 toOtherLayout(BindCardActivity2.class,bundle);
                 break;

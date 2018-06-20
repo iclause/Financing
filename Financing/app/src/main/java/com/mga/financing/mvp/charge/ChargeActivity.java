@@ -1,5 +1,6 @@
 package com.mga.financing.mvp.charge;
 
+import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -7,6 +8,7 @@ import android.widget.TextView;
 import com.mga.financing.R;
 import com.mga.financing.base.presenter.BasePresenter;
 import com.mga.financing.base.view.BaseActivity;
+import com.mga.financing.constant.BundleKeyConstant;
 import com.mga.financing.ui.MPopupDialog;
 import com.mga.financing.ui.XEditText;
 
@@ -48,6 +50,7 @@ public class ChargeActivity extends BaseActivity implements ChargeContact.View{
         chargeNumEt=(XEditText)findViewById(R.id.charge_num_et);
         submitTv=(TextView)findViewById(R.id.submit_tv);
         submitTv.setOnClickListener(this);
+        chargeNumEt.setText(getBundle().getString(BundleKeyConstant.PRICE));
 
 
     }
@@ -70,7 +73,9 @@ public class ChargeActivity extends BaseActivity implements ChargeContact.View{
 
     @Override
     public void showPopDialog() {
-        mPopDialog=new MPopupDialog(this,mChargePresenter);
+        Bundle bundle=getBundle();
+        bundle.putString(BundleKeyConstant.CHARGE_PRICE,chargeNumEt.getText().toString());
+        mPopDialog=new MPopupDialog(this,mChargePresenter,bundle);
         mPopDialog.show();
     }
 

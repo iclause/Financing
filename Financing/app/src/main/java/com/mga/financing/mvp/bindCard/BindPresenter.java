@@ -53,9 +53,8 @@ public class BindPresenter extends LoginPresenter implements BindContact.Present
                 if (isViewAttach()) {
                     ActivityCollector.removeActivity(BindCardActivity1.instance);
                     ActivityCollector.removeActivity(BindCardActivity2.instance);
-                    Bundle bundle = new Bundle();
-                    bundle.putString(BundleKeyConstant.PHONENUMBER, getView().getPhoneNumber());
-                    getView().toOtherLayout(BuyOrderActivity.class, bundle);
+                    mBundle.putString(BundleKeyConstant.PHONENUMBER, getView().getPhoneNumber());
+                    getView().toOtherLayout(BuyOrderActivity.class, mBundle);
 
                 }
             }

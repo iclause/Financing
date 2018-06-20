@@ -54,6 +54,7 @@ public abstract class BaseActivity<A extends BaseActivity, V extends BaseView, T
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        JLog.d(TAG, "onCreate");
+        Log.i(TAG, "onCreate: ");
         initialize();
 
     }
@@ -157,6 +158,7 @@ public abstract class BaseActivity<A extends BaseActivity, V extends BaseView, T
     protected void onDestroy() {
         super.onDestroy();
 //        JLog.d(TAG, "--->onDestroy");
+        Log.i(TAG, "onDestroy: ");
         AppManager.finishActivity(this);
         if (mPresenter != null) {
             mPresenter.detach();
@@ -174,6 +176,8 @@ public abstract class BaseActivity<A extends BaseActivity, V extends BaseView, T
     protected void onStop() {
         super.onStop();
 //        JLog.d(TAG, "--->onStop");
+        Log.i(TAG, "onStop: ");
+
     }
 
     @Override
@@ -184,6 +188,7 @@ public abstract class BaseActivity<A extends BaseActivity, V extends BaseView, T
 
 //        MobclickAgent.onPageStart(mPageName);
 //        MobclickAgent.onResume(this);
+        Log.i(TAG, "onResume: ");
         if (mCustomDialog != null) {
             logi("mcustomprogress ：" + mCustomDialog.isShowing());
         } else {
@@ -207,6 +212,7 @@ public abstract class BaseActivity<A extends BaseActivity, V extends BaseView, T
     @Override
     protected void onPause() {
         super.onPause();
+        Log.i(TAG, "onPause: ");
 //        JLog.d(TAG, "--->onPause");
 //        JPushInterface.onPause(this);
 //        MobclickAgent.onPageEnd(mPageName);
@@ -214,7 +220,10 @@ public abstract class BaseActivity<A extends BaseActivity, V extends BaseView, T
     }
 
     protected Bundle getBundle() {
-        mBundle=getIntent().getExtras();
+        mBundle = getIntent().getExtras();
+        if (mBundle != null && mBundle.toString() != null) {
+            logi("getBundle = " + mBundle.toString());
+        }
         return mBundle;
     }
 
