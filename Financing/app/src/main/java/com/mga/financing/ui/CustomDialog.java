@@ -3,7 +3,6 @@ package com.mga.financing.ui;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.view.View;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -18,9 +17,14 @@ public class CustomDialog extends ProgressDialog {
     private String mContent;
     private LinearLayout rootView;
 
+    public CustomDialog(Context context) {
+        super(context,R.style.CustomDialog);
+        this.mContent=context.getResources().getString(R.string.loading);
+    }
+
     public CustomDialog(Context context, String content) {
         super(context,R.style.CustomDialog);
-        this.mContent=content;
+            this.mContent = content;
     }
 
     public CustomDialog(Context context, int theme,String content) {

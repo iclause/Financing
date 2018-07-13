@@ -22,27 +22,27 @@ import cz.msebera.android.httpclient.Header;
 public class ChargePresenter extends BasePresenterImpl<ChargeContact.View> implements ChargeContact.Presenter {
 
     private final Context mContext;
-    private String TAG=getClass().getSimpleName();
+    private String TAG = getClass().getSimpleName();
 
     public ChargePresenter(Context context) {
         super(context);
-        this.mContext=context;
+        this.mContext = context;
     }
 
     @Override
     public void submit() {
-        if(isViewAttach()) {
-            getView().showDialog(true,getView().getContext().getResources().getString(R.string.loading));
+        if (isViewAttach()) {
+            getView().showDialog(true, getView().getContext().getResources().getString(R.string.loading));
         }
-        BaseNet baseNet=new BaseNet();
+        BaseNet baseNet = new BaseNet();
         baseNet.setDescription("normal");
-        getData(Token.API_USER_DATA,baseNet, new Callback() {
+        getData(Token.API_USER_DATA, baseNet, new Callback() {
             @Override
             public void onSuccess(Object data) {
                 //tologinsecond
-                Log.i(TAG,"onSuccess");
-                if(isViewAttach()) {
-                getView().showPopDialog();
+                Log.i(TAG, "onSuccess");
+                if (isViewAttach()) {
+                    getView().showPopDialog();
 
                 }
             }
@@ -50,8 +50,8 @@ public class ChargePresenter extends BasePresenterImpl<ChargeContact.View> imple
             @Override
             public void onFailure(Object data) {
                 //toregist
-                if(isViewAttach()) {
-                    getView().toOtherLayout(RegistActivity.class,new Bundle());
+                if (isViewAttach()) {
+                    getView().toOtherLayout(RegistActivity.class, new Bundle());
                 }
             }
 
@@ -62,9 +62,9 @@ public class ChargePresenter extends BasePresenterImpl<ChargeContact.View> imple
 
             @Override
             public void onComplete() {
-                Log.i(TAG,"onComplete");
-                if(isViewAttach()) {
-                    getView().showDialog(false,null);
+                Log.i(TAG, "onComplete");
+                if (isViewAttach()) {
+                    getView().showDialog(false, null);
                 }
             }
         });
@@ -72,21 +72,21 @@ public class ChargePresenter extends BasePresenterImpl<ChargeContact.View> imple
 
     @Override
     public void submitPassword(final Bundle bundle) {
-        if(isViewAttach()) {
-            getView().showDialog(true,getView().getContext().getResources().getString(R.string.loading));
+        if (isViewAttach()) {
+            getView().showDialog(true, getView().getContext().getResources().getString(R.string.loading));
         }
-        BaseNet baseNet=new BaseNet();
+        BaseNet baseNet = new BaseNet();
         baseNet.setDescription("normal");
-        getData(Token.API_USER_DATA,baseNet, new Callback() {
+        getData(Token.API_USER_DATA, baseNet, new Callback() {
             @Override
             public void onSuccess(Object data) {
                 //tologinsecond
-                Log.i(TAG,"onSuccess");
-                if(isViewAttach()) {
+                Log.i(TAG, "onSuccess");
+                if (isViewAttach()) {
                     getView().dismissPopDialog();
-                    Log.i(TAG,"chargeprice = "+bundle.getString(BundleKeyConstant.CHARGE_PRICE).toString());
+                    Log.i(TAG, "chargeprice = " + bundle.getString(BundleKeyConstant.CHARGE_PRICE).toString());
 
-                    getView().toOtherLayout(BuyOrderActivity.class,bundle);
+                    getView().toOtherLayout(BuyOrderActivity.class, bundle);
 
                 }
             }
@@ -94,8 +94,8 @@ public class ChargePresenter extends BasePresenterImpl<ChargeContact.View> imple
             @Override
             public void onFailure(Object data) {
                 //toregist
-                if(isViewAttach()) {
-                    getView().toOtherLayout(RegistActivity.class,new Bundle());
+                if (isViewAttach()) {
+                    getView().toOtherLayout(RegistActivity.class, new Bundle());
                 }
             }
 
@@ -106,9 +106,9 @@ public class ChargePresenter extends BasePresenterImpl<ChargeContact.View> imple
 
             @Override
             public void onComplete() {
-                Log.i(TAG,"onComplete");
-                if(isViewAttach()) {
-                    getView().showDialog(false,null);
+                Log.i(TAG, "onComplete");
+                if (isViewAttach()) {
+                    getView().showDialog(false, null);
                 }
             }
         });

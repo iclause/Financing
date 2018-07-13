@@ -16,10 +16,10 @@ import cz.msebera.android.httpclient.Header;
  * Created by mga on 2018/6/20 20:03.
  */
 
-public class BuyPresenter extends BasePresenterImpl<BuyOrderContact.View> implements BuyOrderContact.Presenter {
+public class BuyOrderPresenter extends BasePresenterImpl<BuyOrderContact.View> implements BuyOrderContact.Presenter {
     private String TAG = getClass().getSimpleName();
 
-    public BuyPresenter(Context context) {
+    public BuyOrderPresenter(Context context) {
         super(context);
     }
 

@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">SmsSend</string>
+    <string name="COMPANY_EBSDK_APPKEY">864399fhgfj8EGR12345678gh909d5hg</string>
+    <string name="COMPANY_EBSDK_APPSECRET">e7835a8d145f4cd780fc3e1a134aca49</string>
+    <string name="COMPANY_DOMAIN">abc</string>
+</resources>

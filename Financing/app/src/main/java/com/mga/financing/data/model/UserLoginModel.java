@@ -28,9 +28,10 @@ public class UserLoginModel extends BaseModel<String> {
                 callback.onComplete();
 
             }
-        }, 3000);
+        }, 500);
     }
 //        requestPostAPI(Api.USER_LOGIN, callback);
+
 
 
 }

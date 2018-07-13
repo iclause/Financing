@@ -60,7 +60,7 @@ public class MainActivity extends BaseActivity implements MainContact.View {
     private TextView[] tab_Tvs = new TextView[4];
     private boolean isExit = false;
     private long exitTime=0;
-
+    int i=1;
 
     @Override
     protected int getLayoutId() {
@@ -117,6 +117,7 @@ public class MainActivity extends BaseActivity implements MainContact.View {
             }
         });
         test();
+        test();
     }
 
     private void test() {
@@ -128,6 +129,9 @@ public class MainActivity extends BaseActivity implements MainContact.View {
         }else{
             logi("list==null");
         }
+        int j=i++;
+        logi("j="+j);
+
     }
 
     private void initFragments() {

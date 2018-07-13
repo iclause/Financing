@@ -28,7 +28,7 @@ public class BuyOrderActivity extends BaseActivity implements BuyOrderContact.Vi
     private TextView needChargeTv;
     private TextView nowPriceTv2;
     private TextView wallletBalanceTv;
-    private BuyPresenter mBuyPresenter;
+    private BuyOrderPresenter mBuyOrderPresenter;
     private TextView buyTv;
 
     @Override
@@ -101,8 +101,8 @@ public class BuyOrderActivity extends BaseActivity implements BuyOrderContact.Vi
 
     @Override
     protected BasePresenter createPresenter() {
-        mBuyPresenter=new BuyPresenter(this);
-        return mBuyPresenter;
+        mBuyOrderPresenter =new BuyOrderPresenter(this);
+        return mBuyOrderPresenter;
     }
 
     @Override
@@ -115,7 +115,7 @@ public class BuyOrderActivity extends BaseActivity implements BuyOrderContact.Vi
             case R.id.buy_tv:
                 // TODO: 2018/6/15 买入
                 logi("buy_tv onclick");
-                mBuyPresenter.buy();
+                mBuyOrderPresenter.buy();
                 break;
         }
     }
