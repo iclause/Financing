@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.mga.financing.R;
-import com.mga.financing.bean.ProductBean;
+import com.mga.financing.bean.response.ProductRes;
 
 import java.util.List;
 import java.util.Map;
@@ -22,11 +22,12 @@ import java.util.Map;
  */
 
 public class MlistAdapter extends BaseAdapter {
-    private List<ProductBean> mProductBeanList;
+    private List<ProductRes> mProductResList;
     private Context mContext;
     private LayoutInflater mInflater;
     private Map<Integer, Integer> mLettes;
 
+    private static boolean ISSHOWHEADER = false;
     private static final int TYPE_HEADER = 1;
     private static final int TYPE_CONTENT = 0;
 
@@ -34,22 +35,33 @@ public class MlistAdapter extends BaseAdapter {
     private static final int TYPE_HEADER2 = 1; //稳定生产 省时省力
     private String TAG = getClass().getSimpleName();
 
-    public MlistAdapter(Context context, List<ProductBean> ProductBeanList,
+    /**
+     *
+     * @param context
+     * @param productResList
+     * @param lettes 为null，标识不显示header；有值，显示header
+     */
+    public MlistAdapter(Context context, List<ProductRes> productResList,
                         Map<Integer, Integer> lettes) {
-        mProductBeanList = ProductBeanList;
+        mProductResList = productResList;
         mContext = context;
         mInflater = LayoutInflater.from(mContext);
-        this.mLettes = lettes;
+        if(lettes==null){
+            ISSHOWHEADER=false;
+        }else {
+            this.mLettes = lettes;
+            ISSHOWHEADER=true;
+        }
     }
 
     @Override
     public int getCount() {
-        return (mProductBeanList == null || mProductBeanList.isEmpty()) ? 0 : mProductBeanList.size();
+        return (mProductResList == null || mProductResList.isEmpty()) ? 0 : mProductResList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return (mProductBeanList == null || mProductBeanList.isEmpty()) ? null : mProductBeanList.get(position);
+        return (mProductResList == null || mProductResList.isEmpty()) ? null : mProductResList.get(position);
     }
 
     @Override
@@ -60,8 +72,10 @@ public class MlistAdapter extends BaseAdapter {
     @Override
     public int getItemViewType(int position) {
         //根据每个字母下第一个联系人在数据中的位置，来显示headView
-        ProductBean ProductBean = mProductBeanList.get(position);
-        if (mLettes.get(ProductBean.getHeadertype()) == position) {
+        if(!ISSHOWHEADER){
+            return TYPE_CONTENT;
+        }
+        if (mLettes.get(Integer.parseInt(mProductResList.get(position).getProductslogan())) == position) {
             return TYPE_HEADER;
         }
         return TYPE_CONTENT;
@@ -69,10 +83,11 @@ public class MlistAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if (mProductBeanList.get(position) == null || mProductBeanList.size() == 0 || mLettes == null || mLettes.size() == 0) {
+        if (mProductResList.get(position) == null || mProductResList.size() == 0 ) {
             Log.i(TAG, "mProductBeanList or mLettes is invalid");
             return null;
         }
+        Log.i(TAG, "position "+position+"\n item"+mProductResList.get(position).toString());
         ViewHolder holder = null;
         if (convertView == null) {
             convertView = LayoutInflater.from(mContext).inflate(R.layout.item_fg1,parent, false);
@@ -82,11 +97,11 @@ public class MlistAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
-        holder.proName_tv.setText(mProductBeanList.get(position).getProName());
-        holder.proDes_tv.setText(mProductBeanList.get(position).getProDes());
-        holder.upDownNum_tv.setText(mProductBeanList.get(position).getUpDownNum());
-        holder.proDes1_tv.setText(mProductBeanList.get(position).getProDes1());
-        holder.circle_tv.setText(mProductBeanList.get(position).getCircle());
+        holder.proName_tv.setText(mProductResList.get(position).getProductname());
+        holder.proDes_tv.setText(mProductResList.get(position).getProductdesc());
+        holder.upDownNum_tv.setText(mProductResList.get(position).getAnnualizedrate());
+        holder.proDes1_tv.setText(mProductResList.get(position).getAnnualizedratedes());
+        holder.circle_tv.setText(mProductResList.get(position).getCycle());
         if (getItemViewType(position) == TYPE_CONTENT) {
             //内容
             holder.setHeaderVisible(false);
@@ -94,7 +109,7 @@ public class MlistAdapter extends BaseAdapter {
         } else {
 //            标题
             holder.setHeaderVisible(true);
-            if (mProductBeanList.get(position).getHeadertype() == TYPE_HEADER1) {
+            if (Integer.parseInt(mProductResList.get(position).getProductslogan()) == TYPE_HEADER1) {
                 //持有黄金 保值增值
                 holder.header_tv.setText(mContext.getResources().getString(R.string.text2));
                 holder.header_iv.setImageResource(R.drawable.orange_ring);
@@ -113,10 +128,22 @@ public class MlistAdapter extends BaseAdapter {
         return convertView;
     }
 
-    public void refreshData(List<ProductBean> ProductBeanList,
+    /**
+     *
+     * @param productResList
+     * @param lettes  为null，标识不显示header；有值，显示header
+     */
+    public void refreshData(List<ProductRes> productResList,
                             Map<Integer, Integer> lettes) {
-        this.mProductBeanList = ProductBeanList;
-        this.mLettes = lettes;
+        if(productResList!=null) Log.i(TAG,"productResList :\n"+productResList.toString());
+        if(lettes!=null) Log.i(TAG,"lettes :\n"+lettes.toString());
+        this.mProductResList = productResList;
+        if(lettes==null){
+            ISSHOWHEADER=false;
+        }else {
+            this.mLettes = lettes;
+            ISSHOWHEADER=true;
+        }
         notifyDataSetChanged();
     }
 

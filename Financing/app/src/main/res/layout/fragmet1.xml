@@ -73,7 +73,10 @@
             <com.mga.financing.ui.pullableview.PullableListView
                 android:id="@+id/pullable_lv"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:divider="@color/grey_fragment_buy_background"
+                android:dividerHeight="10dp"
+                >
 
             </com.mga.financing.ui.pullableview.PullableListView>
 

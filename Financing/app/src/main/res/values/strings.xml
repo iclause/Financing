@@ -18,7 +18,7 @@
     <string name="welcome_to_back">欢迎回来！</string>
     <string name="sendinfo">您的收益是我们共同的喜悦</string>
     <string name="password">密码</string>
-    <string name="input_password">请输入登录密码</string>
+    <string name="input_password">请输入密码</string>
     <string name="vfc_login">验证码登录</string>
     <string name="logining">正在登录</string>
     <string name="login">登录</string>
@@ -111,5 +111,17 @@
     <string name="need_charge">需要充值：</string>
     <string name="goto_charge">前往充值</string>
     <string name="charge">充值</string>
+    <string name="dialog_message">提示</string>
+    <string name="friendly_dialog_message">温馨提示</string>
+    <string name="SERVERERRORSTR">服务异常</string>
+    <string name="USER_OPEN_ACCOUNT_FAILED">注册失败</string>
+    <string name="USER_NOT_OPEN_ACCOUNT">用户尚未注册</string>
+    <string name="USER_PASSWORD_ERROR">密码输入错误</string>
+    <string name="USER_DOES_NOT_EXIST">用户不存在</string>
+    <string name="PRODUCT_DOES_NOT_EXIST">产品不存在</string>
+    <string name="OTHER_REASON_FAIL">其他原因错误</string>
+    <string name="request_permissions">请求权限</string>
+    <string name="necessary_permissions">程序运行必要权限</string>
+    <string name="MISS_MISTAKES">未知错误</string>
 
 </resources>

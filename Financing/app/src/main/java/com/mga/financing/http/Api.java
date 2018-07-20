@@ -9,4 +9,9 @@ public class Api {
 
     public static final String LOGIN = "user_login";
     public static final String REGIST = "user_openaccount";
+    public static final String ISREGIST = "user_select";
+    public static final String LIST_PRODUCT = "list_product";
+    public static final String LIST_ALLPRODUCT = "list_allproduct";
+    public static final String PARAM_NEWER_PRODUCT = "recommend";
+    public static final String BUY_PRODUCT = "buy_product";
 }

@@ -4,7 +4,7 @@ package com.mga.financing.bean.request;
  * Created by mga on 2018/4/24 16:50.
  */
 
-public class RegistRequest {
+public class RegistReq {
 
 
     /**

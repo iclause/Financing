@@ -1,8 +1,6 @@
 package com.mga.financing.mvp.main.tab0;
 
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +9,13 @@ import android.widget.TextView;
 import com.mga.financing.R;
 import com.mga.financing.base.presenter.BasePresenter;
 import com.mga.financing.base.view.BaseFragment;
+import com.mga.financing.bean.response.ProductRes;
 import com.mga.financing.constant.NowPrice;
-import com.mga.financing.mvp.BuyGoldenActivity;
+import com.mga.financing.http.Api;
+import com.mga.financing.mvp.buygolden.BuyGoldenActivity;
 import com.mga.financing.mvp.login.LoginFirstActivity;
+import com.mga.financing.mvp.main.tab1.Tab1Contact;
+import com.mga.financing.mvp.main.tab1.Tab1Presenter;
 import com.mga.financing.ui.GlideImageLoader;
 import com.mga.financing.ui.pullableview.PullToRefreshLayout;
 import com.mga.financing.ui.pullableview.PullToRefreshLayout.OnRefreshListener;
@@ -24,12 +26,13 @@ import com.youth.banner.Transformer;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by mga on 2018/4/25 16:07.
  */
 
-public class Tab0Fragment extends BaseFragment implements OnRefreshListener {
+public class Tab0Fragment extends BaseFragment implements OnRefreshListener,Tab1Contact.View {
     private Banner banner;
     private List<Integer> images;
     private List<String> imagespath;
@@ -37,6 +40,7 @@ public class Tab0Fragment extends BaseFragment implements OnRefreshListener {
     private PullToRefreshLayout ptrl;
     private TextView buyTv;
     private TextView goldPriceTv;
+    private Tab1Presenter mTab0Presenter;
 
 
     @Override
@@ -56,10 +60,17 @@ public class Tab0Fragment extends BaseFragment implements OnRefreshListener {
 
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        mTab0Presenter.getProductList(Api.PARAM_NEWER_PRODUCT);
+
+    }
 
     @Override
     protected BasePresenter createPresenter() {
-        return null;
+        mTab0Presenter=new Tab1Presenter(getActivity());
+        return mTab0Presenter;
     }
 
     @Override
@@ -67,10 +78,10 @@ public class Tab0Fragment extends BaseFragment implements OnRefreshListener {
         ptrl = ((PullToRefreshLayout) view.findViewById(R.id.refresh_view));
         ptrl.setOnRefreshListener(this);
         // 第一次进入自动刷新
-        if (isFirstIn) {
-            ptrl.autoRefresh();
-            isFirstIn = false;
-        }
+//        if (isFirstIn) {
+//            ptrl.autoRefresh();
+//            isFirstIn = false;
+//        }
         initbanner(view);
 
         goldPriceTv = (TextView) view.findViewById(R.id.gold_price_tv);
@@ -122,13 +133,7 @@ public class Tab0Fragment extends BaseFragment implements OnRefreshListener {
     @Override
     public void onRefresh(final PullToRefreshLayout pullToRefreshLayout) {
         // 下拉刷新操作
-        new Handler() {
-            @Override
-            public void handleMessage(Message msg) {
-                // 千万别忘了告诉控件刷新完毕了哦！
-                pullToRefreshLayout.refreshFinish(PullToRefreshLayout.SUCCEED);
-            }
-        }.sendEmptyMessageDelayed(0, 2000);
+        mTab0Presenter.getProductList(Api.PARAM_NEWER_PRODUCT);
     }
 
     @Override
@@ -159,4 +164,14 @@ public class Tab0Fragment extends BaseFragment implements OnRefreshListener {
     }
 
 
+    @Override
+    public void refreshOk(List<ProductRes> productResList, Map<Integer, Integer> lettes) {
+//        刷新控件
+        ptrl.refreshFinish(PullToRefreshLayout.SUCCEED);
+    }
+
+    @Override
+    public void refreshFail() {
+
+    }
 }

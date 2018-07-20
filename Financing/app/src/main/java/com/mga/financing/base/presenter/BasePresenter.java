@@ -1,7 +1,5 @@
 package com.mga.financing.base.presenter;
 
-import com.mga.financing.base.bean.BaseNet;
-import com.mga.financing.base.model.Callback;
 import com.mga.financing.base.view.BaseView;
 
 /**
@@ -20,5 +18,5 @@ public interface BasePresenter<V extends BaseView> {
      * 防止内存泄漏
      */
     void detach();
-    void getData(String token, BaseNet baseNet, Callback callback);
+
 }

@@ -146,6 +146,11 @@ public class BindCardActivity2 extends BaseActivity implements LoginContact.View
         return cardNameTv.getText().toString();
     }
 
+    @Override
+    public String getPassWord() {
+        return null;
+    }
+
     private int timeoutlen = 60;
 
     private int UPDATE_TIME = 100;

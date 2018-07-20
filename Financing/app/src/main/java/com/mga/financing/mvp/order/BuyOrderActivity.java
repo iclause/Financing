@@ -1,5 +1,6 @@
 package com.mga.financing.mvp.order;
 
+import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
@@ -30,6 +31,7 @@ public class BuyOrderActivity extends BaseActivity implements BuyOrderContact.Vi
     private TextView wallletBalanceTv;
     private BuyOrderPresenter mBuyOrderPresenter;
     private TextView buyTv;
+    private Bundle buyBundle;
 
     @Override
     protected void setupAppBar() {
@@ -115,7 +117,13 @@ public class BuyOrderActivity extends BaseActivity implements BuyOrderContact.Vi
             case R.id.buy_tv:
                 // TODO: 2018/6/15 买入
                 logi("buy_tv onclick");
-                mBuyOrderPresenter.buy();
+                if(buyBundle==null) {
+                    buyBundle = new Bundle();
+                }
+                buyBundle.putString(BundleKeyConstant.WEIGHT,weightTv.getText().toString());
+                // TODO: 2018/7/20 h5没打通，先采用productid=“1”的产品
+                buyBundle.putString(BundleKeyConstant.PRODUCTID,"1");
+                mBuyOrderPresenter.buy(buyBundle);
                 break;
         }
     }

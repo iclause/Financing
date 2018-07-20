@@ -2,8 +2,9 @@ package com.mga.financing.model;
 
 import com.mga.financing.base.bean.BaseResponse;
 import com.mga.financing.base.model.ObjectLoader;
-import com.mga.financing.bean.request.RegistRequest;
+import com.mga.financing.bean.request.RegistReq;
 import com.mga.financing.http.Api;
+import com.mga.financing.http.HttpResultFunc;
 import com.mga.financing.http.RetrofitServiceManager;
 
 import retrofit2.http.Body;
@@ -22,20 +23,36 @@ public class RegistLoader extends ObjectLoader {
         mRegistService = RetrofitServiceManager.getInstance().create(RegistService.class);
     }
 
-    public Observable<String> regist(RegistRequest registRequest) {
-        return observe(mRegistService.regist(registRequest))
-                .map(new Func1<BaseResponse<String>, String>() {
+    public Observable<Integer> regist(RegistReq registReq) {
+        return observe(mRegistService.regist(registReq))
+                .map(new Func1<BaseResponse<String>, Integer>() {
                     @Override
-                    public String call(BaseResponse<String> s) {
+                    public Integer call(BaseResponse<String> s) {
                         //可以处理对应的逻辑后在返回
-                        return s.getCode();
+                        return Integer.parseInt(s.getCode());
                     }
                 });
     }
 
+    public Observable<Integer> isRegist(RegistReq registReq) {
+//        return observe(mRegistService.isRegist(registReq))
+//                .map(new Func1<BaseResponse<String>, Integer>() {
+//                    @Override
+//                    public Integer call(BaseResponse<String> s) {
+//                        //可以处理对应的逻辑后在返回
+//                        return Integer.parseInt(s.getCode());
+//                    }
+//                });
+        return observe(mRegistService.isRegist(registReq))
+                .map(new HttpResultFunc<Integer>());
+    }
+
     public interface RegistService {
         @POST(Api.REGIST)
-        Observable<BaseResponse<String>> regist(@Body RegistRequest registRequest);
+        Observable<BaseResponse<String>> regist(@Body RegistReq registReq);
+
+        @POST(Api.ISREGIST)
+        Observable<BaseResponse<Integer>> isRegist(@Body RegistReq registReq);
 
     }
 }

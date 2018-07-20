@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -15,26 +16,28 @@
             android:name=".mvp.main.MainActivity"
             android:screenOrientation="portrait"
             >
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN"/>-->
-                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
-            <!--</intent-filter>-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
         <activity android:name=".mvp.login.LoginFirstActivity">
-            <intent-filter>
-            <action android:name="android.intent.action.MAIN"/>
-            <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
+            <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN"/>-->
+            <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+            <!--</intent-filter>-->
         </activity>
         <activity android:name=".mvp.login.LoginPasswordActivity"/>
         <activity android:name=".mvp.login.LoginVfcActivity"/>
         <activity android:name=".mvp.regist.RegistActivity"/>
-        <activity android:name=".mvp.BuyGoldenActivity"/>
+        <activity android:name=".mvp.buygolden.BuyGoldenActivity"/>
         <activity android:name=".mvp.bindCard.BindCardActivity1"/>
         <activity android:name=".mvp.bindCard.BindCardActivity2"/>
         <activity android:name=".mvp.bindCard.BindIdCardActivity"/>
         <activity android:name=".mvp.order.BuyOrderActivity"/>
         <activity android:name=".mvp.charge.ChargeActivity"/>
+        <activity android:name=".mvp.product.ProductH5Activity"/>
+        <activity android:name=".mvp.product.ProductsActivity"/>
 
     </application>
 

@@ -1,4 +1,4 @@
-package com.mga.financing.mvp;
+package com.mga.financing.mvp.buygolden;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -130,6 +130,7 @@ public class BuyGoldenActivity extends BaseActivity {
                 bundle.putString(BundleKeyConstant.PRICE, epTv.getText().toString());
 
                 String bankCardStr = UserInfoManager.readBankCard(this, UserInfoManager.readAccount(this));
+                logi("account :"+UserInfoManager.readAccount(this)+"   bankCardStr"+bankCardStr);
                 if ("".equals(bankCardStr) || !RegexUtils.isBankCard(bankCardStr)) {
                     //绑定银行卡
                  toOtherLayout(BindCardActivity1.class,bundle);

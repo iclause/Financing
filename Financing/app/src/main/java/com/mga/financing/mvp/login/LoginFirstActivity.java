@@ -99,6 +99,11 @@ public class LoginFirstActivity extends BaseActivity implements LoginContact.Vie
     }
 
     @Override
+    public String getPassWord() {
+        return null;
+    }
+
+    @Override
     public void countDown() {
 
     }

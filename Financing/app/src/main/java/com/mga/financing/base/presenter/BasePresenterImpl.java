@@ -1,11 +1,7 @@
 package com.mga.financing.base.presenter;
 
 import android.content.Context;
-import android.util.Log;
 
-import com.mga.financing.base.bean.BaseNet;
-import com.mga.financing.base.model.Callback;
-import com.mga.financing.base.model.DataModel;
 import com.mga.financing.base.view.BaseView;
 
 import java.lang.ref.WeakReference;
@@ -15,7 +11,7 @@ import java.lang.ref.WeakReference;
  */
 
 public abstract class BasePresenterImpl<V extends BaseView> implements BasePresenter {
-    private final Context mContext;
+    protected final Context mContext;
     protected WeakReference<V> mView;
     private String TAG = BasePresenterImpl.class.getSimpleName();
 
@@ -45,16 +41,5 @@ public abstract class BasePresenterImpl<V extends BaseView> implements BasePrese
         return getView() != null;
     }
 
-    @Override
-    public void getData(String token, BaseNet baseNet, Callback callback) {
-        if (baseNet == null) {
-            Log.i(TAG, "basenet==null");
-        }
-        if (getView() == null) {
-            Log.i(TAG, "getView==null");
-        }
-        DataModel.request(token)
-                .params(getView().getContext(), baseNet)
-                .execute(callback);
-    }
+
 }

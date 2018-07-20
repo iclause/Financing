@@ -18,6 +18,7 @@ import com.mga.financing.R;
 import com.mga.financing.base.presenter.BasePresenter;
 import com.mga.financing.ui.CustomDialog;
 import com.mga.financing.utils.AppManager;
+import com.mga.financing.utils.NetCodeShowUtil;
 import com.mga.financing.utils.ToastUtil;
 
 
@@ -275,7 +276,7 @@ public abstract class BaseActivity<A extends BaseActivity, V extends BaseView, T
 
     @Override
     public void showFailReason(int errcode, Intent intent) {
-
+        NetCodeShowUtil.showAndNeJump(getContext(), errcode, intent);
     }
 
 

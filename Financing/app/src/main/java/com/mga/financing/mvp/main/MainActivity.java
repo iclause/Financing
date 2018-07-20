@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.mga.financing.R;
 import com.mga.financing.adapter.MFragmentPagerAdapter;
-import com.mga.financing.bean.LoginBean;
 import com.mga.financing.base.presenter.BasePresenter;
 import com.mga.financing.base.view.BaseActivity;
 import com.mga.financing.mvp.main.tab0.Tab0Fragment;
@@ -116,23 +115,9 @@ public class MainActivity extends BaseActivity implements MainContact.View {
 
             }
         });
-        test();
-        test();
     }
 
-    private void test() {
-        List<LoginBean> list=new ArrayList<>();
-        if(list!=null){
-            logi("list!=null");
-            logi("listsize0="+list.size());
 
-        }else{
-            logi("list==null");
-        }
-        int j=i++;
-        logi("j="+j);
-
-    }
 
     private void initFragments() {
         if (mFragments == null) {

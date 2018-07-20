@@ -12,7 +12,6 @@ import javax.net.ssl.TrustManager;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class RetrofitServiceManager {
@@ -49,8 +48,9 @@ public class RetrofitServiceManager {
         // 创建Retrofit
         mRetrofit = new Retrofit.Builder()
                 .client(builder.build())
+                .addConverterFactory(ResponseConvertFactory.create())
+//                .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl(Api.HOST)
                 .build();
     }

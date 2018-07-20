@@ -13,8 +13,10 @@ import com.mga.financing.base.view.BaseView;
 public class LoginContact {
     public interface View extends BaseView {
         String getPhoneNumber();
-
+        String getPassWord();
         void countDown();
+
+
 
     }
 
@@ -32,17 +34,17 @@ public class LoginContact {
         /**
          * 验证码登录
          */
-        void vfc(String account);
+        void vfc(String account,String vfc);
 
         /**
          * 注册
          */
-        void regist(String account);
+        void regist(String account,String password,String vfc);
 
         /**
          * 语音验证码
          */
-        void audioVfc(String account);
+        void audioVfc(String account,String vfc);
 
 
     }

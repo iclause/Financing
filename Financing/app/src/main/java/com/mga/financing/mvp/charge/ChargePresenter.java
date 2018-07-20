@@ -4,16 +4,13 @@ import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.mga.financing.R;
-import com.mga.financing.base.bean.BaseNet;
-import com.mga.financing.base.model.Callback;
-import com.mga.financing.base.model.Token;
 import com.mga.financing.base.presenter.BasePresenterImpl;
-import com.mga.financing.constant.BundleKeyConstant;
+import com.mga.financing.bean.response.ProductRes;
+import com.mga.financing.model.TestLoader;
 import com.mga.financing.mvp.order.BuyOrderActivity;
-import com.mga.financing.mvp.regist.RegistActivity;
+import com.mga.financing.subscribers.ProgressSubscriber;
 
-import cz.msebera.android.httpclient.Header;
+import java.util.List;
 
 /**
  * Created by mga on 2018/6/15 15:55.
@@ -31,86 +28,33 @@ public class ChargePresenter extends BasePresenterImpl<ChargeContact.View> imple
 
     @Override
     public void submit() {
-        if (isViewAttach()) {
-            getView().showDialog(true, getView().getContext().getResources().getString(R.string.loading));
-        }
-        BaseNet baseNet = new BaseNet();
-        baseNet.setDescription("normal");
-        getData(Token.API_USER_DATA, baseNet, new Callback() {
+        TestLoader mTestLoader=new TestLoader();
+        mTestLoader.listAllProduct().subscribe(new ProgressSubscriber<List<ProductRes>>(mContext){
             @Override
-            public void onSuccess(Object data) {
-                //tologinsecond
-                Log.i(TAG, "onSuccess");
-                if (isViewAttach()) {
-                    getView().showPopDialog();
+            public void onNext(List<ProductRes> productRes) {
+                super.onNext(productRes);
+                if(!isViewAttach()) return;
+                Log.i(TAG,"all_productReslist :"+productRes.toString());
 
-                }
+                getView().showPopDialog();
             }
 
-            @Override
-            public void onFailure(Object data) {
-                //toregist
-                if (isViewAttach()) {
-                    getView().toOtherLayout(RegistActivity.class, new Bundle());
-                }
-            }
-
-            @Override
-            public void onError(int statusCode, Header[] headers, String responseString, Throwable throwable) {
-
-            }
-
-            @Override
-            public void onComplete() {
-                Log.i(TAG, "onComplete");
-                if (isViewAttach()) {
-                    getView().showDialog(false, null);
-                }
-            }
         });
     }
 
     @Override
     public void submitPassword(final Bundle bundle) {
-        if (isViewAttach()) {
-            getView().showDialog(true, getView().getContext().getResources().getString(R.string.loading));
-        }
-        BaseNet baseNet = new BaseNet();
-        baseNet.setDescription("normal");
-        getData(Token.API_USER_DATA, baseNet, new Callback() {
+        TestLoader mTestLoader=new TestLoader();
+        mTestLoader.listAllProduct().subscribe(new ProgressSubscriber<List<ProductRes>>(mContext){
             @Override
-            public void onSuccess(Object data) {
-                //tologinsecond
-                Log.i(TAG, "onSuccess");
-                if (isViewAttach()) {
-                    getView().dismissPopDialog();
-                    Log.i(TAG, "chargeprice = " + bundle.getString(BundleKeyConstant.CHARGE_PRICE).toString());
+            public void onNext(List<ProductRes> productRes) {
+                super.onNext(productRes);
+                if(!isViewAttach()) return;
+                Log.i(TAG,"all_productReslist :"+productRes.toString());
 
-                    getView().toOtherLayout(BuyOrderActivity.class, bundle);
-
-                }
+                getView().toOtherLayout(BuyOrderActivity.class,bundle);
             }
 
-            @Override
-            public void onFailure(Object data) {
-                //toregist
-                if (isViewAttach()) {
-                    getView().toOtherLayout(RegistActivity.class, new Bundle());
-                }
-            }
-
-            @Override
-            public void onError(int statusCode, Header[] headers, String responseString, Throwable throwable) {
-
-            }
-
-            @Override
-            public void onComplete() {
-                Log.i(TAG, "onComplete");
-                if (isViewAttach()) {
-                    getView().showDialog(false, null);
-                }
-            }
         });
     }
 }

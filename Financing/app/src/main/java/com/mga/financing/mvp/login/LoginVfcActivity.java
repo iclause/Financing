@@ -87,7 +87,7 @@ public class LoginVfcActivity extends BaseActivity implements LoginContact.View 
         switch (v.getId()) {
 
             case R.id.vfc_login_tv:
-                mLoginPresenter.vfc(getBundle().getString(BundleKeyConstant.PHONENUMBER));
+                mLoginPresenter.vfc(getBundle().getString(BundleKeyConstant.PHONENUMBER),vfcEt.getText().toString());
                 break;
         }
     }
@@ -104,6 +104,11 @@ public class LoginVfcActivity extends BaseActivity implements LoginContact.View 
             return "";
         }
         return getBundle().getString(BundleKeyConstant.PHONENUMBER);
+    }
+
+    @Override
+    public String getPassWord() {
+        return null;
     }
 
     @Override

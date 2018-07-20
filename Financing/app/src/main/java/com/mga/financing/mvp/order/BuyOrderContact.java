@@ -1,5 +1,7 @@
 package com.mga.financing.mvp.order;
 
+import android.os.Bundle;
+
 import com.mga.financing.base.presenter.BasePresenter;
 import com.mga.financing.base.view.BaseView;
 
@@ -14,7 +16,7 @@ public class BuyOrderContact {
     }
     interface Presenter extends BasePresenter{
 
-        void buy();
+        void buy(Bundle bundle);
 
     }
 }

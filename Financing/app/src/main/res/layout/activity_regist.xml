@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.mga.financing.mvp.main.MainActivity">
 
     <include
@@ -24,9 +24,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/first_regist"
+            android:textColor="@color/black_large_text"
             android:textSize="@dimen/large2"
             android:textStyle="bold"
-            android:textColor="@color/black_large_text"
             />
 
         <TextView
@@ -34,20 +34,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/hello_tv"
+            android:layout_marginTop="18dp"
             android:text="@string/vfc_has_send"
             android:textColor="@color/grey_middle1_text"
-            android:layout_marginTop="18dp"
             android:textSize="@dimen/middle2"
             />
+
         <TextView
             android:id="@+id/phonenumber_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/hello_tv"
+            android:layout_marginTop="18dp"
+            android:layout_toRightOf="@+id/welcome_tv"
             android:text="13516725164"
             android:textColor="@color/black_middle1_text"
-            android:layout_toRightOf="@+id/welcome_tv"
-            android:layout_marginTop="18dp"
             android:textSize="@dimen/middle2"
             />
 
@@ -58,68 +59,121 @@
             android:layout_below="@+id/welcome_tv"
             android:layout_marginTop="74dp"
             >
-            <TextView
-                android:id="@+id/vfc_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/vfc"
-                android:textSize="@dimen/middle2"
-                android:textColor="@color/black_middle1_text"
-                />
 
-            <com.mga.financing.ui.XEditText
-                android:id="@+id/regist_vfc_et"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@+id/vfc_tv"
-                android:background="@null"
-                android:hint="@string/input_vfc"
-                android:textColorHint="@color/grey_middle1_text_input"
-                android:textSize="@dimen/middle2"
-                android:inputType="number"
-                app:x_clearDrawable="@drawable/icon_text_clear"
-                app:x_hidePwdDrawable="@drawable/close_eye_icon"
-                app:x_showPwdDrawable="@drawable/open_eye_icon"
-                />
-            <View
-                android:id="@+id/line"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/orange_line"
-                android:layout_marginTop="6dp"
-                android:layout_below="@id/vfc_tv"
-                />
+            <RelativeLayout
+                android:id="@+id/rl1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/vfc_tv"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/vfc"
+                    android:textColor="@color/black_middle1_text"
+                    android:textSize="@dimen/middle2"
+                    />
+
+                <com.mga.financing.ui.XEditText
+                    android:id="@+id/regist_vfc_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/vfc_tv"
+                    android:background="@null"
+                    android:hint="@string/input_vfc"
+                    android:inputType="number"
+                    android:textColorHint="@color/grey_middle1_text_input"
+                    android:textSize="@dimen/middle2"
+                    app:x_clearDrawable="@drawable/icon_text_clear"
+                    app:x_hidePwdDrawable="@drawable/close_eye_icon"
+                    app:x_showPwdDrawable="@drawable/open_eye_icon"
+                    />
+
+                <View
+                    android:id="@+id/line"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/vfc_tv"
+                    android:layout_marginTop="6dp"
+                    android:background="@color/orange_line"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl2"
+                android:layout_below="@+id/rl1"
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/password_tv"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/password"
+                    android:textColor="@color/black_middle1_text"
+                    android:textSize="@dimen/middle2"
+                    />
+
+                <com.mga.financing.ui.XEditText
+                    android:id="@+id/regist_password_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/password_tv"
+                    android:background="@null"
+                    android:hint="@string/input_password"
+                    android:inputType="textPassword"
+                    android:textColorHint="@color/grey_middle1_text_input"
+                    android:textSize="@dimen/middle2"
+                    app:x_clearDrawable="@drawable/icon_text_clear"
+                    app:x_hidePwdDrawable="@drawable/close_eye_icon"
+                    app:x_showPwdDrawable="@drawable/open_eye_icon"
+                    />
+
+                <View
+                    android:id="@+id/line2"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@id/password_tv"
+                    android:layout_marginTop="6dp"
+                    android:background="@color/orange_line"
+                    />
+            </RelativeLayout>
+
             <TextView
                 android:id="@+id/miss_vfc_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/line"
+                android:layout_below="@+id/rl2"
+                android:layout_marginTop="18dp"
                 android:text="@string/miss_vfc"
                 android:textColor="@color/grey_middle1_text"
-                android:layout_marginTop="18dp"
                 android:textSize="@dimen/middle1"
                 />
+
             <TextView
                 android:id="@+id/audio_get_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/line"
-                android:text="@string/audio_get"
-                android:layout_toRightOf="@id/miss_vfc_tv"
-                android:textColor="@color/orange_line"
+                android:layout_below="@+id/rl2"
                 android:layout_marginTop="18dp"
+                android:layout_toRightOf="@id/miss_vfc_tv"
+                android:text="@string/audio_get"
+                android:textColor="@color/orange_line"
                 android:textSize="@dimen/middle1"
                 />
+
             <TextView
                 android:id="@+id/countdown_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/line"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/rl2"
+                android:layout_marginTop="18dp"
                 android:text="@string/countdown"
                 android:textColor="@color/grey_middle1_text"
-                android:layout_marginTop="18dp"
-                android:layout_alignParentRight="true"
                 android:textSize="@dimen/middle1"
                 />
 
@@ -130,32 +184,33 @@
                 android:layout_height="45dp"
                 android:layout_below="@id/miss_vfc_tv"
                 android:layout_marginTop="14dp"
-                android:background="@drawable/shape_login_btn_unennable"
-                android:text="@string/regist_tv"
+                android:background="@drawable/shape_login_btn_ennable"
                 android:gravity="center"
-                android:textSize="@dimen/middle2"
-                android:enabled="false"
-                android:textColor="@color/white"/>
+                android:text="@string/regist_tv"
+                android:textColor="@color/white"
+                android:textSize="@dimen/middle2"/>
         </RelativeLayout>
+
         <ImageView
             android:id="@+id/ali_iv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/logo_aliyun"
-            android:layout_centerHorizontal="true"
             android:layout_above="@+id/safeinfo_tv"
+            android:layout_centerHorizontal="true"
             android:layout_marginBottom="6dp"
+            android:src="@drawable/logo_aliyun"
             />
+
         <TextView
             android:id="@+id/safeinfo_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/safeinfo"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="16dp"
-            android:textSize="@dimen/small"
+            android:text="@string/safeinfo"
             android:textColor="@color/grey_middle1_text"
+            android:textSize="@dimen/small"
             />
 
 

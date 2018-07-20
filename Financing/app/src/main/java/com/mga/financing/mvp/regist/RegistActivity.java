@@ -1,6 +1,7 @@
 package com.mga.financing.mvp.regist;
 
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.mga.financing.R;
@@ -9,14 +10,17 @@ import com.mga.financing.base.view.BaseActivity;
 import com.mga.financing.constant.BundleKeyConstant;
 import com.mga.financing.mvp.login.LoginContact;
 import com.mga.financing.mvp.login.LoginPresenter;
+import com.mga.financing.utils.ECCUtils;
 
 /**
  * Created by mga on 2018/4/10 16:25.
  */
 
-public class RegistActivity extends BaseActivity implements LoginContact.View{
+public class RegistActivity extends BaseActivity implements LoginContact.View {
     private LoginPresenter mLoginPresenter;
     private TextView registTv;
+    private EditText vfcEt;
+    private EditText registPasswordEt;
 
 
     @Override
@@ -26,8 +30,10 @@ public class RegistActivity extends BaseActivity implements LoginContact.View{
 
     @Override
     protected void initView() {
-       registTv=(TextView)findViewById(R.id.regist_tv);
+        registTv = (TextView) findViewById(R.id.regist_tv);
         registTv.setOnClickListener(this);
+        vfcEt = (EditText) findViewById(R.id.regist_vfc_et);
+        registPasswordEt = (EditText) findViewById(R.id.regist_password_et);
     }
 
     @Override
@@ -40,9 +46,18 @@ public class RegistActivity extends BaseActivity implements LoginContact.View{
     @Override
     public void onClick(View v) {
         super.onClick(v);
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.regist_tv:
-                mLoginPresenter.regist(getBundle().getString(BundleKeyConstant.PHONENUMBER));
+                if (!ECCUtils.isVertificationCode(vfcEt.getText().toString())) {
+                    showToast("请输入有效验证码");
+                    return;
+                }
+                if (!ECCUtils.isPassword(registPasswordEt.getText().toString())) {
+                    showToast("请输入有效密码");
+                    return;
+                }
+                mLoginPresenter.regist(getBundle().getString(BundleKeyConstant.PHONENUMBER),
+                        registPasswordEt.getText().toString(), vfcEt.getText().toString());
                 break;
         }
     }
@@ -50,10 +65,15 @@ public class RegistActivity extends BaseActivity implements LoginContact.View{
 
     @Override
     public String getPhoneNumber() {
-        if(getBundle()==null){
+        if (getBundle() == null) {
             return "";
         }
         return getBundle().getString(BundleKeyConstant.PHONENUMBER);
+    }
+
+    @Override
+    public String getPassWord() {
+        return registPasswordEt.getText().toString();
     }
 
     @Override
