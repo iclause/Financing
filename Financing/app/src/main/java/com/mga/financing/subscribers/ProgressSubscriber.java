@@ -20,13 +20,14 @@ import rx.Subscriber;
  * 调用者自己对请求数据进行处理
  */
 public class ProgressSubscriber<T> extends Subscriber<T> implements ProgressCancelListener {
-
+    private SubscriberOnNextListener mSubscriberOnNextListener;
     private ProgressDialogHandler mProgressDialogHandler;
 
     private Context context;
     private String TAG = getClass().getSimpleName();
 
-    public ProgressSubscriber( Context context) {
+    public ProgressSubscriber( SubscriberOnNextListener mSubscriberOnNextListener,Context context) {
+        this.mSubscriberOnNextListener = mSubscriberOnNextListener;
         this.context = context;
         mProgressDialogHandler = new ProgressDialogHandler(context, this, true);
     }
@@ -79,10 +80,13 @@ public class ProgressSubscriber<T> extends Subscriber<T> implements ProgressCanc
         } else if (e instanceof ApiException) {
             //业务错误码处理，实现类处理
             Log.i(TAG,"业务错误码 ApiException :"+((ApiException) e).getCode());
+            if (mSubscriberOnNextListener != null) {
+                mSubscriberOnNextListener.onError((ApiException)e);
+            }
         } else {
             //其他错误码处理
             Log.i(TAG,"其他Exception :"+e.toString()+e.getCause()+e.getLocalizedMessage());
-            Toast.makeText(context, "error:" + e.getMessage()+e.toString(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "error:" +e.toString(), Toast.LENGTH_SHORT).show();
         }
         dismissProgressDialog();
 
@@ -95,7 +99,9 @@ public class ProgressSubscriber<T> extends Subscriber<T> implements ProgressCanc
      */
     @Override
     public void onNext(T t) {
-
+        if (mSubscriberOnNextListener != null) {
+            mSubscriberOnNextListener.onNext(t);
+        }
     }
 
     /**

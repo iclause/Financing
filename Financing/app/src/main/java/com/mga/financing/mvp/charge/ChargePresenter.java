@@ -1,14 +1,18 @@
 package com.mga.financing.mvp.charge;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 
 import com.mga.financing.base.presenter.BasePresenterImpl;
 import com.mga.financing.bean.response.ProductRes;
+import com.mga.financing.http.ApiException;
 import com.mga.financing.model.TestLoader;
 import com.mga.financing.mvp.order.BuyOrderActivity;
 import com.mga.financing.subscribers.ProgressSubscriber;
+import com.mga.financing.subscribers.SubscriberOnNextListener;
+import com.mga.financing.utils.AppManager;
 
 import java.util.List;
 
@@ -20,6 +24,7 @@ public class ChargePresenter extends BasePresenterImpl<ChargeContact.View> imple
 
     private final Context mContext;
     private String TAG = getClass().getSimpleName();
+    private SubscriberOnNextListener<List<ProductRes>> testOnNextLis;
 
     public ChargePresenter(Context context) {
         super(context);
@@ -29,32 +34,46 @@ public class ChargePresenter extends BasePresenterImpl<ChargeContact.View> imple
     @Override
     public void submit() {
         TestLoader mTestLoader=new TestLoader();
-        mTestLoader.listAllProduct().subscribe(new ProgressSubscriber<List<ProductRes>>(mContext){
+
+        testOnNextLis=new SubscriberOnNextListener<List<ProductRes>>() {
+
             @Override
             public void onNext(List<ProductRes> productRes) {
-                super.onNext(productRes);
                 if(!isViewAttach()) return;
                 Log.i(TAG,"all_productReslist :"+productRes.toString());
-
                 getView().showPopDialog();
             }
 
-        });
+            @Override
+            public void onError(ApiException e) {
+                if (!isViewAttach()) return;
+                getView().showFailReason(e.getCode(), null);
+            }
+        };
+        mTestLoader.listAllProduct().subscribe(new ProgressSubscriber<List<ProductRes>>(testOnNextLis,mContext));
     }
 
     @Override
     public void submitPassword(final Bundle bundle) {
         TestLoader mTestLoader=new TestLoader();
-        mTestLoader.listAllProduct().subscribe(new ProgressSubscriber<List<ProductRes>>(mContext){
+
+        testOnNextLis=new SubscriberOnNextListener<List<ProductRes>>() {
+
             @Override
             public void onNext(List<ProductRes> productRes) {
-                super.onNext(productRes);
                 if(!isViewAttach()) return;
                 Log.i(TAG,"all_productReslist :"+productRes.toString());
 
                 getView().toOtherLayout(BuyOrderActivity.class,bundle);
+                AppManager.finishActivity((Activity)mContext);
             }
 
-        });
+            @Override
+            public void onError(ApiException e) {
+                if (!isViewAttach()) return;
+                getView().showFailReason(e.getCode(), null);
+            }
+        };
+        mTestLoader.listAllProduct().subscribe(new ProgressSubscriber<List<ProductRes>>(testOnNextLis,mContext));
     }
 }

@@ -1,15 +1,19 @@
 package com.mga.financing.mvp.bindCard;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 
 import com.mga.financing.bean.response.ProductRes;
 import com.mga.financing.constant.BundleKeyConstant;
+import com.mga.financing.http.ApiException;
 import com.mga.financing.model.TestLoader;
 import com.mga.financing.mvp.login.LoginPresenter;
 import com.mga.financing.mvp.order.BuyOrderActivity;
 import com.mga.financing.subscribers.ProgressSubscriber;
+import com.mga.financing.subscribers.SubscriberOnNextListener;
+import com.mga.financing.utils.AppManager;
 import com.mga.financing.utils.UserInfoManager;
 
 import java.util.List;
@@ -21,6 +25,7 @@ import java.util.List;
 public class BindPresenter extends LoginPresenter implements BindContact.Presenter {
     private String TAG = getClass().getSimpleName();
     private Bundle mBundle = null;
+    private SubscriberOnNextListener<List<ProductRes>> testOnNextLis;
 
     public BindPresenter(Context context) {
         super(context);
@@ -35,19 +40,26 @@ public class BindPresenter extends LoginPresenter implements BindContact.Present
     public void submitBindCard(final String account, String vfc) {
         // TODO: 2018/4/17 网络请求
         TestLoader mTestLoader=new TestLoader();
-        mTestLoader.listAllProduct().subscribe(new ProgressSubscriber<List<ProductRes>>(mContext){
+
+        testOnNextLis=new SubscriberOnNextListener<List<ProductRes>>() {
+
             @Override
             public void onNext(List<ProductRes> productRes) {
-                super.onNext(productRes);
                 if(!isViewAttach()) return;
-                Log.i(TAG,"all_productReslist :"+productRes.toString());
                 Log.i(TAG,"save bankcard :"+mBundle.getString(BundleKeyConstant.BANKCARD));
                 UserInfoManager.saveBankCard(mContext,UserInfoManager.readAccount(mContext),mBundle.getString(BundleKeyConstant.BANKCARD));
 
                 Log.i(TAG,"account :"+account+"  read bankcard :"+UserInfoManager.readBankCard(mContext,account));
                 getView().toOtherLayout(BuyOrderActivity.class,mBundle);
+                AppManager.finishActivity((Activity)mContext);
             }
 
-        });
+            @Override
+            public void onError(ApiException e) {
+                if (!isViewAttach()) return;
+                getView().showFailReason(e.getCode(), null);
+            }
+        };
+        mTestLoader.listAllProduct().subscribe(new ProgressSubscriber<List<ProductRes>>(testOnNextLis,mContext));
     }
 }

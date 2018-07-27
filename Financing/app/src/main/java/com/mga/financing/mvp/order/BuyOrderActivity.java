@@ -20,8 +20,8 @@ import com.mga.financing.mvp.charge.ChargeActivity;
 public class BuyOrderActivity extends BaseActivity implements BuyOrderContact.View{
 
     private TextView goToChargeTv;
-    private float bankBalance = (float) 0.00;
-    private float order = (float) 256.00;
+    private float bankBalance = (float) 0.00; //余额
+    private float order = (float) 256.00; //订单金额
     private RelativeLayout buyRl;
     private RelativeLayout chargeRl;
     private TextView priceTv;
@@ -43,6 +43,7 @@ public class BuyOrderActivity extends BaseActivity implements BuyOrderContact.Vi
     @Override
     protected void initialize() {
         super.initialize();
+        mBuyOrderPresenter.queryBalance();
         // TODO: 2018/6/13 获取银行卡余额
     }
 
@@ -67,7 +68,7 @@ public class BuyOrderActivity extends BaseActivity implements BuyOrderContact.Vi
         }
         String chargePrice=getBundle().getString(BundleKeyConstant.CHARGE_PRICE,"0.00元").toString();
         chargePrice=chargePrice.substring(0,chargePrice.indexOf("元"));
-        bankBalance=Float.valueOf(chargePrice);
+
         logi("bankBalance="+bankBalance);
 
         weightTv = (TextView) findViewById(R.id.weight_tv);
@@ -102,6 +103,14 @@ public class BuyOrderActivity extends BaseActivity implements BuyOrderContact.Vi
     }
 
     @Override
+    public void showBalance(String balance) {
+        logi("bankBalance="+bankBalance);
+        bankBalance=Float.valueOf(balance);
+        wallletBalanceTv.setText(balance);
+        judgeIsCharge();
+    }
+
+    @Override
     protected BasePresenter createPresenter() {
         mBuyOrderPresenter =new BuyOrderPresenter(this);
         return mBuyOrderPresenter;
@@ -132,7 +141,7 @@ public class BuyOrderActivity extends BaseActivity implements BuyOrderContact.Vi
     protected void onResume() {
         super.onResume();
         // TODO: 2018/6/13  获取银行卡余额
-
+        mBuyOrderPresenter.queryBalance();
         judgeIsCharge();
     }
 }

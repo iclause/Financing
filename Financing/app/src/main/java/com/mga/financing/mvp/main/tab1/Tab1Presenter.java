@@ -27,6 +27,8 @@ public class Tab1Presenter extends BasePresenterImpl<Tab1Contact.View> implement
     private HashMap<Integer,Integer> mLettes=new HashMap<>();
     private SubscriberOnNextListener<List<ProductRes>> mSubscriberOnNextListener;
     private ProductReq productReq;
+    private SubscriberOnNextListener<List<ProductRes>> allProductListOnNextLis;
+    private SubscriberOnNextListener<List<ProductRes>> productListOnNextLis;
 
     public Tab1Presenter(Context context) {
         super(context);
@@ -35,10 +37,10 @@ public class Tab1Presenter extends BasePresenterImpl<Tab1Contact.View> implement
 
     @Override
     public void getAllProductList() {
-        mProductLoader.listAllProduct().subscribe(new ProgressSubscriber<List<ProductRes>>(mContext){
+        allProductListOnNextLis=new SubscriberOnNextListener<List<ProductRes>>() {
+
             @Override
             public void onNext(List<ProductRes> productRes) {
-                super.onNext(productRes);
                 if(!isViewAttach()) return;
                 Log.i(TAG,"all_productReslist :"+productRes.toString());
 //                if (!isViewAttach()) return;
@@ -55,7 +57,13 @@ public class Tab1Presenter extends BasePresenterImpl<Tab1Contact.View> implement
                 getView().refreshOk(productRes,mLettes);
             }
 
-        });
+            @Override
+            public void onError(ApiException e) {
+                if (!isViewAttach()) return;
+                getView().showFailReason(e.getCode(), null);
+            }
+        };
+        mProductLoader.listAllProduct().subscribe(new ProgressSubscriber<List<ProductRes>>(allProductListOnNextLis,mContext));
     }
 
     @Override
@@ -64,33 +72,26 @@ public class Tab1Presenter extends BasePresenterImpl<Tab1Contact.View> implement
              productReq=new ProductReq();
         }
         productReq.setProductid(productid);
-        mProductLoader.listProduct(productReq).subscribe(new ProgressSubscriber<List<ProductRes>>(mContext){
+
+        productListOnNextLis=new SubscriberOnNextListener<List<ProductRes>>() {
+
             @Override
             public void onNext(List<ProductRes> productRes) {
-                super.onNext(productRes);
                 Log.i(TAG,"productReslist :\n"+productRes.toString());
                 if(!isViewAttach()) return;
                 getView().refreshOk(productRes,null);
             }
 
             @Override
-            public void onError(Throwable e) {
-                super.onError(e);
-                if(!isViewAttach()) return;
-                if(e instanceof ApiException){
-//                    switch (((ApiException) e).getCode()){
-//                        case NetCode.PRODUCTS_IS_NULL:
-//                            getView().showToast("产品列表为空");
-//                            break;
-//                        default:
-//                            break;
-//                    }
-                    if(((ApiException) e).getCode()== NetCode.PRODUCTS_IS_NULL){
-                        getView().showToast("产品列表为空");
-                    }
+            public void onError(ApiException e) {
+                if (!isViewAttach()) return;
+                if(e.getCode()== NetCode.PRODUCTS_IS_NULL){
+                    getView().showToast("产品列表为空");
                 }
+                getView().showFailReason(e.getCode(), null);
             }
-        });
+        };
+        mProductLoader.listProduct(productReq).subscribe(new ProgressSubscriber<List<ProductRes>>(productListOnNextLis,mContext));
     }
 
 //    private void initData() {

@@ -16,6 +16,7 @@ import com.mga.financing.mvp.main.MainActivity;
 import com.mga.financing.mvp.regist.RegistActivity;
 import com.mga.financing.safe.Md5Encrypt;
 import com.mga.financing.subscribers.ProgressSubscriber;
+import com.mga.financing.subscribers.SubscriberOnNextListener;
 import com.mga.financing.utils.AppManager;
 import com.mga.financing.utils.DevUtils;
 import com.mga.financing.utils.UserInfoManager;
@@ -29,11 +30,16 @@ public class LoginPresenter extends BasePresenterImpl<LoginContact.View> impleme
 
     private static final String TAG = LoginPresenter.class.getSimpleName();
     private final LoginLoader loginLoader;
+    private final RegistLoader registLoader;
     private ProgressSubscriber<String> mProgressSubscriber;
+    private SubscriberOnNextListener<Integer> registOnNextLis;
+    private SubscriberOnNextListener<String> loginOnNextLis;
+    private SubscriberOnNextListener<Integer> checkIsRegistOnNextLis;
 
     public LoginPresenter(Context context) {
         super(context);
         loginLoader=new LoginLoader();
+        registLoader=new RegistLoader();
 
     }
 
@@ -44,20 +50,20 @@ public class LoginPresenter extends BasePresenterImpl<LoginContact.View> impleme
         if (!isViewAttach()) return;
         RegistReq registReq = new RegistReq();
         registReq.setBindnumber(getView().getPhoneNumber());
-        new RegistLoader().isRegist(registReq).subscribe(new ProgressSubscriber<Integer>(mContext) {
+
+        checkIsRegistOnNextLis=new SubscriberOnNextListener<Integer>() {
+
             @Override
             public void onNext(Integer integer) {
-                super.onNext(integer);
+
             }
 
             @Override
-            public void onError(Throwable e) {
-                super.onError(e);
+            public void onError(ApiException e) {
                 if (!isViewAttach()) return;
                 Bundle bundle = new Bundle();
                 bundle.putString(BundleKeyConstant.PHONENUMBER, getView().getPhoneNumber());
-                if (e instanceof ApiException) {
-                    switch (((ApiException) e).getCode()) {
+                    switch ( e.getCode()) {
                         case NetCode.USER_NOT_OPEN_ACCOUNT:
                             //注册成功进入到注册界面输入注册验证码
                             getView().toOtherLayout(RegistActivity.class, bundle);
@@ -68,13 +74,14 @@ public class LoginPresenter extends BasePresenterImpl<LoginContact.View> impleme
                             break;
                         default:
                             //显示错误弹窗
-                            getView().showFailReason(((ApiException) e).getCode(), null);
+                            getView().showFailReason(e.getCode(), null);
                             break;
-                    }
 
                 }
+
             }
-        });
+        };
+        new RegistLoader().isRegist(registReq).subscribe(new ProgressSubscriber<Integer>(checkIsRegistOnNextLis,mContext) );
     }
 
     @Override
@@ -87,10 +94,11 @@ public class LoginPresenter extends BasePresenterImpl<LoginContact.View> impleme
         loginReq.setImei(DevUtils.getImei(mContext.getApplicationContext()));
         loginReq.setRegistration_id("170976fa8a8220f42d4");
         loginReq.setDevice_type(DevUtils.DEVICE_TYPE);
-        loginLoader.login(loginReq).subscribe(new ProgressSubscriber<String>(mContext) {
+
+        loginOnNextLis=new SubscriberOnNextListener<String>() {
+
             @Override
             public void onNext(String s) {
-                super.onNext(s);
                 Log.i(TAG,"login str"+s);
 //                保存密码
                 UserInfoManager.saveUserLoginInfo(mContext,account,password);
@@ -101,15 +109,16 @@ public class LoginPresenter extends BasePresenterImpl<LoginContact.View> impleme
                 bundle.putString(BundleKeyConstant.PHONENUMBER, getView().getPhoneNumber());
                 getView().toOtherLayout(MainActivity.class, bundle);
                 AppManager.finishAllActivity();
-
             }
+
             @Override
-            public void onError(Throwable e) {
-                super.onError(e);
-                getView().showFailReason(((ApiException)e).getCode(), null);
-            }
+            public void onError(ApiException e) {
+                if (!isViewAttach()) return;
+                getView().showFailReason(e.getCode(), null);
 
-        });
+            }
+        };
+        loginLoader.login(loginReq).subscribe(new ProgressSubscriber<String>(loginOnNextLis,mContext));
 
     }
 
@@ -134,10 +143,11 @@ public class LoginPresenter extends BasePresenterImpl<LoginContact.View> impleme
         registReq.setImei(DevUtils.getImei(mContext.getApplicationContext()));
         registReq.setRegistration_id("170976fa8a8220f42d4");
         registReq.setDevice_type(DevUtils.DEVICE_TYPE);
-        new RegistLoader().regist(registReq).subscribe(new ProgressSubscriber<Integer>(mContext){
+
+        registOnNextLis=new SubscriberOnNextListener<Integer>() {
+
             @Override
             public void onNext(Integer integer) {
-                super.onNext(integer);
 //                保存密码
                 UserInfoManager.saveUserLoginInfo(mContext,account,password);
                 if (!isViewAttach()) return;
@@ -147,11 +157,13 @@ public class LoginPresenter extends BasePresenterImpl<LoginContact.View> impleme
             }
 
             @Override
-            public void onError(Throwable e) {
-                super.onError(e);
-                getView().showFailReason(((ApiException)e).getCode(), null);
+            public void onError(ApiException e) {
+                if (!isViewAttach()) return;
+                getView().showFailReason(e.getCode(), null);
             }
-        });
+        };
+        registLoader.regist(registReq).subscribe(new ProgressSubscriber<Integer>(registOnNextLis, mContext));
+
     }
 
     @Override

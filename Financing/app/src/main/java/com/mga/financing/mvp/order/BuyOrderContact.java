@@ -13,10 +13,14 @@ public class BuyOrderContact {
 
     interface View extends BaseView{
 
+        void showBalance(String balance);
+
     }
     interface Presenter extends BasePresenter{
 
         void buy(Bundle bundle);
+
+        void queryBalance();
 
     }
 }

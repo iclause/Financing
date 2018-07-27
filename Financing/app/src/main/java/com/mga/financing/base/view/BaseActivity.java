@@ -182,6 +182,12 @@ public abstract class BaseActivity<A extends BaseActivity, V extends BaseView, T
     }
 
     @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        Log.i(TAG, "onNewIntent: ");
+    }
+
+    @Override
     protected void onResume() {
         super.onResume();
 //        JLog.d(TAG, "--->onResume");
