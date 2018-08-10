@@ -8,11 +8,13 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.mga.financing.R;
 import com.mga.financing.base.presenter.BasePresenter;
 import com.mga.financing.base.view.BaseFragment;
+import com.squareup.picasso.Picasso;
 
 /**
  * Created by mga on 2018/4/25 16:07.
@@ -25,6 +27,7 @@ public class Tab2Fragment extends BaseFragment {
     private TextView loading;
     private TextView endLoading;
     private TextView mtitle;
+    private ImageView testIv;
 
     @Override
     public void toOtherLayout(Class aClass, Bundle bundle) {
@@ -53,7 +56,7 @@ public class Tab2Fragment extends BaseFragment {
 
         mWebSettings = mWebview.getSettings();
 
-        mWebview.loadUrl("http://www.baidu.com/");
+        mWebview.loadUrl("http://47.94.107.221:8081/index.jpg");
 
         //设置不用系统浏览器打开,直接显示在当前Webview
         mWebview.setWebViewClient(new WebViewClient() {
@@ -91,13 +94,21 @@ public class Tab2Fragment extends BaseFragment {
             //设置加载前的函数
              @Override
              public void onPageStarted(WebView view, String url, Bitmap favicon) {
-                 System.out.println("开始加载了"); beginLoading.setText("开始加载了");
+                 System.out.println("开始加载了");
+                 beginLoading.setText("开始加载了");
              }
              // /设置结束加载函数
              @Override public void onPageFinished(WebView view, String url) {
                  endLoading.setText("结束加载了");
              }
         });
+
+
+        //图片
+        testIv = (ImageView) view.findViewById(R.id.test_iv);
+        Picasso.with(getContext()).load("http://47.94.107.221:8081/index.jpg").into(testIv);
+
+
 
 
     }

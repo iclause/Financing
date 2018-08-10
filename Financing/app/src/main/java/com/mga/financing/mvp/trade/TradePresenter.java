@@ -1,4 +1,4 @@
-package com.mga.financing.mvp.order;
+package com.mga.financing.mvp.trade;
 
 import android.app.Activity;
 import android.content.Context;
@@ -12,7 +12,7 @@ import com.mga.financing.constant.BundleKeyConstant;
 import com.mga.financing.http.ApiException;
 import com.mga.financing.model.BuyLoader;
 import com.mga.financing.model.TestLoader;
-import com.mga.financing.mvp.main.MainActivity;
+import com.mga.financing.mvp.trade.traderesult.TradeResultActivity;
 import com.mga.financing.subscribers.ProgressSubscriber;
 import com.mga.financing.subscribers.SubscriberOnNextListener;
 import com.mga.financing.utils.AppManager;
@@ -21,24 +21,26 @@ import com.mga.financing.utils.UserInfoManager;
 import java.util.List;
 
 /**
+ * 交易用的presenter
+ * 包含：买入、卖出
  * Created by mga on 2018/6/20 20:03.
  */
 
-public class BuyOrderPresenter extends BasePresenterImpl<BuyOrderContact.View> implements BuyOrderContact.Presenter {
+public class TradePresenter extends BasePresenterImpl<TradeContact.View> implements TradeContact.Presenter {
     private  BuyLoader buyLoader;
     private String TAG = getClass().getSimpleName();
     private BuyReq buyReq;
     private SubscriberOnNextListener<String> buyOnNextLis;
     private SubscriberOnNextListener<List<ProductRes>> testOnNextLis;
 
-    public BuyOrderPresenter(Context context) {
+    public TradePresenter(Context context) {
         super(context);
         buyLoader=new BuyLoader();
     }
 
 
     @Override
-    public void buy(Bundle bundle) {
+    public void buy(final Bundle bundle) {
             buyReq = new BuyReq();
 
         long timestamp=System.currentTimeMillis();
@@ -56,7 +58,8 @@ public class BuyOrderPresenter extends BasePresenterImpl<BuyOrderContact.View> i
             @Override
             public void onNext(String s) {
                 if(!isViewAttach()) return;
-                getView().toOtherLayout(MainActivity.class,null);
+                getView().dismissPopDialog();
+                getView().toOtherLayout(TradeResultActivity.class,bundle);
                 AppManager.finishActivity((Activity)mContext);
             }
 
@@ -67,6 +70,11 @@ public class BuyOrderPresenter extends BasePresenterImpl<BuyOrderContact.View> i
             }
         };
         buyLoader.buy(buyReq).subscribe(new ProgressSubscriber<String>(buyOnNextLis,mContext));
+    }
+
+    @Override
+    public void sell(Bundle bundle) {
+
     }
 
     @Override

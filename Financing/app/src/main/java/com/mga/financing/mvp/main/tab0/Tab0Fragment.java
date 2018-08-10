@@ -61,9 +61,15 @@ public class Tab0Fragment extends BaseFragment implements OnRefreshListener,Tab1
     }
 
     @Override
+    public void onStart() {
+        super.onStart();
+        mTab0Presenter.getProductList(Api.PARAM_NEWER_PRODUCT);
+
+    }
+
+    @Override
     public void onResume() {
         super.onResume();
-        mTab0Presenter.getProductList(Api.PARAM_NEWER_PRODUCT);
 
     }
 

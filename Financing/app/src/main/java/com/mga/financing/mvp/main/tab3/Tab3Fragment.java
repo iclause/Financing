@@ -4,10 +4,12 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import com.mga.financing.R;
 import com.mga.financing.base.presenter.BasePresenter;
 import com.mga.financing.base.view.BaseFragment;
+import com.mga.financing.mvp.trade.sell.GoldenAssetsActivity;
 import com.mga.financing.ui.pullableview.PullToRefreshLayout;
 import com.mga.financing.ui.pullableview.PullToRefreshLayout.OnRefreshListener;
 
@@ -17,11 +19,9 @@ import com.mga.financing.ui.pullableview.PullToRefreshLayout.OnRefreshListener;
 
 public class Tab3Fragment extends BaseFragment implements OnRefreshListener {
     private PullToRefreshLayout pullToRefreshLayout;
+    private LinearLayout goldenAssetsLl;
 
-    @Override
-    public void toOtherLayout(Class aClass, Bundle bundle) {
 
-    }
 
     @Override
     protected int bindLayout() {
@@ -37,6 +37,9 @@ public class Tab3Fragment extends BaseFragment implements OnRefreshListener {
     protected void initView(View view, Bundle savedInstanceState) {
         pullToRefreshLayout=(PullToRefreshLayout) view.findViewById(R.id.refresh_view);
         pullToRefreshLayout.setOnRefreshListener(this);
+        goldenAssetsLl=(LinearLayout) view.findViewById(R.id.golden_assets_ll);
+        goldenAssetsLl.setOnClickListener(this);
+
     }
 
     @Override
@@ -59,6 +62,15 @@ public class Tab3Fragment extends BaseFragment implements OnRefreshListener {
 
     @Override
     public void onClick(View v) {
+     switch (v.getId()){
+         case R.id.golden_assets_ll:
+//             showToast("golden_assets_ll onclick");
+          toOtherLayout(GoldenAssetsActivity.class,null);
+             break;
 
+         default:
+
+             break;
+     }
     }
 }

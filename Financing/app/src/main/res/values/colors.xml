@@ -7,6 +7,7 @@
 
     //登录界面
 
+    <color name="black">#000000</color>
     <color name="black_large_text">#3A3A3A</color>
     <color name="black_middle1_text">#333333</color>
     <color name="grey_middle1_text">#949494</color>
@@ -17,16 +18,21 @@
     <color name="orange_loginbtn_enable">#FFA51A</color>
     <color name="orange_fg_item">#FF9B0B</color>
     <color name="orange_wallet_balance">#EBB100</color>
+    <color name="orange_fg3_text">#FF9900</color>
     <color name="orange_banner_bg">#FFF7EA</color>
     <color name="orange_banner_text">#F79F23</color>
     <color name="blue_fg1_item">#4C93E5</color>
     <color name="grey_fragment_small_text">#BCBCBC</color>
     <color name="red_fragment_small_text">#FF3D3D</color>
     <color name="grey_fragment_buy_background">#F2F2F6</color>
+    <color name="grey_trade_done_background">#F5F5F5</color>
     <color name="grey_bg">#F2F2F6</color>
+    <color name="grey_fg3_text">#C0C0C0</color>
     <color name="style_window_background">#212121</color>
     <color name="orange_real_tiem_golden_price">#FF701A</color>
     <color name="orange_btn">#FEA848</color>
     <color name="grey_btn">#BCBCBC</color>
     <color name="blue_dialog_button_text">#037BFF</color>
+    <color name="yellow">#F2B643</color>
+    <color name="yellow_trade_textcolor">#CB8B0F</color>
 </resources>

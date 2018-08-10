@@ -2,18 +2,342 @@
 <com.mga.financing.ui.pullableview.PullToRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                                        android:id="@+id/refresh_view"
                                                        android:layout_width="match_parent"
-                                                       android:layout_height="match_parent" >
+                                                       android:layout_height="match_parent">
 
-    <include layout="@layout/refresh_head" />
+    <include layout="@layout/refresh_head"/>
     <!-- 支持所有实现Pullable接口的View -->
 
     <com.mga.financing.ui.pullableview.PullableScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:background="@color/grey_trade_done_background"
+        >
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                      android:layout_width="match_parent"
+                      android:layout_height="match_parent"
+                      android:background="@color/grey_trade_done_background"
+                      android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="176dp"
+                android:background="@color/yellow"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:orientation="horizontal"
+                    android:paddingRight="9dp"
+                    >
+
+
+                    <TextView
+                        android:id="@+id/user_account_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="136****0672"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/middle1"/>
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_toRightOf="@+id/user_account_tv"
+                        android:src="@drawable/ic_add_deposit_gold_success"/>
+
+                    <TextView
+                        android:id="@+id/done_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="@string/setting"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/middle1"/>
+
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:text="资产总价值（元）"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/middle1"
+                    />
+
+
+                <TextView
+                    android:id="@+id/user_total_asset_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="10dp"
+                    android:text="0.002"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/large2"
+                    />
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/price_per_weight_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="累计利息收益（元）"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/middle1"
+                        />
+
+                    <TextView
+                        android:id="@+id/accumulated_income_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_toRightOf="@+id/price_per_weight_tv"
+                        android:text="0.00"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/middle1"
+                        />
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                >
+
+
+                <LinearLayout
+                    android:id="@+id/golden_assets_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="16dp"
+                    android:paddingLeft="28dp"
+                    android:paddingRight="28dp"
+                    android:paddingTop="16dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="2dp"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="黄金资产（克）"
+                            android:textColor="@color/black_middle1_text"
+                            android:textSize="@dimen/middle1"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="买黄金资产保值有收益"
+                            android:textColor="@color/grey_fg3_text"
+                            android:textSize="@dimen/middle1"
+                            />
+                    </RelativeLayout>
+
+
+
+                        <TextView
+                            android:id="@+id/golden_assets_weight_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="0.003"
+                            android:layout_marginTop="8dp"
+                            android:textColor="@color/orange_fg3_text"
+                            android:textSize="@dimen/large2"/>
+
+                        <TextView
+                            android:id="@+id/golden_assets_price_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="0.8元"
+                            android:layout_marginTop="8dp"
+
+                            android:textColor="@color/grey_middle1_text"
+                            android:textSize="@dimen/middle1"
+                            android:textStyle="bold"/>
+
+
+
+                </LinearLayout>
+
+                <View
+                    style="@style/style_normal_line"
+                    android:layout_width="match_parent"/>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="28dp"
+                    android:layout_marginRight="28dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="2dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/wallet_balance_info_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="钱包余额（元）"
+                        android:textColor="@color/grey_fg3_text"
+                        android:textSize="@dimen/middle1"/>
+
+                    <TextView
+                        android:id="@+id/wallet_balance_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10.00"
+                        android:layout_toRightOf="@+id/wallet_balance_info_tv"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/middle1"
+                        android:layout_marginLeft="4dp"
+                        android:textStyle="bold"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                >
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="16dp"
+                    android:paddingLeft="28dp"
+                    android:paddingRight="28dp"
+                    android:paddingTop="16dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="2dp"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:text="智选投资产（元）"
+                            android:textColor="@color/black_middle1_text"
+                            android:textSize="@dimen/middle1"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="汇丰银行 全称托管"
+                            android:textColor="@color/grey_fg3_text"
+                            android:textSize="@dimen/middle1"
+                            />
+                    </RelativeLayout>
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:text="0.00"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/blue_fg1_item"
+                        android:textSize="@dimen/large2"/>
+
+
+
+
+
+                </LinearLayout>
+
+                <View
+                    style="@style/style_normal_line"
+                    android:layout_width="match_parent"/>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="28dp"
+                    android:layout_marginRight="28dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="2dp"
+                    android:paddingRight="2dp"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/save_balance_info_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="存管余额（元）"
+                        android:textColor="@color/grey_fg3_text"
+                        android:textSize="@dimen/middle1"/>
+
+                    <TextView
+                        android:id="@+id/save_balance_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0.00"
+                        android:layout_toRightOf="@+id/save_balance_info_tv"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/middle1"
+                        android:layout_marginLeft="4dp"
+                        android:textStyle="bold"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="30dp"
+                >
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_bg_gbanker_loge"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
 
 
     </com.mga.financing.ui.pullableview.PullableScrollView>
 
-    <include layout="@layout/load_more" />
+    <include layout="@layout/load_more"/>
 
 </com.mga.financing.ui.pullableview.PullToRefreshLayout>

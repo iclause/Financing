@@ -1,4 +1,4 @@
-package com.mga.financing.mvp.order;
+package com.mga.financing.mvp.trade.buy;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -12,12 +12,15 @@ import com.mga.financing.base.view.BaseActivity;
 import com.mga.financing.constant.BundleKeyConstant;
 import com.mga.financing.constant.NowPrice;
 import com.mga.financing.mvp.charge.ChargeActivity;
+import com.mga.financing.mvp.trade.TradeContact;
+import com.mga.financing.mvp.trade.TradePresenter;
+import com.mga.financing.ui.BuyPopupDialog;
 
 /**
  * Created by mga on 2018/6/12 17:32.
  */
 
-public class BuyOrderActivity extends BaseActivity implements BuyOrderContact.View{
+public class BuyActivity extends BaseActivity implements TradeContact.View{
 
     private TextView goToChargeTv;
     private float bankBalance = (float) 0.00; //余额
@@ -29,9 +32,10 @@ public class BuyOrderActivity extends BaseActivity implements BuyOrderContact.Vi
     private TextView needChargeTv;
     private TextView nowPriceTv2;
     private TextView wallletBalanceTv;
-    private BuyOrderPresenter mBuyOrderPresenter;
+    private TradePresenter mTradePresenter;
     private TextView buyTv;
     private Bundle buyBundle;
+    private BuyPopupDialog mBuyPopDialog;
 
     @Override
     protected void setupAppBar() {
@@ -43,7 +47,7 @@ public class BuyOrderActivity extends BaseActivity implements BuyOrderContact.Vi
     @Override
     protected void initialize() {
         super.initialize();
-        mBuyOrderPresenter.queryBalance();
+        mTradePresenter.queryBalance();
         // TODO: 2018/6/13 获取银行卡余额
     }
 
@@ -112,8 +116,8 @@ public class BuyOrderActivity extends BaseActivity implements BuyOrderContact.Vi
 
     @Override
     protected BasePresenter createPresenter() {
-        mBuyOrderPresenter =new BuyOrderPresenter(this);
-        return mBuyOrderPresenter;
+        mTradePresenter =new TradePresenter(this);
+        return mTradePresenter;
     }
 
     @Override
@@ -126,22 +130,38 @@ public class BuyOrderActivity extends BaseActivity implements BuyOrderContact.Vi
             case R.id.buy_tv:
                 // TODO: 2018/6/15 买入
                 logi("buy_tv onclick");
-                if(buyBundle==null) {
-                    buyBundle = new Bundle();
-                }
-                buyBundle.putString(BundleKeyConstant.WEIGHT,weightTv.getText().toString());
-                // TODO: 2018/7/20 h5没打通，先采用productid=“1”的产品
-                buyBundle.putString(BundleKeyConstant.PRODUCTID,"1");
-                mBuyOrderPresenter.buy(buyBundle);
+
+                showPopDialog();
+
+//                mTradePresenter.buy(buyBundle);
                 break;
         }
     }
+    @Override
+    public void showPopDialog() {
+        if(buyBundle==null) {
+            buyBundle = new Bundle();
+        }
+        buyBundle.putString(BundleKeyConstant.WEIGHT,weightTv.getText().toString());
+        // TODO: 2018/7/20 h5没打通，先采用productid=“1”的产品
+        buyBundle.putString(BundleKeyConstant.PRODUCTID,"1");
+        buyBundle.putString(BundleKeyConstant.BUY_PRICE,priceTv.getText().toString());
+        mBuyPopDialog=new BuyPopupDialog(this,mTradePresenter,buyBundle);
+        mBuyPopDialog.show();
+    }
 
+    @Override
+    public void dismissPopDialog() {
+        if(mBuyPopDialog!=null&&mBuyPopDialog.isShowing()){
+            mBuyPopDialog.dismiss();
+            mBuyPopDialog=null;
+        }
+    }
     @Override
     protected void onResume() {
         super.onResume();
         // TODO: 2018/6/13  获取银行卡余额
-        mBuyOrderPresenter.queryBalance();
+        mTradePresenter.queryBalance();
         judgeIsCharge();
     }
 }

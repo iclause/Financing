@@ -19,7 +19,7 @@ public class NetCode {
     public static final int PRODUCT_DOES_NOT_EXIST = 20000031;
     public static final int OTHER_REASON_FAIL = 20000032;
     //产品查询
-    public static final int PRODUCTS_IS_NULL = 00040003;
+    public static final int PRODUCTS_IS_NULL = 40000003;
 
 
 }

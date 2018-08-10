@@ -5,7 +5,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatDialog;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,21 +17,21 @@ import android.widget.TextView;
 
 import com.mga.financing.R;
 import com.mga.financing.constant.BundleKeyConstant;
-import com.mga.financing.mvp.charge.ChargePresenter;
+import com.mga.financing.mvp.trade.TradePresenter;
 
 
 /**
  * 充值密码输入框
  * Created by Administrator on 2016/12/22.
  */
-public class MPopupDialog extends AppCompatDialog implements View.OnClickListener {
-    private final ChargePresenter mPresenter;
+public class BuyPopupDialog extends AppCompatDialog implements View.OnClickListener {
+    private final TradePresenter mPresenter;
     private final Bundle mBundle;
     private ListView mListview;
     private Button sendBtn;
     private Context mContext;
     private TextView title;
-    private String TAG = MPopupDialog.class.getName();
+    private String TAG = BuyPopupDialog.class.getName();
     private ProgressDialog mProgressDialog;
     public static final int DIALOGTOANSWERFLAG=1;
     private TextView chargeNumTv;
@@ -40,18 +39,18 @@ public class MPopupDialog extends AppCompatDialog implements View.OnClickListene
     private TextView userBankCardInfoTv;
     private TextView confirmTv;
 
-    public MPopupDialog(Context context, ChargePresenter chargePresenter, Bundle bundle) {
+    public BuyPopupDialog(Context context, TradePresenter tradePresenter, Bundle bundle) {
         super(context, R.style.MPopupDialog);
         this.mContext = context;
-        this.mPresenter=chargePresenter;
+        this.mPresenter=tradePresenter;
         this.mBundle=bundle;
         setMsgDialog();
     }
 
     private void setMsgDialog() {
-        View mView = LayoutInflater.from(getContext()).inflate(R.layout.popupdialog, null);
+        View mView = LayoutInflater.from(getContext()).inflate(R.layout.buy_popupdialog, null);
         chargeNumTv = (TextView) mView.findViewById(R.id.charge_num_tv);
-        chargeNumTv.setText(mBundle.getString(BundleKeyConstant.CHARGE_PRICE,"0.00"));
+        chargeNumTv.setText(mBundle.getString(BundleKeyConstant.BUY_PRICE,"0.00"));
         userBankCardInfoTv = (TextView) mView.findViewById(R.id.use_bankcard_info_tv);
         confirmTv = (TextView) mView.findViewById(R.id.confirm_tv);
         confirmTv.setOnClickListener(this);
@@ -82,9 +81,7 @@ public class MPopupDialog extends AppCompatDialog implements View.OnClickListene
         switch (v.getId()) {
             case R.id.confirm_tv:
                 // TODO: 2018/6/15  提交支付密码
-                mBundle.putString(BundleKeyConstant.CHARGE_PRICE,chargeNumTv.getText().toString());
-                Log.i(TAG,"chargeprice = "+chargeNumTv.getText().toString());
-                mPresenter.submitPassword(mBundle);
+                mPresenter.buy(mBundle);
                 break;
 
         }

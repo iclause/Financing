@@ -71,11 +71,13 @@
     <string name="expect_price">预计金额</string>
     <string name="caculate_rate_date">计息日</string>
     <string name="check_notice">查看买入提示</string>
+    <string name="check_sell_out_notice">查看卖出提示</string>
     <string name="have_read">我已阅读并同意</string>
     <string name="golden_protocal">流动金-黄金消费综合服务协议</string>
     <string name="read_agree_golden_protocal">阅读并同意流动金-黄金消费综合服务协议</string>
     <string name="china_unicom">中华联合财险承保用户黄金财产安全，请放心交易</string>
     <string name="confirm_order">确认下单</string>
+    <string name="confirm_sell">确认卖出</string>
     <string name="confirm">确认</string>
     <string name="bind_info">黄金钱包只支持绑定一张银行卡，该银行卡将是您在黄金钱包唯一的资金出口。即使手机丢失、账号被盗，您的钱也只能回到您自己的银行卡中，最大程度保障您的资产安全。</string>
     <string name="bind_notice">绑卡提示</string>
@@ -123,5 +125,8 @@
     <string name="request_permissions">请求权限</string>
     <string name="necessary_permissions">程序运行必要权限</string>
     <string name="MISS_MISTAKES">未知错误</string>
+    <string name="buy_ok">成功买入黄金</string>
+    <string name="done">完成</string>
+    <string name="setting">设置</string>
 
 </resources>

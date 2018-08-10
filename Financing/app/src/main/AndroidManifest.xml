@@ -16,10 +16,10 @@
             android:name=".mvp.main.MainActivity"
             android:screenOrientation="portrait"
             >
-            <!--<intent-filter>-->
-                <!--<action android:name="android.intent.action.MAIN"/>-->
-                <!--<category android:name="android.intent.category.LAUNCHER"/>-->
-            <!--</intent-filter>-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
         </activity>
         <activity android:name=".mvp.login.LoginFirstActivity">
             <!--<intent-filter>-->
@@ -34,17 +34,18 @@
         <activity android:name=".mvp.bindCard.BindCardActivity1"/>
         <activity android:name=".mvp.bindCard.BindCardActivity2"/>
         <activity android:name=".mvp.bindCard.BindIdCardActivity"/>
-        <activity android:name=".mvp.order.BuyOrderActivity"
-                  android:launchMode="singleInstance"/>
+        <activity
+            android:name=".mvp.trade.buy.BuyActivity"
+            android:launchMode="singleInstance"/>
         <activity android:name=".mvp.charge.ChargeActivity"/>
         <activity android:name=".mvp.product.ProductH5Activity"/>
         <activity android:name=".mvp.product.ProductsActivity"/>
-        <activity android:name=".mvp.main.TestActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
+        <activity android:name=".mvp.main.TestActivity"/>
+        <activity android:name=".mvp.trade.traderesult.TradeResultActivity"/>
+        <activity
+            android:name=".mvp.trade.sell.SellActivity"
+            android:launchMode="singleInstance"/>
+        <activity android:name=".mvp.trade.sell.GoldenAssetsActivity"/>
 
     </application>
 

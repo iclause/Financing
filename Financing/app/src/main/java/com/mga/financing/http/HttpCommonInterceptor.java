@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import okhttp3.FormBody;
 import okhttp3.Interceptor;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -17,6 +18,7 @@ import okhttp3.Response;
  * Created by zhouwei on 16/11/10.
  */
 public class HttpCommonInterceptor implements Interceptor {
+    private static final String TAG ="HttpCommonInterceptor" ;
     private Map<String, String> mHeaderParamsMap = new HashMap<>();
 
     public HttpCommonInterceptor() {
@@ -42,6 +44,29 @@ public class HttpCommonInterceptor implements Interceptor {
             }
         }
         Request newRequest = requestBuilder.build();
+        long startTime = System.currentTimeMillis();
+        okhttp3.Response response = chain.proceed(chain.request());
+        long endTime = System.currentTimeMillis();
+        long duration=endTime-startTime;
+        okhttp3.MediaType mediaType = response.body().contentType();
+        String content = response.body().string();
+        Log.i(TAG,"╔═════════════════════════════════════════════════════Start═══════════════════════════════════════════════════════════");
+        Log.i(TAG, "║ "+newRequest.toString());
+        String method=newRequest.method();
+        if("POST".equals(method)){
+            StringBuilder sb = new StringBuilder();
+            if (newRequest.body() instanceof FormBody) {
+                FormBody body = (FormBody) newRequest.body();
+                for (int i = 0; i < body.size(); i++) {
+                    sb.append(body.encodedName(i) + "=" + body.encodedValue(i) + ",");
+                }
+                sb.delete(sb.length() - 1, sb.length());
+                Log.i(TAG, "║ RequestParams:{"+sb.toString()+"}");
+            }
+        }
+        Log.i(TAG, "║ Response:" + content);
+        Log.i(TAG,"╚═════════════════════════════════════════════════════End:"+duration+"毫秒═════════════════════════════════════════════════════");
+
         return chain.proceed(newRequest);
     }
 

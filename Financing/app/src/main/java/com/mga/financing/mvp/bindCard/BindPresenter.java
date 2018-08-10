@@ -1,6 +1,5 @@
 package com.mga.financing.mvp.bindCard;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,7 +9,7 @@ import com.mga.financing.constant.BundleKeyConstant;
 import com.mga.financing.http.ApiException;
 import com.mga.financing.model.TestLoader;
 import com.mga.financing.mvp.login.LoginPresenter;
-import com.mga.financing.mvp.order.BuyOrderActivity;
+import com.mga.financing.mvp.trade.buy.BuyActivity;
 import com.mga.financing.subscribers.ProgressSubscriber;
 import com.mga.financing.subscribers.SubscriberOnNextListener;
 import com.mga.financing.utils.AppManager;
@@ -50,8 +49,9 @@ public class BindPresenter extends LoginPresenter implements BindContact.Present
                 UserInfoManager.saveBankCard(mContext,UserInfoManager.readAccount(mContext),mBundle.getString(BundleKeyConstant.BANKCARD));
 
                 Log.i(TAG,"account :"+account+"  read bankcard :"+UserInfoManager.readBankCard(mContext,account));
-                getView().toOtherLayout(BuyOrderActivity.class,mBundle);
-                AppManager.finishActivity((Activity)mContext);
+                getView().toOtherLayout(BuyActivity.class,mBundle);
+                AppManager.finishActivity(BindCardActivity2.class);
+                AppManager.finishActivity(BindCardActivity1.class);
             }
 
             @Override

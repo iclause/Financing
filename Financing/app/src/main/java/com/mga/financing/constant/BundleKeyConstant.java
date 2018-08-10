@@ -16,5 +16,6 @@ public class BundleKeyConstant {
     public static final String CHARGE_PRICE ="charge_price" ;
     public static final String TITLE="title";
     public static final String PRODUCTID = "productid";
+    public static final String BUY_PRICE = "buy_price";
     public static final String H5URL = "h5url";
 }

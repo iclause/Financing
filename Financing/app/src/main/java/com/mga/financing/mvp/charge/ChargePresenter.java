@@ -9,7 +9,7 @@ import com.mga.financing.base.presenter.BasePresenterImpl;
 import com.mga.financing.bean.response.ProductRes;
 import com.mga.financing.http.ApiException;
 import com.mga.financing.model.TestLoader;
-import com.mga.financing.mvp.order.BuyOrderActivity;
+import com.mga.financing.mvp.trade.buy.BuyActivity;
 import com.mga.financing.subscribers.ProgressSubscriber;
 import com.mga.financing.subscribers.SubscriberOnNextListener;
 import com.mga.financing.utils.AppManager;
@@ -63,8 +63,8 @@ public class ChargePresenter extends BasePresenterImpl<ChargeContact.View> imple
             public void onNext(List<ProductRes> productRes) {
                 if(!isViewAttach()) return;
                 Log.i(TAG,"all_productReslist :"+productRes.toString());
-
-                getView().toOtherLayout(BuyOrderActivity.class,bundle);
+                getView().dismissPopDialog();
+                getView().toOtherLayout(BuyActivity.class,bundle);
                 AppManager.finishActivity((Activity)mContext);
             }
 

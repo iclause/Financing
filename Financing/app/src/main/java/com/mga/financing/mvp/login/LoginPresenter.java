@@ -81,7 +81,7 @@ public class LoginPresenter extends BasePresenterImpl<LoginContact.View> impleme
 
             }
         };
-        new RegistLoader().isRegist(registReq).subscribe(new ProgressSubscriber<Integer>(checkIsRegistOnNextLis,mContext) );
+        registLoader.isRegist(registReq).subscribe(new ProgressSubscriber<Integer>(checkIsRegistOnNextLis,mContext) );
     }
 
     @Override

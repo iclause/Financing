@@ -86,9 +86,9 @@ public class Tab1Presenter extends BasePresenterImpl<Tab1Contact.View> implement
             public void onError(ApiException e) {
                 if (!isViewAttach()) return;
                 if(e.getCode()== NetCode.PRODUCTS_IS_NULL){
-                    getView().showToast("产品列表为空");
+//                    getView().showToast("产品列表为空");
                 }
-                getView().showFailReason(e.getCode(), null);
+//                getView().showFailReason(e.getCode(), null);
             }
         };
         mProductLoader.listProduct(productReq).subscribe(new ProgressSubscriber<List<ProductRes>>(productListOnNextLis,mContext));

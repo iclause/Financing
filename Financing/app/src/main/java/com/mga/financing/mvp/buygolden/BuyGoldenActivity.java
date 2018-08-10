@@ -15,7 +15,7 @@ import com.mga.financing.base.view.BaseActivity;
 import com.mga.financing.constant.BundleKeyConstant;
 import com.mga.financing.constant.NowPrice;
 import com.mga.financing.mvp.bindCard.BindCardActivity1;
-import com.mga.financing.mvp.order.BuyOrderActivity;
+import com.mga.financing.mvp.trade.buy.BuyActivity;
 import com.mga.financing.utils.RegexUtils;
 import com.mga.financing.utils.UserInfoManager;
 
@@ -136,7 +136,7 @@ public class BuyGoldenActivity extends BaseActivity {
                  toOtherLayout(BindCardActivity1.class,bundle);
                 } else {
                     //至购买订单
-                    toOtherLayout(BuyOrderActivity.class,bundle);
+                    toOtherLayout(BuyActivity.class,bundle);
                 }
                 break;
         }

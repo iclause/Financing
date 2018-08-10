@@ -70,7 +70,7 @@ public class PullToRefreshLayout extends RelativeLayout
 	// 在刷新过程中滑动操作
 	private boolean isTouch = false;
 	// 手指滑动距离与下拉头的滑动距离比，中间会随正切函数变化
-	private float radio = 2;
+	private float radio = 1;
 
 	// 下拉箭头的转180°动画
 	private RotateAnimation rotateAnimation;

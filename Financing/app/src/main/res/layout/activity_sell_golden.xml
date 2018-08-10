@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <include layout="@layout/toolbar"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/grey_fragment_buy_background"
+        >
+
+        <TextView
+            android:id="@+id/real_time_golden_price_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="230.03"
+            android:textColor="@color/orange_real_tiem_golden_price"
+            android:textSize="@dimen/large3"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/real_time_golden_price_tv"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:text="@string/realtime_gold_price"
+            android:textColor="@color/grey_middle1_text"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey_fragment_buy_background"
+        android:paddingBottom="8dp"
+        android:paddingLeft="@dimen/toleft"
+        android:paddingTop="8dp"
+        >
+
+        <TextView
+            android:id="@+id/info1_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="可卖出黄金"
+            android:textColor="@color/grey_middle1_text"
+            android:textSize="@dimen/middle1"
+            />
+
+        <TextView
+            android:id="@+id/sell_out_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/info1_tv"
+            android:text="0.003"
+            android:textColor="#F06040"
+            android:textSize="@dimen/middle1"
+            />
+
+        <TextView
+            android:id="@+id/info2_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/sell_out_tv"
+            android:text="克"
+            android:textColor="@color/grey_middle1_text"
+            android:textSize="@dimen/middle1"
+            />
+
+
+    </RelativeLayout>
+
+
+    <View
+        style="@style/style_bolder_line"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <View
+            style="@style/style_normal_line"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/toleft"
+            android:paddingRight="@dimen/toright">
+
+            <TextView
+                android:id="@+id/weight_or_price_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="卖出克重"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/middle2"/>
+
+            <EditText
+                android:id="@+id/input_sell_weight_et"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:background="@null"
+                android:hint="输入卖出克重"
+                android:phoneNumber="true"
+
+                />
+
+
+        </LinearLayout>
+
+        <View
+            style="@style/style_normal_line"
+            android:layout_marginLeft="@dimen/toleft"
+            android:layout_marginRight="@dimen/toright"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/toleft"
+            android:paddingRight="@dimen/toright">
+
+            <TextView
+                android:id="@+id/expect_price_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="预计收入"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/middle2"/>
+
+            <TextView
+                android:id="@+id/expect_price_tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/wallet_balance_tv"
+                android:layout_weight="3"
+                android:text="0.00元"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/middle2"
+                />
+
+
+        </LinearLayout>
+
+
+        <View
+            style="@style/style_normal_line"
+            />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey_fragment_buy_background"
+        android:paddingLeft="@dimen/toleft"
+        android:paddingRight="@dimen/toright">
+
+
+        <LinearLayout
+            android:id="@+id/notice_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/notice_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/ic_prompt"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/notice_tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/notice_tv"
+                android:gravity="center"
+                android:text="@string/check_sell_out_notice"
+                android:textColor="@color/orange_change_state"
+                />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+   <View
+       style="@style/style_bolder_line"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:background="@color/grey_fragment_small_text"
+        >
+
+        <TextView
+            android:id="@+id/confirm_sell_out_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="false"
+            android:gravity="center"
+            android:text="@string/confirm_sell"
+            android:textColor="@color/white"
+            android:textSize="@dimen/middle3"/>
+    </RelativeLayout>
+
+
+</LinearLayout>
