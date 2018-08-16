@@ -3,6 +3,7 @@ package com.mga.financing.mvp.buygolden;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -54,7 +55,7 @@ public class BuyGoldenActivity extends BaseActivity {
     protected void initView() {
         walletBalanceTv = (TextView) findViewById(R.id.wallet_balance_tv2);
         rtgpTv = (TextView) findViewById(R.id.real_time_golden_price_tv);
-        rtgpTv.setText(NowPrice.price);
+        rtgpTv.setText(NowPrice.getPrice(this));
         wopTv = (TextView) findViewById(R.id.weight_or_price_tv);
         iwopEt = (EditText) findViewById(R.id.input_weight_or_price_et);
         csTv = (TextView) findViewById(R.id.change_state_tv);
@@ -127,7 +128,8 @@ public class BuyGoldenActivity extends BaseActivity {
                 }
                 Bundle bundle = new Bundle();
                 bundle.putString(BundleKeyConstant.WEIGHT, iwopEt.getText().toString());
-                bundle.putString(BundleKeyConstant.PRICE, epTv.getText().toString());
+                Log.i(TAG, "BundleKeyConstant.PRICE: "+epTv.getText().toString().substring(0,epTv.getText().toString().indexOf("元")));
+                bundle.putString(BundleKeyConstant.PRICE, epTv.getText().toString().substring(0,epTv.getText().toString().indexOf("元")));
 
                 String bankCardStr = UserInfoManager.readBankCard(this, UserInfoManager.readAccount(this));
                 logi("account :"+UserInfoManager.readAccount(this)+"   bankCardStr"+bankCardStr);

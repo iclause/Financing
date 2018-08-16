@@ -38,7 +38,7 @@ public class LoginPasswordActivity extends BaseActivity implements LoginContact.
     private EditText passwordEt;
     private TextView loginTv;
     private TextView toVfcLoginTv;
-    private static final int REQUEST_PERMISSION_SEETING = 1;
+    public static final int REQUEST_PERMISSION_SEETING = 1;
 
     @Override
     protected int getLayoutId() {

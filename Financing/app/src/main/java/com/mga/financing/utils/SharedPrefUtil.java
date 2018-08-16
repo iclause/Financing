@@ -17,6 +17,7 @@ public class SharedPrefUtil {
         SharedPreferences sp = mContext.getApplicationContext().getSharedPreferences("ebjarsdk_init_info", Context.MODE_PRIVATE);
         sp.edit().putBoolean("locationcontrol", locationcontrol).commit();
     }
+
     public static String getDeviceName(Context mContext) {
         SharedPreferences sp = mContext.getApplicationContext().getSharedPreferences("ebjarsdk_init_info", Context.MODE_PRIVATE);
         return sp.getString("devicename", "");
@@ -27,11 +28,15 @@ public class SharedPrefUtil {
         sp.edit().putString("device_type", device_type).commit();
     }
 
+    public static String getNowGoldenPrice(Context mContext) {
+        SharedPreferences sp = mContext.getApplicationContext().getSharedPreferences("ebjarsdk_init_info", Context.MODE_PRIVATE);
+        return sp.getString("nowgoldenprice", "");
+    }
 
-
-
-
-
+    public static void setNowGoldenPrice(String now_golden_price, Context mContext) {
+        SharedPreferences sp = mContext.getApplicationContext().getSharedPreferences("ebjarsdk_init_info", Context.MODE_PRIVATE);
+        sp.edit().putString("nowgoldenprice", now_golden_price).commit();
+    }
 
 
 }

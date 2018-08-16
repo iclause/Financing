@@ -59,6 +59,8 @@ public class BindPresenter extends LoginPresenter implements BindContact.Present
                 if (!isViewAttach()) return;
                 getView().showFailReason(e.getCode(), null);
             }
+
+
         };
         mTestLoader.listAllProduct().subscribe(new ProgressSubscriber<List<ProductRes>>(testOnNextLis,mContext));
     }

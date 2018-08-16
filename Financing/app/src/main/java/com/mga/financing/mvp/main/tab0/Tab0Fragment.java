@@ -28,6 +28,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import static com.mga.financing.R.id.gold_price_tv;
+
 /**
  * Created by mga on 2018/4/25 16:07.
  */
@@ -64,6 +66,7 @@ public class Tab0Fragment extends BaseFragment implements OnRefreshListener,Tab1
     public void onStart() {
         super.onStart();
         mTab0Presenter.getProductList(Api.PARAM_NEWER_PRODUCT);
+        mTab0Presenter.queryGoldenPrice();
 
     }
 
@@ -90,8 +93,8 @@ public class Tab0Fragment extends BaseFragment implements OnRefreshListener,Tab1
 //        }
         initbanner(view);
 
-        goldPriceTv = (TextView) view.findViewById(R.id.gold_price_tv);
-        goldPriceTv.setText(NowPrice.price);
+        goldPriceTv = (TextView) view.findViewById(gold_price_tv);
+        goldPriceTv.setText(NowPrice.getPrice(getContext()));
         buyTv = (TextView) view.findViewById(R.id.buy_tv);
         buyTv.setOnClickListener(this);
 
@@ -174,6 +177,11 @@ public class Tab0Fragment extends BaseFragment implements OnRefreshListener,Tab1
     public void refreshOk(List<ProductRes> productResList, Map<Integer, Integer> lettes) {
 //        刷新控件
         ptrl.refreshFinish(PullToRefreshLayout.SUCCEED);
+    }
+
+    @Override
+    public void refreshGoldenPrice(String price) {
+        goldPriceTv.setText(price);
     }
 
     @Override

@@ -1,12 +1,11 @@
 package com.mga.financing.bean.response;
 
-import com.mga.financing.base.bean.BaseNet;
 
 /**
  * Created by mga on 2018/5/10 18:38.
  */
 
-public class ProductRes extends BaseNet {
+public class ProductRes  {
     public String productid; //eg:产品id
     public String productdesc; //eg:
     public String productname;   //eg:1元起购，随时买卖

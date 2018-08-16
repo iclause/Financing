@@ -75,6 +75,11 @@ public class ProductsActivity extends BaseActivity implements Tab1Contact.View {
     }
 
     @Override
+    public void refreshGoldenPrice(String price) {
+//        donothing
+    }
+
+    @Override
     public void refreshFail() {
 
     }

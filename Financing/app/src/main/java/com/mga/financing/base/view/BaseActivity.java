@@ -211,7 +211,6 @@ public abstract class BaseActivity<A extends BaseActivity, V extends BaseView, T
                 AppManager.finishActivity(this);
                 break;
             default:
-
                 break;
         }
     }

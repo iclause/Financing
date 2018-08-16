@@ -80,6 +80,8 @@ public class LoginPresenter extends BasePresenterImpl<LoginContact.View> impleme
                 }
 
             }
+
+
         };
         registLoader.isRegist(registReq).subscribe(new ProgressSubscriber<Integer>(checkIsRegistOnNextLis,mContext) );
     }
@@ -117,6 +119,8 @@ public class LoginPresenter extends BasePresenterImpl<LoginContact.View> impleme
                 getView().showFailReason(e.getCode(), null);
 
             }
+
+
         };
         loginLoader.login(loginReq).subscribe(new ProgressSubscriber<String>(loginOnNextLis,mContext));
 
@@ -134,8 +138,9 @@ public class LoginPresenter extends BasePresenterImpl<LoginContact.View> impleme
 
     @Override
     public void regist(final String account, final String password, String vfc) {
+        Log.i(TAG,"excute regist");
         RegistReq registReq = new RegistReq();
-        registReq.setUserid("ad4a54fa5df5ad5fa5");
+        registReq.setUserid("weixinid"+UserInfoManager.readAccount(mContext));
         registReq.setNickname("zhangsan");
         registReq.setBindnumber(getView().getPhoneNumber());
         registReq.setVerificationcode(vfc);
@@ -149,6 +154,7 @@ public class LoginPresenter extends BasePresenterImpl<LoginContact.View> impleme
             @Override
             public void onNext(Integer integer) {
 //                保存密码
+                Log.i("onNext","integer:"+integer);
                 UserInfoManager.saveUserLoginInfo(mContext,account,password);
                 if (!isViewAttach()) return;
                 Bundle bundle = new Bundle();
@@ -158,9 +164,12 @@ public class LoginPresenter extends BasePresenterImpl<LoginContact.View> impleme
 
             @Override
             public void onError(ApiException e) {
+                Log.i("onNext","ApiException:"+e.getCode());
                 if (!isViewAttach()) return;
                 getView().showFailReason(e.getCode(), null);
             }
+
+
         };
         registLoader.regist(registReq).subscribe(new ProgressSubscriber<Integer>(registOnNextLis, mContext));
 

@@ -47,8 +47,8 @@ public class BuyActivity extends BaseActivity implements TradeContact.View{
     @Override
     protected void initialize() {
         super.initialize();
-        mTradePresenter.queryBalance();
         // TODO: 2018/6/13 获取银行卡余额
+        mTradePresenter.queryBalance();
     }
 
     @Override
@@ -78,17 +78,17 @@ public class BuyActivity extends BaseActivity implements TradeContact.View{
         weightTv = (TextView) findViewById(R.id.weight_tv);
         priceTv = (TextView) findViewById(R.id.price_tv);
         nowPriceTv2 = (TextView) findViewById(R.id.now_price_tv2);
-        nowPriceTv2.setText(NowPrice.price+"元/克");
+        nowPriceTv2.setText(NowPrice.getPrice(this)+"元/克");
         needChargeTv = (TextView) findViewById(R.id.need_charge_num_tv);
         weightTv.setText(getBundle().getString(BundleKeyConstant.WEIGHT,"0克"));
         logi("order all price ="+getBundle().getString(BundleKeyConstant.PRICE,"0.00元"));
         priceTv.setText(getBundle().getString(BundleKeyConstant.PRICE,"0.00元"));
         String orderPrice=getBundle().getString(BundleKeyConstant.PRICE,"0.00元");
-        orderPrice=orderPrice.substring(0,orderPrice.indexOf("元"));
+//        orderPrice=orderPrice.substring(0,orderPrice.indexOf("元"));
         order=Float.valueOf(orderPrice);
         logi("order="+order);
         judgeIsCharge();
-        needChargeTv.setText(getBundle().getString(BundleKeyConstant.PRICE,"0.00元"));
+        needChargeTv.setText(getBundle().getString(BundleKeyConstant.PRICE,"0.00")+"元");
         goToChargeTv = (TextView) findViewById(R.id.goto_charge_tv);
         goToChargeTv.setOnClickListener(this);
 

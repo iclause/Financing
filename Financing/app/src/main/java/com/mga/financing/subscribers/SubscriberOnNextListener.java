@@ -11,4 +11,6 @@ public interface SubscriberOnNextListener<T> {
     void onNext(T t);//业务码成功
 
     void onError(ApiException e);//业务码错误
+
+
 }

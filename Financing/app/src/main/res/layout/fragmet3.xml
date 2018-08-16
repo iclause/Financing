@@ -20,12 +20,14 @@
                       android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/has_user_ll"
                 android:layout_width="match_parent"
                 android:layout_height="176dp"
                 android:background="@color/yellow"
                 android:orientation="vertical"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
+                android:visibility="gone"
                 >
 
                 <RelativeLayout
@@ -115,6 +117,34 @@
 
 
             </LinearLayout>
+        <LinearLayout
+            android:id="@+id/no_user_ll"
+            android:layout_width="match_parent"
+            android:layout_height="176dp"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:gravity="center"
+            android:visibility="gone"
+            >
+
+            <TextView
+                android:id="@+id/user_login_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_below="@id/line"
+                android:layout_marginTop="14dp"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:background="@drawable/shape_login_btn_ennable"
+                android:text="登录或注册"
+                android:gravity="center"
+                android:textSize="@dimen/middle3"
+                android:textColor="@color/white"/>
+
+            </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"

@@ -15,7 +15,7 @@ public class Tab1Contact {
    public interface View extends BaseView {
         void refreshOk(List<ProductRes> productResList, Map<Integer,Integer> lettes);
 
-
+        void refreshGoldenPrice(String price);
         void refreshFail();
 
     }
@@ -23,5 +23,6 @@ public class Tab1Contact {
     interface Presenter extends BasePresenter {
         void getAllProductList();//获取所有产品
         void getProductList(String productid);//获取某些产品
+        void queryGoldenPrice();
     }
 }

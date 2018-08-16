@@ -153,11 +153,12 @@
                     android:textSize="@dimen/middle1"/>
 
                 <TextView
+                    android:id="@+id/gold_price_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="3dp"
-                    android:text="0.53"
+                    android:text="0.00"
                     android:textColor="@color/black_middle1_text"
                     android:textSize="@dimen/middle1"
                     />
@@ -190,7 +191,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="3dp"
-                    android:text="0.01"
+                    android:text="0.00"
                     android:textColor="@color/black_middle1_text"
                     android:textSize="@dimen/middle1"
                     />
@@ -223,7 +224,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="3dp"
-                    android:text="0.01"
+                    android:text="0.00"
                     android:textColor="@color/black_middle1_text"
                     android:textSize="@dimen/middle1"
                     />
@@ -256,7 +257,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_marginRight="3dp"
-                    android:text="0.01"
+                    android:text="0.00"
                     android:textColor="@color/black_middle1_text"
                     android:textSize="@dimen/middle1"
                     />

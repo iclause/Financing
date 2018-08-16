@@ -112,6 +112,11 @@ public class Tab1Fragment extends BaseFragment implements OnRefreshListener, Tab
     }
 
     @Override
+    public void refreshGoldenPrice(String price) {
+//        donothing
+    }
+
+    @Override
     public void refreshFail() {
         logi("refreshFail");
         prl.refreshFinish(PullToRefreshLayout.FAIL);

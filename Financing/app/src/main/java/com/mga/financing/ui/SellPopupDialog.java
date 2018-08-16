@@ -13,6 +13,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -35,10 +36,11 @@ public class SellPopupDialog extends AppCompatDialog implements View.OnClickList
     private String TAG = SellPopupDialog.class.getName();
     private ProgressDialog mProgressDialog;
     public static final int DIALOGTOANSWERFLAG=1;
-    private TextView chargeNumTv;
+    private TextView sellNumTv;
     private EditText inputChargePasswordEt;
     private TextView userBankCardInfoTv;
     private TextView confirmTv;
+    private ImageView closeIv;
 
     public SellPopupDialog(Context context, TradePresenter tradePresenter, Bundle bundle) {
         super(context, R.style.MPopupDialog);
@@ -50,10 +52,17 @@ public class SellPopupDialog extends AppCompatDialog implements View.OnClickList
 
     private void setMsgDialog() {
         View mView = LayoutInflater.from(getContext()).inflate(R.layout.sell_popupdialog, null);
-        chargeNumTv = (TextView) mView.findViewById(R.id.charge_num_tv);
-        chargeNumTv.setText(mBundle.getString(BundleKeyConstant.CHARGE_PRICE,"0.00"));
+        sellNumTv = (TextView) mView.findViewById(R.id.sell_num_tv);
+        sellNumTv.setText(mBundle.getString(BundleKeyConstant.SELL_PRICE,"0.00"));
         userBankCardInfoTv = (TextView) mView.findViewById(R.id.use_bankcard_info_tv);
         confirmTv = (TextView) mView.findViewById(R.id.confirm_tv);
+        closeIv = (ImageView) mView.findViewById(R.id.close_iv);
+        closeIv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismiss();
+            }
+        });
         confirmTv.setOnClickListener(this);
         inputChargePasswordEt = (EditText) mView.findViewById(R.id.input_charge_password_et);
 
@@ -82,8 +91,7 @@ public class SellPopupDialog extends AppCompatDialog implements View.OnClickList
         switch (v.getId()) {
             case R.id.confirm_tv:
                 // TODO: 2018/6/15  提交支付密码
-                mBundle.putString(BundleKeyConstant.CHARGE_PRICE,chargeNumTv.getText().toString());
-                Log.i(TAG,"chargeprice = "+chargeNumTv.getText().toString());
+                Log.i(TAG,"chargeprice = "+sellNumTv.getText().toString());
                 mPresenter.sell(mBundle);
                 break;
 

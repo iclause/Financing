@@ -5,6 +5,7 @@
               android:background="@color/grey_trade_done_background"
               android:orientation="vertical">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="164dp"
@@ -118,6 +119,7 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/buy_detail_ll"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_marginLeft="13dp"
@@ -125,6 +127,7 @@
         android:layout_marginTop="15dp"
         android:background="@color/white"
         android:orientation="vertical"
+        android:visibility="gone"
         >
 
         <RelativeLayout
@@ -151,6 +154,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/trade_action_info_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="支付"
@@ -211,6 +215,7 @@
                     android:textSize="@dimen/middle1"/>
 
                 <TextView
+                    android:id="@+id/balance_pay_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
@@ -327,6 +332,170 @@
         </RelativeLayout>
 
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sell_detail_ll"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginRight="13dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:visibility="visible"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:orientation="horizontal"
+            >
+
+            <View
+                style="@style/style_normal_line"
+                android:layout_width="fill_parent"
+                android:layout_height="0.4dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:layout_toLeftOf="@+id/ll2"
+                />
+
+            <LinearLayout
+                android:id="@+id/ll2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/trade_action_info_tv2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/receive"
+                    android:textColor="@color/black_middle1_text"
+                    android:textSize="@dimen/middle1"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/sell_price_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0.81"
+                    android:textColor="@color/black_middle1_text"
+                    android:textSize="@dimen/middle1"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="元"
+                    android:textColor="@color/black_middle1_text"
+                    android:textSize="@dimen/middle1"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <View
+                style="@style/style_normal_line"
+                android:layout_width="fill_parent"
+                android:layout_height="0.4dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:layout_toRightOf="@+id/ll2"
+                />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp"
+            android:paddingLeft="28dp"
+            android:paddingRight="28dp"
+            android:paddingTop="16dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="卖出克重"
+                    android:textColor="@color/grey_middle1_text"
+                    android:textSize="@dimen/middle1"/>
+
+                <TextView
+                    android:id="@+id/sell_weight_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="0.81元"
+                    android:textColor="@color/grey_middle1_text"
+                    android:textSize="@dimen/middle1"
+                    android:textStyle="bold"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="卖出金价"
+                    android:textColor="@color/grey_middle1_text"
+                    android:textSize="@dimen/middle1"/>
+
+                <TextView
+                    android:id="@+id/sell_per_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="0.00元"
+                    android:textColor="@color/grey_middle1_text"
+                    android:textSize="@dimen/middle1"
+                    android:textStyle="bold"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="卖出手续费"
+                    android:textColor="@color/grey_middle1_text"
+                    android:textSize="@dimen/middle1"/>
+
+                <TextView
+                    android:id="@+id/sell_fee_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="0.00元"
+                    android:textColor="@color/grey_middle1_text"
+                    android:textSize="@dimen/middle1"
+                    android:textStyle="bold"/>
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
 
     <!--底部广告图片-->
     <ImageView

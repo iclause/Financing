@@ -16,6 +16,7 @@ import com.mga.financing.base.presenter.BasePresenter;
 import com.mga.financing.base.view.BaseActivity;
 import com.mga.financing.mvp.login.LoginContact;
 import com.mga.financing.utils.RegexUtils;
+import com.mga.financing.utils.UserInfoManager;
 
 /**
  * Created by mga on 2018/5/30 15:09.
@@ -48,6 +49,7 @@ public class BindCardActivity2 extends BaseActivity implements LoginContact.View
     @Override
     protected void initView() {
         cardNameTv = (TextView) findViewById(R.id.card_name_tv);
+        cardNameTv.setText(UserInfoManager.readName(this,UserInfoManager.readAccount(this)));
         cardTypeTv = (TextView) findViewById(R.id.card_type_tv);
         ipEt = (EditText) findViewById(R.id.input_phone_et);
         vfcTv = (TextView) findViewById(R.id.vfc_tv);
@@ -110,7 +112,7 @@ public class BindCardActivity2 extends BaseActivity implements LoginContact.View
                     return;
                 }
                 // TODO: 2018/6/8 1.发送验证码;
-                mBindCardPresenter.getVfc(cardNameTv.getText().toString());
+                mBindCardPresenter.getVfc(vfcTv.getText().toString());
 
 
                 break;
@@ -143,7 +145,7 @@ public class BindCardActivity2 extends BaseActivity implements LoginContact.View
 
     @Override
     public String getPhoneNumber() {
-        return cardNameTv.getText().toString();
+        return ipEt.getText().toString();
     }
 
     @Override

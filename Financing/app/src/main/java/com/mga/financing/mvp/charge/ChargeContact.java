@@ -19,7 +19,7 @@ public class ChargeContact {
 
         //提交充值订单
         void submit();
-        //提交充值密码
+        //提交充值密码,走充值接口
         void submitPassword(Bundle bundle);
 
     }

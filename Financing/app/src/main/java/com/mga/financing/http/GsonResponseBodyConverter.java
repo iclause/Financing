@@ -32,7 +32,7 @@ class GsonResponseBodyConverter<T> implements Converter<ResponseBody, T> {
             BaseResponse httpResult = gson.fromJson(response, BaseResponse.class);
             //
 //            if (!"00000000".equals(httpResult.getCode())) {
-//                throw new ApiException(Integer.parseInt(httpResult.getCode()+1));
+//                throw new ApiException(Integer.parseInt(httpResult.getCode()));
 //            }
             return gson.fromJson(response, type);
 

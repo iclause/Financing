@@ -13,6 +13,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -39,6 +40,7 @@ public class MPopupDialog extends AppCompatDialog implements View.OnClickListene
     private EditText inputChargePasswordEt;
     private TextView userBankCardInfoTv;
     private TextView confirmTv;
+    private ImageView closeIv;
 
     public MPopupDialog(Context context, ChargePresenter chargePresenter, Bundle bundle) {
         super(context, R.style.MPopupDialog);
@@ -51,12 +53,18 @@ public class MPopupDialog extends AppCompatDialog implements View.OnClickListene
     private void setMsgDialog() {
         View mView = LayoutInflater.from(getContext()).inflate(R.layout.popupdialog, null);
         chargeNumTv = (TextView) mView.findViewById(R.id.charge_num_tv);
-        chargeNumTv.setText(mBundle.getString(BundleKeyConstant.CHARGE_PRICE,"0.00"));
+        chargeNumTv.setText(mBundle.getString(BundleKeyConstant.CHARGE_PRICE,"0.00")+"元");
         userBankCardInfoTv = (TextView) mView.findViewById(R.id.use_bankcard_info_tv);
         confirmTv = (TextView) mView.findViewById(R.id.confirm_tv);
         confirmTv.setOnClickListener(this);
         inputChargePasswordEt = (EditText) mView.findViewById(R.id.input_charge_password_et);
-
+        closeIv = (ImageView) mView.findViewById(R.id.close_iv);
+        closeIv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismiss();
+            }
+        });
 
         this.setCanceledOnTouchOutside(true);                 //点击外部关闭窗口
         Window win = this.getWindow();
@@ -82,8 +90,8 @@ public class MPopupDialog extends AppCompatDialog implements View.OnClickListene
         switch (v.getId()) {
             case R.id.confirm_tv:
                 // TODO: 2018/6/15  提交支付密码
-                mBundle.putString(BundleKeyConstant.CHARGE_PRICE,chargeNumTv.getText().toString());
-                Log.i(TAG,"chargeprice = "+chargeNumTv.getText().toString());
+                mBundle.putString(BundleKeyConstant.CHARGE_PRICE,chargeNumTv.getText().toString().substring(0,chargeNumTv.getText().toString().indexOf("元")));
+                Log.i(TAG,"chargeprice = "+chargeNumTv.getText().toString().substring(0,chargeNumTv.getText().toString().indexOf("元")));
                 mPresenter.submitPassword(mBundle);
                 break;
 

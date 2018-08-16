@@ -6,6 +6,7 @@ import android.widget.TextView;
 import com.mga.financing.R;
 import com.mga.financing.base.presenter.BasePresenter;
 import com.mga.financing.base.view.BaseActivity;
+import com.mga.financing.constant.BundleKeyConstant;
 
 /**
  * 黄金资产界面
@@ -14,6 +15,8 @@ import com.mga.financing.base.view.BaseActivity;
 
 public class GoldenAssetsActivity extends BaseActivity {
     private TextView sellTv;
+    private TextView gawTv;
+    private TextView goldPriceTv;
 
     @Override
     protected int getLayoutId() {
@@ -22,6 +25,10 @@ public class GoldenAssetsActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        gawTv=(TextView)findViewById(R.id.golden_assets_weight_tv);
+        goldPriceTv=(TextView)findViewById(R.id.gold_price_tv);
+        gawTv.setText(getBundle().getString(BundleKeyConstant.USER_WEIGHT));
+        goldPriceTv.setText(getBundle().getString(BundleKeyConstant.USER_PRICE));
         sellTv=(TextView)findViewById(R.id.sell_tv);
         sellTv.setOnClickListener(this);
     }
@@ -43,7 +50,7 @@ public class GoldenAssetsActivity extends BaseActivity {
         super.onClick(v);
         switch (v.getId()){
             case R.id.sell_tv:
-            toOtherLayout(SellActivity.class,null);
+            toOtherLayout(SellActivity.class,getBundle());
                 break;
 
         }
