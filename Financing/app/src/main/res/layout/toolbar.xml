@@ -12,11 +12,11 @@
         <!--android:background="@color/activity_tab_normal"-->
         <!--android:background="@drawable/env_bg"-->
         <android.support.v7.widget.Toolbar
-            app:contentInsetStart="0dp"
-            app:contentInsetLeft="0dp"
+            app:contentInsetStart="@dimen/qb_px_0"
+            app:contentInsetLeft="@dimen/qb_px_0"
             android:id="@+id/mtoolbar"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="@dimen/qb_px_45"
             android:background="@drawable/gradation_title"
             android:theme="@style/MyToolbarStyle">
 
@@ -37,11 +37,11 @@
 
                 <ImageView
                     android:id="@+id/right_icon"
-                    android:layout_width="32dp"
+                    android:layout_width="@dimen/qb_px_32"
                     android:layout_height="match_parent"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:paddingRight="12dp"
+                    android:paddingRight="@dimen/qb_px_12"
                     android:src="@drawable/toolbar_close_side"
                     android:visibility="invisible" />
 
@@ -51,7 +51,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="10dp"
+                    android:layout_marginRight="@dimen/qb_px_10"
                     android:text="按钮"
                     android:textColor="@color/white"
                     android:textSize="14sp"
@@ -67,11 +67,11 @@
 
             <ImageView
                 android:id="@+id/main_title_iv"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="@dimen/qb_px_20"
+                android:layout_height="@dimen/qb_px_20"
                 android:layout_centerVertical="true"
                 android:layout_toLeftOf="@+id/main_title"
-                android:padding="4dp"
+                android:padding="@dimen/qb_px_4"
                 android:scaleType="fitCenter"
                 android:src="@drawable/down_arrow"
                 android:visibility="gone"
@@ -93,9 +93,9 @@
             android:layout_height="wrap_content"
 
             android:layout_gravity="left|top"
-            android:layout_marginLeft="33dp"
-            android:layout_marginTop="10dp"
-            android:padding="5dp"
+            android:layout_marginLeft="@dimen/qb_px_33"
+            android:layout_marginTop="@dimen/qb_px_10"
+            android:padding="@dimen/qb_px_5"
             android:src="@drawable/side_red_icon"
             android:visibility="gone" />
 

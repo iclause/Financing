@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="164dp"
+        android:layout_height="@dimen/qb_px_164"
         android:background="@color/yellow"
         android:orientation="vertical"
         >
@@ -16,16 +16,16 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="@dimen/qb_px_18"
             android:orientation="horizontal"
-            android:paddingRight="9dp"
+            android:paddingRight="@dimen/qb_px_9"
             >
 
             <ImageView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
+                android:layout_width="@dimen/qb_px_15"
+                android:layout_height="@dimen/qb_px_15"
                 android:layout_centerInParent="true"
-                android:layout_marginRight="10dp"
+                android:layout_marginRight="@dimen/qb_px_10"
                 android:layout_toLeftOf="@+id/title"
                 android:src="@drawable/ic_add_deposit_gold_success"/>
 
@@ -52,7 +52,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="@dimen/qb_px_24"
             android:gravity="center">
 
             <TextView
@@ -68,7 +68,7 @@
                 android:id="@+id/weight_desc_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="@dimen/qb_px_8"
                 android:layout_toRightOf="@+id/weight_num_tv"
                 android:text="克"
                 android:textColor="@color/white"
@@ -82,7 +82,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/qb_px_10"
             android:text="流动金"
             android:textColor="@color/yellow_trade_textcolor"
             android:textSize="@dimen/middle1"
@@ -91,7 +91,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/qb_px_8"
             android:gravity="center">
 
             <TextView
@@ -107,7 +107,7 @@
                 android:id="@+id/price_per_weight_unit_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="@dimen/qb_px_8"
                 android:layout_toRightOf="@+id/price_per_weight_tv"
                 android:text="元/克"
                 android:textColor="@color/yellow_trade_textcolor"
@@ -121,10 +121,10 @@
     <LinearLayout
         android:id="@+id/buy_detail_ll"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginLeft="13dp"
-        android:layout_marginRight="13dp"
-        android:layout_marginTop="15dp"
+        android:layout_height="@dimen/qb_px_200"
+        android:layout_marginLeft="@dimen/qb_px_13"
+        android:layout_marginRight="@dimen/qb_px_13"
+        android:layout_marginTop="@dimen/qb_px_15"
         android:background="@color/white"
         android:orientation="vertical"
         android:visibility="gone"
@@ -133,7 +133,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="@dimen/qb_px_18"
             android:orientation="horizontal"
             >
 
@@ -142,7 +142,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="0.4dp"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="16dp"
+                android:layout_marginRight="@dimen/qb_px_16"
                 android:layout_toLeftOf="@+id/ll1"
                 />
 
@@ -185,7 +185,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="0.4dp"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="16dp"
+                android:layout_marginLeft="@dimen/qb_px_16"
                 android:layout_toRightOf="@+id/ll1"
                 />
 
@@ -195,15 +195,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="16dp"
-            android:paddingLeft="28dp"
-            android:paddingRight="28dp"
-            android:paddingTop="16dp">
+            android:paddingBottom="@dimen/qb_px_16"
+            android:paddingLeft="@dimen/qb_px_28"
+            android:paddingRight="@dimen/qb_px_28"
+            android:paddingTop="@dimen/qb_px_16">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="2dp"
+                android:padding="@dimen/qb_px_2"
                 >
 
                 <TextView
@@ -228,7 +228,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="2dp"
+                android:padding="@dimen/qb_px_2"
                 >
 
                 <TextView
@@ -252,7 +252,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="2dp"
+                android:padding="@dimen/qb_px_2"
                 >
 
                 <TextView
@@ -276,7 +276,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="2dp"
+                android:padding="@dimen/qb_px_2"
                 >
 
                 <TextView
@@ -306,10 +306,10 @@
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_marginLeft="28dp"
-            android:layout_marginRight="28dp"
+            android:layout_marginLeft="@dimen/qb_px_28"
+            android:layout_marginRight="@dimen/qb_px_28"
             android:gravity="center"
-            android:padding="2dp"
+            android:padding="@dimen/qb_px_2"
             >
 
             <TextView
@@ -336,10 +336,10 @@
     <LinearLayout
         android:id="@+id/sell_detail_ll"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginLeft="13dp"
-        android:layout_marginRight="13dp"
-        android:layout_marginTop="15dp"
+        android:layout_height="@dimen/qb_px_150"
+        android:layout_marginLeft="@dimen/qb_px_13"
+        android:layout_marginRight="@dimen/qb_px_13"
+        android:layout_marginTop="@dimen/qb_px_15"
         android:background="@color/white"
         android:orientation="vertical"
         android:visibility="visible"
@@ -348,7 +348,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="@dimen/qb_px_18"
             android:orientation="horizontal"
             >
 
@@ -357,7 +357,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="0.4dp"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="16dp"
+                android:layout_marginRight="@dimen/qb_px_16"
                 android:layout_toLeftOf="@+id/ll2"
                 />
 
@@ -400,7 +400,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="0.4dp"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="16dp"
+                android:layout_marginLeft="@dimen/qb_px_16"
                 android:layout_toRightOf="@+id/ll2"
                 />
 
@@ -410,15 +410,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="16dp"
-            android:paddingLeft="28dp"
-            android:paddingRight="28dp"
-            android:paddingTop="16dp">
+            android:paddingBottom="@dimen/qb_px_16"
+            android:paddingLeft="@dimen/qb_px_28"
+            android:paddingRight="@dimen/qb_px_28"
+            android:paddingTop="@dimen/qb_px_16">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="2dp"
+                android:padding="@dimen/qb_px_2"
                 >
 
                 <TextView
@@ -443,7 +443,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="2dp"
+                android:padding="@dimen/qb_px_2"
                 >
 
                 <TextView
@@ -468,7 +468,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="2dp"
+                android:padding="@dimen/qb_px_2"
                 >
 
                 <TextView
@@ -500,8 +500,8 @@
     <!--底部广告图片-->
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:layout_marginTop="75dp"
+        android:layout_height="@dimen/qb_px_75"
+        android:layout_marginTop="@dimen/qb_px_75"
         android:scaleType="fitXY"
         android:src="@drawable/ic_ad_img"
         />

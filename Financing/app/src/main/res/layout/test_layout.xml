@@ -6,13 +6,13 @@
     android:gravity="center">
     <Button
         android:id="@+id/abt"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="@dimen/qb_px_90"
+        android:layout_height="@dimen/qb_px_90"
         android:text="A"/>
     <Button
         android:id="@+id/bbt"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="@dimen/qb_px_90"
+        android:layout_height="@dimen/qb_px_90"
         android:text="B"/>
 
 </LinearLayout>

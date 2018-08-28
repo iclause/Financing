@@ -45,20 +45,19 @@
         <item name="android:layout_centerHorizontal">true</item>
         <item name="android:focusable">false</item>
         <item name="android:layout_marginTop">2dp</item>
-        <item name="android:layout_marginBottom">6dp</item>
         <item name="android:textSize">@dimen/small</item>
     </style>
 
     <style name="tab_rl_style">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_height">match_parent</item>
         <item name="android:layout_weight">1</item>
         <item name="android:clickable">true</item>
         <item name="android:focusable">true</item>
-        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
         <item name="android:paddingLeft">2dp</item>
         <item name="android:paddingRight">2dp</item>
-        <item name="android:paddingTop">2dp</item>
+        <!--<item name="android:paddingTop">2dp</item>-->
     </style>
 
     <style name="styler_rl1">

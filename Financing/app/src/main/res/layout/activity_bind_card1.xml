@@ -17,7 +17,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/qb_px_10"
             android:orientation="horizontal"
             android:paddingLeft="@dimen/toleft"
             android:paddingRight="@dimen/toright"
@@ -33,7 +33,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="@dimen/qb_px_20"
                 android:orientation="vertical"
                 >
 
@@ -51,7 +51,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="@dimen/qb_px_20"
                     android:text="@string/bind_info"
                     android:textColor="@color/black_middle1_text"
                     android:textSize="@dimen/small"/>
@@ -61,7 +61,7 @@
 
         <View
             style="@style/style_normal_line"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="@dimen/qb_px_10"/>
 
         <View
             style="@style/style_bold_line"
@@ -80,7 +80,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="@dimen/qb_px_45"
                 android:gravity="center_vertical"
                 android:paddingLeft="@dimen/toleft"
                 android:paddingRight="@dimen/toright">
@@ -102,7 +102,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="@dimen/qb_px_45"
                 android:gravity="center_vertical"
                 android:paddingLeft="@dimen/toleft"
                 android:paddingRight="@dimen/toright">
@@ -134,7 +134,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="@dimen/qb_px_45"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/toleft"
             android:paddingRight="@dimen/toright">
@@ -167,8 +167,8 @@
                 android:id="@+id/text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="2dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginLeft="@dimen/qb_px_2"
+                android:layout_marginTop="@dimen/qb_px_15"
                 android:layout_toRightOf="@+id/checkbox"
                 android:text="@string/check"
                 />
@@ -177,7 +177,7 @@
                 android:id="@+id/support_bank_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="@dimen/qb_px_15"
                 android:layout_toRightOf="@id/text"
                 android:text="@string/support_bank"
                 android:textColor="@color/orange_change_state"
@@ -185,7 +185,7 @@
             <TextView
                 android:id="@+id/next_tv2"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="@dimen/qb_px_45"
                 android:background="@color/grey_fragment_small_text"
                 android:layout_centerInParent="true"
                 android:gravity="center"

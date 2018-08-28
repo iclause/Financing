@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/login_toolbar"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="@dimen/qb_px_25"
         android:paddingLeft="@dimen/toleft"
         android:paddingRight="@dimen/toright">
 
@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/hello_tv"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="@dimen/qb_px_18"
             android:text="@string/vfc_has_send"
             android:textColor="@color/grey_middle1_text"
             android:textSize="@dimen/middle2"
@@ -45,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/hello_tv"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="@dimen/qb_px_18"
             android:layout_toRightOf="@+id/welcome_tv"
             android:text="13516725164"
             android:textColor="@color/black_middle1_text"
@@ -57,7 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/welcome_tv"
-            android:layout_marginTop="74dp"
+            android:layout_marginTop="@dimen/qb_px_74"
             >
 
             <RelativeLayout
@@ -67,7 +67,7 @@
 
                 <TextView
                     android:id="@+id/vfc_tv"
-                    android:layout_width="60dp"
+                    android:layout_width="@dimen/qb_px_60"
                     android:layout_height="wrap_content"
                     android:text="@string/vfc"
                     android:textColor="@color/black_middle1_text"
@@ -78,7 +78,7 @@
                     android:id="@+id/regist_vfc_et"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="@dimen/qb_px_10"
                     android:layout_toRightOf="@+id/vfc_tv"
                     android:background="@null"
                     android:hint="@string/input_vfc"
@@ -93,9 +93,9 @@
                 <View
                     android:id="@+id/line"
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                    android:layout_height="@dimen/qb_px_1"
                     android:layout_below="@id/vfc_tv"
-                    android:layout_marginTop="6dp"
+                    android:layout_marginTop="@dimen/qb_px_6"
                     android:background="@color/orange_line"
                     />
             </RelativeLayout>
@@ -103,13 +103,13 @@
             <RelativeLayout
                 android:id="@+id/rl2"
                 android:layout_below="@+id/rl1"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/qb_px_20"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
                 <TextView
                     android:id="@+id/password_tv"
-                    android:layout_width="60dp"
+                    android:layout_width="@dimen/qb_px_60"
                     android:layout_height="wrap_content"
                     android:text="@string/password"
                     android:textColor="@color/black_middle1_text"
@@ -120,7 +120,7 @@
                     android:id="@+id/regist_password_et"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="@dimen/qb_px_10"
                     android:layout_toRightOf="@+id/password_tv"
                     android:background="@null"
                     android:hint="@string/input_password"
@@ -135,9 +135,9 @@
                 <View
                     android:id="@+id/line2"
                     android:layout_width="match_parent"
-                    android:layout_height="1dp"
+                    android:layout_height="@dimen/qb_px_1"
                     android:layout_below="@id/password_tv"
-                    android:layout_marginTop="6dp"
+                    android:layout_marginTop="@dimen/qb_px_6"
                     android:background="@color/orange_line"
                     />
             </RelativeLayout>
@@ -147,7 +147,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/rl2"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="@dimen/qb_px_18"
                 android:text="@string/miss_vfc"
                 android:textColor="@color/grey_middle1_text"
                 android:textSize="@dimen/middle1"
@@ -158,7 +158,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/rl2"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="@dimen/qb_px_18"
                 android:layout_toRightOf="@id/miss_vfc_tv"
                 android:text="@string/audio_get"
                 android:textColor="@color/orange_line"
@@ -171,7 +171,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_below="@+id/rl2"
-                android:layout_marginTop="18dp"
+                android:layout_marginTop="@dimen/qb_px_18"
                 android:text="@string/countdown"
                 android:textColor="@color/grey_middle1_text"
                 android:textSize="@dimen/middle1"
@@ -181,9 +181,9 @@
             <TextView
                 android:id="@+id/regist_tv"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="@dimen/qb_px_45"
                 android:layout_below="@id/miss_vfc_tv"
-                android:layout_marginTop="14dp"
+                android:layout_marginTop="@dimen/qb_px_14"
                 android:background="@drawable/shape_login_btn_ennable"
                 android:gravity="center"
                 android:text="@string/regist_tv"
@@ -197,7 +197,7 @@
             android:layout_height="wrap_content"
             android:layout_above="@+id/safeinfo_tv"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="6dp"
+            android:layout_marginBottom="@dimen/qb_px_6"
             android:src="@drawable/logo_aliyun"
             />
 
@@ -207,7 +207,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="@dimen/qb_px_16"
             android:text="@string/safeinfo"
             android:textColor="@color/grey_middle1_text"
             android:textSize="@dimen/small"

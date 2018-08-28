@@ -24,13 +24,13 @@
     <LinearLayout
         android:id="@+id/tab_all_ll"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/qb_px_60"
         android:layout_alignParentBottom="true"
         android:background="@color/white"
         android:baselineAligned="false"
         android:orientation="horizontal"
-        android:paddingBottom="1dp"
-        android:paddingTop="2dp">
+        android:paddingBottom="@dimen/qb_px_1"
+        android:paddingTop="@dimen/qb_px_2">
 
         <RelativeLayout
             android:id="@+id/tab_0_rl"
@@ -39,7 +39,7 @@
             <ImageView
                 android:id="@+id/tab_0_iv"
                 style="@style/tab_iv_style"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="@dimen/qb_px_2"
                 android:src="@drawable/tab0_enable_iv"
 
                 />
@@ -98,7 +98,7 @@
             <ImageView
                 android:id="@+id/tab_3_iv"
                 style="@style/tab_iv_style"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="@dimen/qb_px_4"
                 android:src="@drawable/tab3_unable_iv"
                 />
 
@@ -119,23 +119,23 @@
     <!--android:layout_height="match_parent"-->
     <!--android:background="@color/main_introduce_bg"-->
     <!--android:clickable="true"-->
-    <!--android:paddingLeft="30dp"-->
-    <!--android:paddingRight="30dp"-->
+    <!--android:paddingLeft="30"-->
+    <!--android:paddingRight="30"-->
     <!--android:visibility="gone"-->
     <!--&gt;-->
 
     <!--<ImageView-->
     <!--android:id="@+id/iv_ad_background"-->
     <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="380dp"-->
+    <!--android:layout_height="380"-->
     <!--android:layout_centerInParent="true"-->
     <!--android:scaleType="fitCenter"-->
     <!--/>-->
 
     <!--<RelativeLayout-->
     <!--android:id="@+id/rl_addetail"-->
-    <!--android:layout_width="280dp"-->
-    <!--android:layout_height="280dp"-->
+    <!--android:layout_width="280"-->
+    <!--android:layout_height="280"-->
     <!--android:layout_centerInParent="true">-->
 
     <!--<LinearLayout-->
@@ -148,9 +148,9 @@
     <!--android:layout_width="wrap_content"-->
     <!--android:layout_height="wrap_content"-->
     <!--android:layout_gravity="center_horizontal"-->
-    <!--android:layout_marginLeft="@dimen/dp_30"-->
-    <!--android:layout_marginRight="@dimen/dp_30"-->
-    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_marginLeft="@dimen/_30"-->
+    <!--android:layout_marginRight="@dimen/_30"-->
+    <!--android:layout_marginTop="10"-->
     <!--android:gravity="center_vertical"-->
     <!--android:lines="2"-->
     <!--android:text="zheshihu多功能"-->
@@ -160,11 +160,11 @@
     <!--<TextView-->
     <!--android:id="@+id/tv_addetail_message"-->
     <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="0dp"-->
+    <!--android:layout_height="0"-->
     <!--android:layout_gravity="center_horizontal"-->
-    <!--android:layout_marginLeft="@dimen/dp_30"-->
-    <!--android:layout_marginRight="@dimen/dp_30"-->
-    <!--android:layout_marginTop="60dp"-->
+    <!--android:layout_marginLeft="@dimen/_30"-->
+    <!--android:layout_marginRight="@dimen/_30"-->
+    <!--android:layout_marginTop="60"-->
     <!--android:layout_weight="1"-->
     <!--android:gravity="center_vertical"-->
     <!--android:text="1nihais这是测试帝\n豪斯和覅海商法hi按时发货是否is合法和冯绍峰和是否is合法是否is合法is是否is反思法"-->
@@ -176,12 +176,12 @@
     <!--android:layout_width="wrap_content"-->
     <!--android:layout_height="wrap_content"-->
     <!--android:layout_gravity="center_horizontal"-->
-    <!--android:layout_marginBottom="@dimen/dp_30"-->
+    <!--android:layout_marginBottom="@dimen/_30"-->
     <!--android:background="#ed0f7d"-->
-    <!--android:paddingBottom="@dimen/dp_10"-->
-    <!--android:paddingLeft="50dp"-->
-    <!--android:paddingRight="50dp"-->
-    <!--android:paddingTop="@dimen/dp_10"-->
+    <!--android:paddingBottom="@dimen/_10"-->
+    <!--android:paddingLeft="50"-->
+    <!--android:paddingRight="50"-->
+    <!--android:paddingTop="@dimen/_10"-->
     <!--android:text="立即查看活动"-->
     <!--android:textColor="@color/white"-->
     <!--android:visibility="invisible"/>-->
@@ -195,7 +195,7 @@
     <!--android:layout_height="wrap_content"-->
     <!--android:layout_below="@+id/iv_ad_background"-->
     <!--android:layout_centerHorizontal="true"-->
-    <!--android:layout_marginTop="@dimen/dp_5"-->
+    <!--android:layout_marginTop="@dimen/_5"-->
     <!--android:src="@drawable/close_icon"/>-->
 
 
@@ -208,7 +208,7 @@
     <!--android:background="@color/main_introduce_bg"-->
     <!--android:clickable="true"-->
     <!--android:orientation="vertical"-->
-    <!--android:paddingTop="110dp"-->
+    <!--android:paddingTop="110"-->
     <!--android:visibility="gone">-->
 
 
@@ -217,7 +217,7 @@
     <!--android:layout_width="match_parent"-->
     <!--android:layout_height="wrap_content"-->
     <!--android:layout_gravity="center_horizontal"-->
-    <!--android:layout_marginTop="25dp"-->
+    <!--android:layout_marginTop="25"-->
     <!--android:src="@drawable/iknow"/>-->
     <!--</LinearLayout>-->
 

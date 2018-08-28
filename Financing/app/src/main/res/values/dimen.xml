@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="toleft">20dp</dimen>
-    <dimen name="toright">20dp</dimen>
+    <dimen name="toleft">@dimen/qb_px_20</dimen>
+    <dimen name="toright">@dimen/qb_px_20</dimen>
 
     <dimen name="small">12sp</dimen>
     <dimen name="middle1">14sp</dimen>

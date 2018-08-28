@@ -9,8 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:paddingBottom="20dp"
-        android:paddingTop="20dp" >
+        android:paddingBottom="@dimen/qb_px_20"
+        android:paddingTop="@dimen/qb_px_20" >
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -22,7 +22,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="60dp"
+                android:layout_marginLeft="@dimen/qb_px_60"
                 android:background="@drawable/refresh_loading_icon" />
 
             <ImageView
@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="60dp"
+                android:layout_marginLeft="@dimen/qb_px_60"
                 android:background="@drawable/refresh_loading_icon"
                 android:visibility="gone" />
 
@@ -48,7 +48,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginRight="8dp"
+                android:layout_marginRight="@dimen/qb_px_8"
                 android:layout_toLeftOf="@id/state_tv"
                 android:visibility="gone" />
         </RelativeLayout>

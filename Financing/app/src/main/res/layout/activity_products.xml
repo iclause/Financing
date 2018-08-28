@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:divider="@color/grey_fragment_buy_background"
-        android:dividerHeight="10dp"
+        android:dividerHeight="@dimen/qb_px_10"
         >
 
     </ListView>

@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:background="#F0514D"
         android:gravity="center"
-        android:paddingBottom="5dp"
-        android:paddingTop="5dp"
+        android:paddingBottom="@dimen/qb_px_5"
+        android:paddingTop="@dimen/qb_px_5"
         >
 
         <TextView
@@ -36,7 +36,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="@dimen/qb_px_80"
         android:background="@color/white"
         android:paddingLeft="@dimen/toleft"
         android:paddingRight="@dimen/toright"
@@ -45,7 +45,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/qb_px_20"
             android:text="@string/floute_price"
             android:textColor="@android:color/black"
             android:textSize="@dimen/middle2"
@@ -60,7 +60,7 @@
                 android:id="@+id/weight_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="@dimen/qb_px_20"
                 android:text="1000克"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/middle2"
@@ -71,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/weight_tv"
                 android:layout_centerInParent="true"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/qb_px_10"
                 android:text="@string/expect_weight"
                 android:textColor="@color/grey_middle1_text"
                 />
@@ -80,7 +80,7 @@
 
     <TextView
         style="@style/style_bolder_line"
-        android:layout_height="80dp"
+        android:layout_height="@dimen/qb_px_80"
         android:gravity="center|left"
         android:paddingLeft="@dimen/toleft"
         android:paddingRight="@dimen/toright"
@@ -101,7 +101,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="@dimen/qb_px_45"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/toleft"
             android:paddingRight="@dimen/toright">
@@ -136,7 +136,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="@dimen/qb_px_45"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/toleft"
             android:paddingRight="@dimen/toright">
@@ -164,7 +164,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="2dp"
+                android:layout_marginLeft="@dimen/qb_px_2"
                 android:background="@drawable/ic_arrowhead"/>
 
         </LinearLayout>
@@ -175,7 +175,7 @@
             />
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="@dimen/qb_px_45"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/toleft"
             android:paddingRight="@dimen/toright">
@@ -228,7 +228,7 @@
                 android:id="@+id/notice_tv2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/qb_px_10"
                 android:layout_toRightOf="@id/notice_tv"
                 android:gravity="center"
                 android:text="@string/time_pay_notice"
@@ -240,7 +240,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="@dimen/qb_px_120"
             android:background="@color/grey_fragment_buy_background"
             android:gravity="center">
 
@@ -250,8 +250,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/golden_protocal_tv"
-                android:layout_marginLeft="2dp"
-                android:layout_marginTop="14dp"
+                android:layout_marginLeft="@dimen/qb_px_2"
+                android:layout_marginTop="@dimen/qb_px_14"
                 android:text="@string/buy_order_info2"
                 />
         </RelativeLayout>
@@ -265,7 +265,7 @@
         <RelativeLayout
             android:id="@+id/charge_rl"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="@dimen/qb_px_50"
             android:layout_alignParentBottom="true"
             android:background="@color/white"
             android:visibility="gone"
@@ -312,7 +312,7 @@
         <RelativeLayout
             android:id="@+id/buy_rl"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="@dimen/qb_px_50"
             android:layout_alignParentBottom="true"
             android:background="@color/white"
             android:visibility="gone"

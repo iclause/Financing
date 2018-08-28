@@ -6,11 +6,11 @@
     <LinearLayout
         android:id="@+id/header_ll"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="@dimen/qb_px_45"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
+        android:paddingLeft="@dimen/qb_px_20"
+        android:paddingRight="@dimen/qb_px_20"
         android:background="@color/grey_fragment_buy_background"
         >
 
@@ -28,7 +28,7 @@
             android:text="@string/text2"
             android:textColor="@color/grey_fragment_small_text"
             android:textSize="@dimen/middle2"
-            android:layout_marginLeft="6dp"
+            android:layout_marginLeft="@dimen/qb_px_6"
             />
     </LinearLayout>
     <RelativeLayout
@@ -63,7 +63,7 @@
 
         <LinearLayout
             style="@style/style_botom_ll1"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/qb_px_10"
             android:layout_below="@id/ll1"
             >
 

@@ -13,8 +13,8 @@
         android:layout_height="wrap_content"
         android:background="@color/orange_wallet_balance"
         android:gravity="center"
-        android:paddingBottom="5dp"
-        android:paddingTop="5dp"
+        android:paddingBottom="@dimen/qb_px_5"
+        android:paddingTop="@dimen/qb_px_5"
         >
 
         <TextView
@@ -37,7 +37,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="@dimen/qb_px_100"
         android:background="@color/grey_fragment_buy_background"
         >
 
@@ -46,7 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/qb_px_20"
             android:text="230.03"
             android:textColor="@color/orange_real_tiem_golden_price"
             android:textSize="@dimen/large3"
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/real_time_golden_price_tv"
             android:layout_centerInParent="true"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="@dimen/qb_px_10"
             android:text="@string/realtime_gold_price"
             android:textColor="@color/grey_middle1_text"
             />
@@ -76,7 +76,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="@dimen/qb_px_45"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/toleft"
             android:paddingRight="@dimen/toright">
@@ -98,15 +98,14 @@
                 android:phoneNumber="true"
                 android:background="@null"
                 android:hint="@string/input_buy_weight"
-
                 />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginBottom="@dimen/qb_px_12"
+                android:layout_marginRight="@dimen/qb_px_20"
+                android:layout_marginTop="@dimen/qb_px_12"
                 android:background="@drawable/lock_pattern_view_bg"
                 android:gravity="center"
                 android:textColor="@color/orange_change_state"
@@ -132,7 +131,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="@dimen/qb_px_45"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/toleft"
             android:paddingRight="@dimen/toright">
@@ -180,7 +179,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="@dimen/qb_px_45"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/toleft"
             android:paddingRight="@dimen/toright">
@@ -215,7 +214,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="@dimen/qb_px_45"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/toleft"
             android:paddingRight="@dimen/toright">
@@ -266,7 +265,7 @@
                 android:id="@+id/notice_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/qb_px_10"
                 android:background="@drawable/ic_prompt"
                 android:gravity="center"/>
 
@@ -274,7 +273,7 @@
                 android:id="@+id/notice_tv2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/qb_px_10"
                 android:layout_toRightOf="@id/notice_tv"
                 android:gravity="center"
                 android:text="@string/check_notice"
@@ -286,7 +285,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="@dimen/qb_px_120"
             android:background="@color/grey_fragment_buy_background"
             android:gravity="center">
 
@@ -301,8 +300,8 @@
                 android:id="@+id/text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="2dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginLeft="@dimen/qb_px_2"
+                android:layout_marginTop="@dimen/qb_px_8"
                 android:layout_toRightOf="@+id/checkbox"
                 android:text="@string/have_read"
                 />
@@ -311,7 +310,7 @@
                 android:id="@+id/golden_protocal_tv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="@dimen/qb_px_8"
                 android:layout_toRightOf="@id/text"
                 android:text="@string/golden_protocal"
                 android:textColor="@color/orange_change_state"
@@ -322,8 +321,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/golden_protocal_tv"
-                android:layout_marginLeft="2dp"
-                android:layout_marginTop="14dp"
+                android:layout_marginLeft="@dimen/qb_px_2"
+                android:layout_marginTop="@dimen/qb_px_14"
                 android:text="@string/china_unicom"
                 />
         </RelativeLayout>
@@ -338,7 +337,7 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="@dimen/qb_px_45"
             android:layout_alignParentBottom="true"
             >
 

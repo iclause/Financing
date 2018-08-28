@@ -1,0 +1,23 @@
+
+
+project(':smallestwidth') {
+    apply plugin: 'java'
+
+
+
+//    apply plugin: 'application'
+////
+//    mainClassName = "com.mga.dimens.generator.DimenGenerator"
+//    def outputDir = "../app/src/main/java/dimens"
+////
+////
+//
+//    task createDocs {
+//        def docs = file(outputDir)
+//        docs.mkdirs()
+//    }
+//
+//    run {
+//        args outputDir
+//    }
+}

@@ -8,17 +8,17 @@
     <RelativeLayout
         android:id="@+id/header_rl"
         android:layout_width="match_parent"
-        android:layout_height="75dp"
+        android:layout_height="@dimen/qb_px_75"
         android:background="@drawable/fragment1_header_color"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
+        android:paddingLeft="@dimen/qb_px_20"
+        android:paddingRight="@dimen/qb_px_20"
         >
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="@dimen/qb_px_20"
             >
 
             <TextView
@@ -46,11 +46,11 @@
 
             <ImageView
                 android:id="@+id/right_tv"
-                android:layout_width="12dp"
-                android:layout_height="12dp"
+                android:layout_width="@dimen/qb_px_12"
+                android:layout_height="@dimen/qb_px_12"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="2dp"
+                android:layout_marginLeft="@dimen/qb_px_2"
                 android:src="@drawable/icon_grey_arrow"
 
                 />
@@ -75,7 +75,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:divider="@color/grey_fragment_buy_background"
-                android:dividerHeight="10dp"
+                android:dividerHeight="@dimen/qb_px_10"
                 >
 
             </com.mga.financing.ui.pullableview.PullableListView>

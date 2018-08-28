@@ -32,7 +32,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="@dimen/qb_px_45"
                 android:gravity="center_vertical"
                 android:paddingLeft="@dimen/toleft"
                 android:paddingRight="@dimen/toright">
@@ -85,7 +85,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="@dimen/qb_px_45"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingLeft="@dimen/toleft"
@@ -105,8 +105,8 @@
                     android:id="@+id/vfc_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="@dimen/qb_px_5"
+                    android:layout_marginTop="@dimen/qb_px_5"
                     android:layout_weight="1"
                     android:background="@color/orange_btn"
                     android:gravity="center"
@@ -125,7 +125,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="@dimen/qb_px_45"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingLeft="@dimen/toleft"
@@ -161,15 +161,15 @@
                 android:id="@+id/checkbox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/qb_px_10"
                 />
 
             <TextView
                 android:id="@+id/text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="2dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginLeft="@dimen/qb_px_2"
+                android:layout_marginTop="@dimen/qb_px_15"
                 android:layout_toRightOf="@+id/checkbox"
                 android:text="@string/have_read"
                 android:textColor="@color/black_middle1_text"
@@ -179,7 +179,7 @@
                 android:id="@+id/text2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="@dimen/qb_px_15"
                 android:layout_toRightOf="@id/text"
                 android:text="@string/one_key_pay_protocal"
                 android:textColor="@color/orange_change_state"
@@ -188,7 +188,7 @@
             <TextView
                 android:id="@+id/submit_tv"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="@dimen/qb_px_45"
                 android:layout_centerInParent="true"
                 android:background="@color/grey_fragment_small_text"
                 android:enabled="false"

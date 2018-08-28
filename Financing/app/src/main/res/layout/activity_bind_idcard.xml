@@ -19,9 +19,9 @@
             android:layout_height="wrap_content"
             android:background="@color/orange_banner_bg"
             android:gravity="center_vertical"
-            android:paddingBottom="5dp"
+            android:paddingBottom="@dimen/qb_px_5"
             android:paddingLeft="@dimen/toleft"
-            android:paddingTop="5dp"
+            android:paddingTop="@dimen/qb_px_5"
             >
 
             <ImageView
@@ -50,38 +50,38 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginLeft="@dimen/qb_px_10"
+                android:layout_marginRight="@dimen/qb_px_10"
                 android:background="@color/white"
-                android:paddingLeft="10dp"
-                android:paddingRight="10dp">
+                android:paddingLeft="@dimen/qb_px_10"
+                android:paddingRight="@dimen/qb_px_10">
 
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="@dimen/qb_px_10"
+                    android:layout_marginTop="@dimen/qb_px_40"
                     android:text="@string/auth_notice_info"/>
             </RelativeLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/qb_px_10"
                 android:background="#FEA94C"
-                android:paddingBottom="2dp"
-                android:paddingLeft="16dp"
-                android:paddingRight="16dp"
-                android:paddingTop="2dp"
+                android:paddingBottom="@dimen/qb_px_2"
+                android:paddingLeft="@dimen/qb_px_16"
+                android:paddingRight="@dimen/qb_px_16"
+                android:paddingTop="@dimen/qb_px_2"
                 android:text="@string/auth_notice"
                 android:textColor="@color/white"/>
         </FrameLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginTop="20dp"
+            android:layout_height="@dimen/qb_px_45"
+            android:layout_marginTop="@dimen/qb_px_20"
             android:background="@color/white"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/toleft"
@@ -105,7 +105,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="@dimen/qb_px_45"
             android:background="@color/white"
             android:gravity="center_vertical"
             android:paddingLeft="@dimen/toleft"
@@ -127,7 +127,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="@dimen/qb_px_30"
             android:text="@string/personal_infomation_by_public_security_organization"/>
 
         <RelativeLayout
@@ -142,7 +142,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_above="@+id/submit_tv"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="@dimen/qb_px_10"
                 >
 
                 <CheckBox
@@ -150,7 +150,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/toleft"
-                    android:layout_marginTop="7dp"
+                    android:layout_marginTop="@dimen/qb_px_7"
                     android:checked="true"
                     />
 
@@ -158,8 +158,8 @@
                     android:id="@+id/text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="2dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="@dimen/qb_px_2"
+                    android:layout_marginTop="@dimen/qb_px_15"
                     android:layout_toRightOf="@+id/checkbox"
                     android:text="@string/have_read"
                     />
@@ -168,7 +168,7 @@
                     android:id="@+id/golden_wallet_protocal_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="@dimen/qb_px_15"
                     android:layout_toRightOf="@id/text"
                     android:text="@string/golden_wallet_protocal"
                     android:textColor="@color/orange_change_state"
@@ -178,7 +178,7 @@
             <TextView
                 android:id="@+id/submit_tv"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="@dimen/qb_px_45"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"

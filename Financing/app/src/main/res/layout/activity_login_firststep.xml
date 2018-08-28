@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/login_toolbar"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="@dimen/qb_px_25"
         android:paddingLeft="@dimen/toleft"
         android:paddingRight="@dimen/toright">
 
@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/hello_tv"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="@dimen/qb_px_18"
             android:text="@string/welcome"
             android:textColor="@color/grey_middle1_text"
             android:textSize="@dimen/middle2"
@@ -45,7 +45,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/welcome_tv"
-            android:layout_marginTop="74dp"
+            android:layout_marginTop="@dimen/qb_px_74"
             >
 
             <TextView
@@ -64,19 +64,19 @@
             <!--android:gravity="center|left"-->
             <!--android:hint="@string/input_password"-->
             <!--android:inputType="text"-->
-            <!--android:paddingLeft="17dp"-->
-            <!--android:paddingRight="17dp"-->
+            <!--android:paddingLeft="17"-->
+            <!--android:paddingRight="17"-->
             <!--android:textColor="@color/normal_login_input_text"-->
             <!--android:textColorHint="@color/normal_login_input_text"-->
             <!--android:textCursorDrawable="@drawable/et_cursor"-->
-            <!--app:x_clearDrawable="@drawable/x_et_svg_ic_clear_24dp"-->
+            <!--app:x_clearDrawable="@drawable/x_et_svg_ic_clear_24"-->
             <!--android:maxLength="18"-->
             <!--/>-->
             <com.mga.financing.ui.XEditText
                 android:id="@+id/phonenumber_et"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="@dimen/qb_px_10"
                 android:layout_toRightOf="@+id/phonenumber"
                 android:background="@null"
                 android:hint="@string/input_phonenumber"
@@ -91,9 +91,9 @@
             <View
                 android:id="@+id/line"
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="@dimen/qb_px_1"
                 android:layout_below="@id/phonenumber"
-                android:layout_marginTop="6dp"
+                android:layout_marginTop="@dimen/qb_px_6"
                 android:background="@color/orange_line"
 
                 />
@@ -101,9 +101,9 @@
             <TextView
                 android:id="@+id/next_tv1"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="@dimen/qb_px_45"
                 android:layout_below="@id/line"
-                android:layout_marginTop="14dp"
+                android:layout_marginTop="@dimen/qb_px_14"
                 android:background="@drawable/shape_login_btn_unennable"
                 android:gravity="center"
                 android:text="@string/next"
@@ -118,7 +118,7 @@
             android:layout_height="wrap_content"
             android:layout_above="@+id/safeinfo_tv"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="6dp"
+            android:layout_marginBottom="@dimen/qb_px_6"
             android:src="@drawable/logo_aliyun"
             />
 
@@ -128,7 +128,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="@dimen/qb_px_16"
             android:text="@string/safeinfo"
             android:textColor="@color/grey_middle1_text"
             android:textSize="@dimen/small"
